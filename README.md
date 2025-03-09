@@ -13,9 +13,6 @@
 
 ## ✏ Introdução
 
-<div align="center">
-
-<img src="https://github.com/2024-1-NADS1-A/Projeto9/blob/main/imagens/ODS.jpg" alt="ODS" border="0">
 
 
 
