@@ -4,8 +4,7 @@
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Projeto Baseado nos Objetivos de Desenvolvimento Sustentável para controlar e monitorar o descarte de lixo eletrônicos.
-
+# 
 ## Neon Open Academy
 
 ## 👥 Integrantes: <a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine </a>, <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves	</a>, <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/">José Bento Almeida Gama </a>, <a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus	</a>.
