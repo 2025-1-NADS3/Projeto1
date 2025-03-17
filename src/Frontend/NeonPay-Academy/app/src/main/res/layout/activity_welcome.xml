@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.197" />
 
     <Button
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btnRegister"
         android:layout_width="322dp"
         android:layout_height="50dp"
         android:backgroundTint="@color/yellow_neon"
