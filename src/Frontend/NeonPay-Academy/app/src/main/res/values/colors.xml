@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue_neon">#0F91FE</color>
+    <color name="blue_light_neon">#00D0DA</color>
     <color name="yellow_neon">#FFC800</color>
     <color name="brown_neon">#855B35</color>
 </resources>

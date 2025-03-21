@@ -35,7 +35,6 @@
         android:id="@+id/textView3"
         android:layout_width="247dp"
         android:layout_height="276dp"
-        android:layout_marginStart="91dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
         android:text="Pagamentos acadêmicos simples e seguros na palma da sua mão"
@@ -43,10 +42,9 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.197" />
+        app:layout_constraintVertical_bias="0.151" />
 
     <Button
         android:id="@+id/btnRegister"
