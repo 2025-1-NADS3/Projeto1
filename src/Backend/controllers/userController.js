@@ -27,17 +27,30 @@ exports.login = (req, res) => {
 };
 
 exports.register = (req, res) => {
-    const { nome, cpf, email, telefone, senha } = req.body;
-    if (!nome || !cpf || !email || !telefone || !senha) return res.status(400).json("Por favor, preencha todos os campos.");
+    const { nome, cpf, data_nasc, email, telefone, senha } = req.body;
+
+    if (!nome || !cpf || !data_nasc || !email || !telefone || !senha) {
+        return res.status(400).json({ erro: "Por favor, preencha todos os campos." });
+    }
 
     db.query("SELECT * FROM usuarios WHERE email = ? OR cpf = ?", [email, cpf], (erro, usuariosExistentes) => {
-        if (usuariosExistentes.length > 0) return res.status(400).json("Email ou CPF já cadastrados.");
+        if (erro) return res.status(500).json({ erro: "Erro no banco de dados." });
+
+        if (usuariosExistentes.length > 0) {
+            return res.status(400).json({ erro: "Email ou CPF já cadastrados." });
+        }
+
         bcrypt.hash(senha, 10, (erro, hash) => {
-            if (erro) return res.status(500).json("Erro ao hashear a senha.");
-            db.query("INSERT INTO usuarios (nome, cpf, email, telefone, senha) VALUES (?, ?, ?, ?, ?)", [nome, cpf, email, telefone, hash], (erro) => {
-                if (erro) return res.status(500).json("Erro ao registrar o usuário.");
-                return res.status(201).json("Usuário registrado com sucesso.");
-            });
+            if (erro) return res.status(500).json({ erro: "Erro ao hashear a senha." });
+
+            db.query("INSERT INTO usuarios (nome, cpf, data_nasc, email, telefone, senha) VALUES (?, ?, ?, ?, ?, ?)", 
+                [nome, cpf, data_nasc, email, telefone, hash], 
+                (erro) => {
+                    if (erro) return res.status(500).json({ erro: "Erro ao registrar o usuário." });
+
+                    return res.json({ mensagem: "Usuário registrado com sucesso." });
+                }
+            );
         });
     });
 };
