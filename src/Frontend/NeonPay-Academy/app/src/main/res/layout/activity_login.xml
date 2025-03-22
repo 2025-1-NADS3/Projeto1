@@ -43,49 +43,68 @@
     </FrameLayout>
 
 
+    <TextView
+        android:id="@+id/tituloCPF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="CPF"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtCPF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
 
     <EditText
-        android:id="@+id/txtCpf"
+        android:id="@+id/txtCPF"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/input_background"
-        android:hint=" CPF"
-        android:textColor="#000000"
-        android:textColorHint="#7A7A7A"
+        android:hint=" 000.000.000-00"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/tituloSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Senha"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtSenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCPF"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/txtSenha"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/input_background"
-        android:hint=" Senha"
+        android:hint=" ********"
         android:inputType="textPassword"
-        android:textColor="#000000"
-        android:textColorHint="#7A7A7A"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtCpf" />
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="360dp"
-        android:layout_height="50dp"
-        android:backgroundTint="@color/blue_light_neon"
-        android:text="Entrar"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintTop_toBottomOf="@id/txtCPF" />
 
     <TextView
         android:id="@+id/txtCrie"
@@ -94,13 +113,30 @@
         android:layout_marginBottom="364dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Ainda não tem uma conta? Crie uma"
-        android:textColor="@color/blue_neon"
+        android:textColor="@color/blue_light_neon"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintHorizontal_bias="0.227"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSenha"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintVertical_bias="0.089" />
+
+    <Button
+        android:id="@+id/btnLogar"
+        android:layout_width="360dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/blue_light_neon"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Entrar"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.407" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
