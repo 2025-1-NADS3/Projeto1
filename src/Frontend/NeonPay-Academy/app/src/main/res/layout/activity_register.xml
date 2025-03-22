@@ -26,8 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginEnd="70dp"
-            android:paddingTop="3dp"
             android:fontFamily="@font/poppins_semibold"
+            android:paddingTop="3dp"
             android:text="Criar Conta"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -42,56 +42,124 @@
             app:srcCompat="@drawable/seta_voltar" />
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/tituloNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Nome Completo"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
         android:id="@+id/txtNome"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="56dp"
         android:background="@drawable/input_background"
-        android:hint=" Nome completo"
+        android:hint=" Seu nome"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+
+    <TextView
+        android:id="@+id/tituloCPF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:text="CPF"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtCpf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNome"
+        app:layout_constraintVertical_bias="1.0" />
+
 
     <EditText
         android:id="@+id/txtCpf"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/input_background"
-        android:hint=" CPF"
+        android:hint=" 000.000.000-00"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtNome" />
+
+    <TextView
+        android:id="@+id/tituloDataNasc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Data de Nascimento"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtDataNasc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCpf"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/txtDataNasc"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/input_background"
-        android:hint=" Data de Nascimento"
+        android:hint=" 00/00/0000"
+        android:maxLength="10"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:maxLength="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtCpf" />
 
+    <TextView
+        android:id="@+id/tituloEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="1dp"
+        android:text="E-mail"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDataNasc"
+        app:layout_constraintVertical_bias="0.307" />
+
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/input_background"
-        android:hint=" E-mail"
+        android:hint="  Seu email"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,11 +167,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtDataNasc" />
 
+    <TextView
+        android:id="@+id/tituloCelular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Celular"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtCelular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
         android:id="@+id/txtCelular"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/input_background"
         android:hint=" Celular"
         android:textColor="@color/black"
@@ -113,13 +197,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtEmail" />
 
+    <TextView
+        android:id="@+id/tituloSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Senha"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtSenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCelular"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
         android:id="@+id/txtSenha"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="52dp"
         android:background="@drawable/input_background"
-        android:hint=" Senha"
+        android:hint=" ********"
         android:inputType="textPassword"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -128,20 +227,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtCelular" />
 
-
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="360dp"
         android:layout_height="50dp"
         android:backgroundTint="@color/blue_light_neon"
         android:text="Cadastrar"
+        android:textSize="20sp"
+        android:fontFamily="@font/poppins_semibold"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.804" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSenha"
+        app:layout_constraintVertical_bias="0.451" />
 
     <TextView
         android:id="@+id/txtCrie"
@@ -165,6 +265,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCrie"
         app:layout_constraintVertical_bias="0.109" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
