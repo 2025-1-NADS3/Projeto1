@@ -47,6 +47,7 @@ Há também 4 pastas que seguem da seguinte forma:
 <br>🎨 WireFrame </br>
 <a href="https://www.figma.com/design/fJi0BJh1UnpZ2pNsil4LDm/WireFrame--Grupo-1.?node-id=49-4&t=pewvPpg1QO1NQwo0-1">WireFrame </a>
 <br>🎨 StoryBoard</br>
+<a href="https://www.canva.com/design/DAGik0tm6I0/M8exD_9sd5LbMnnHM4bcGg/edit?utm_content=DAGik0tm6I0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">StoryBoard </a>
 
 
 
