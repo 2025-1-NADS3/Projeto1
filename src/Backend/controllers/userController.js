@@ -1,7 +1,9 @@
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = 'neonpay_academy';
+require('dotenv').config();
+const JWT_SECRET = process.env.JWT_SECRET; 
+
 
 exports.login = (req, res) => {
     const { cpf, senha } = req.body;
@@ -53,4 +55,37 @@ exports.register = (req, res) => {
             );
         });
     });
+};
+
+exports.atualizarPerfil = (req, res) => {
+    const { id } = req.user; 
+    const { nome, email, telefone, senha } = req.body;
+
+    if (!nome || !email || !telefone) {
+        return res.status(400).json({ erro: "Por favor, preencha todos os campos." });
+    }
+
+    let queryValues = [nome, email, telefone, id];
+    let sqlAtualizar = "UPDATE usuarios SET nome = ?, email = ?, telefone = ? WHERE id = ?";
+
+    if (senha) {
+        bcrypt.hash(senha, 10, (err, hashedPassword) => {
+            if (err) return res.status(500).json({ erro: "Erro ao hashear a senha." });
+
+            sqlAtualizar = "UPDATE usuarios SET nome = ?, email = ?, telefone = ?, senha = ? WHERE id = ?";
+            queryValues = [nome, email, telefone, hashedPassword, id];
+
+            db.query(sqlAtualizar, queryValues, (err, resultado) => {
+                if (err) return res.status(500).json({ erro: "Erro ao atualizar o perfil." });
+
+                return res.status(200).json({ mensagem: "Perfil atualizado com sucesso." });
+            });
+        });
+    } else {
+        db.query(sqlAtualizar, queryValues, (err, resultado) => {
+            if (err) return res.status(500).json({ erro: "Erro ao atualizar o perfil." });
+
+            return res.status(200).json({ mensagem: "Perfil atualizado com sucesso." });
+        });
+    }
 };
