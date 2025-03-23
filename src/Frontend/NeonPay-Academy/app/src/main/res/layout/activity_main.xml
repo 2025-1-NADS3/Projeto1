@@ -11,8 +11,8 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/logoneon" />
+        android:layout_width="250dp"
+        android:layout_height="210dp"
+        android:src="@drawable/logo_neon_academy" />
 
 </LinearLayout>

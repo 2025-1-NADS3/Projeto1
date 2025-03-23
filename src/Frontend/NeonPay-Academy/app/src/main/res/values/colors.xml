@@ -6,4 +6,5 @@
     <color name="blue_light_neon">#00D0DA</color>
     <color name="yellow_neon">#FFC800</color>
     <color name="brown_neon">#855B35</color>
+    <color name="red">#FF0000</color>
 </resources>
