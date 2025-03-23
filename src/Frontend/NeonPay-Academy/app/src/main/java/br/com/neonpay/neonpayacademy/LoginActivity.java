@@ -1,6 +1,7 @@
 package br.com.neonpay.neonpayacademy;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -26,7 +27,6 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
-    // Campos do Formulario de Cadastro
     private EditText txtCPF, txtSenha;
     private Button btnLogar;
 
@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         String cpf = txtCPF.getText().toString().trim();
         String senha = txtSenha.getText().toString().trim();
 
-        if (cpf.isEmpty()  || senha.isEmpty()) {
+        if (cpf.isEmpty() || senha.isEmpty()) {
             Toast.makeText(this, "Todos os campos são obrigatórios!", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -85,17 +85,10 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-
-        // Continuar com o cadastro após a validação
-        Log.d("Registro", "Login: ");
-        Log.d("Registro", "CPF: " + cpf);
-        Log.d("Registro", "Senha: " + senha);
-
         JSONObject postData = new JSONObject();
         try {
             postData.put("cpf", cpf);
             postData.put("senha", senha);
-            Log.d("Registro", "JSON criado: " + postData.toString());
         } catch (JSONException e) {
             Log.e("Registro", "Erro ao criar JSON", e);
             return;
@@ -105,13 +98,19 @@ public class LoginActivity extends AppCompatActivity {
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, postData,
                 response -> {
-                    Log.d("Registro", "Resposta da API: " + response.toString());
-                    Toast.makeText(LoginActivity.this, "Login realizado com sucesso!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(LoginActivity.this, EditProfileActivity.class);
-                    startActivity(intent);
+                    try {
+                        String tokenRecebido = response.getString("token");
+                        armazenarToken(tokenRecebido);
+                        Toast.makeText(LoginActivity.this, "Login realizado com sucesso!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(LoginActivity.this, EditProfileActivity.class));
+                        finish();
+                    } catch (JSONException e) {
+                        Log.e("Registro", "Erro ao ler o token do JSON", e);
+                        Toast.makeText(LoginActivity.this, "Erro no servidor.", Toast.LENGTH_LONG).show();
+                    }
                 },
                 error -> {
-                    Log.e("Registro", "Erro ao cadastrar: " + error.toString());
+                    Log.e("Registro", "Erro ao logar: " + error.toString());
                     Toast.makeText(LoginActivity.this, "CPF ou Senha Incorreta!!", Toast.LENGTH_LONG).show();
                 });
 
@@ -130,6 +129,7 @@ public class LoginActivity extends AppCompatActivity {
             return false;
         }
 
+        if (cpf.length() != 11 || cpf.matches("(\\d)\\1{10}")) return false;
         int[] pesos1 = {10, 9, 8, 7, 6, 5, 4, 3, 2};
         int[] pesos2 = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};
 
@@ -148,5 +148,8 @@ public class LoginActivity extends AppCompatActivity {
         return (resto < 2) ? 0 : 11 - resto;
     }
 
-
+    private void armazenarToken(String token) {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        sharedPreferences.edit().putString("TOKEN", token).apply();
+    }
 }
