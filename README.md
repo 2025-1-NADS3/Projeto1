@@ -1,10 +1,10 @@
 # FECAP - Fundação de Comércio Álvares Penteado
 
-
+<p align="center">
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# 
+
 ## NeonPay Academy
 
 ## 👥 Integrantes: <a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine </a>, <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves	</a>, <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/">José Bento Almeida Gama </a>, <a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus	</a>.
@@ -13,12 +13,14 @@
 ## 👨‍🏫 Professores Orientadores:<a href="https://www.linkedin.com/in/aimarlopes/">Aimar Martins Lopes</a>,<a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>,<a href="https://www.linkedin.com/in/vheltai/">Vinicius Heltai</a>, <a href="https://www.linkedin.com/in/jefferson-o-silva/">Jefferson Silva</a>.
 
 ## ✏ Introdução
-<div align="center">
-
-<img src="https://github.com/2025-1-NADS3/Projeto1/blob/main/imagens/Logo.png" alt="ODS" border="0">
 
 
 
+<div>
+  <div align="center">
+  <img src="https://github.com/2025-1-NADS3/Projeto1/blob/main/imagens/Logo.png" alt="ODS" border="0">
+</div>
+  
 ## 🔎 Descrição
 
 
