@@ -57,7 +57,10 @@ Há também 4 pastas que seguem da seguinte forma:
 
 
 ## 🖥️ Ferramentas de Desenvolvimento
-<img src="https://github.com/devicons/devicon/blob/v2.15.0/icons/nodejs/nodejs-original.svg" alt="ODS" border="0"> <img src="https://camo.githubusercontent.com/0d4b500c99671bf83bcb747e4f25f3da28765f2bbb4cdd9733c09f9a46381aaa/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f64657669636f6e732f64657669636f6e2f69636f6e732f6a6176612f6a6176612d6f726967696e616c2e737667>
+![image](https://github.com/user-attachments/assets/8c7d68a7-a610-4e20-a0d4-96f61d3cd210)
+
+
+
 ## 🚀 Instalação e Configuração
 
 ### 📲 1. Instale o Android Studio
