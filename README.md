@@ -57,7 +57,8 @@ Há também 4 pastas que seguem da seguinte forma:
 
 
 ## 🖥️ Ferramentas de Desenvolvimento
-![image](https://github.com/user-attachments/assets/9721256e-4eba-4af3-8de0-d77a956a0743)
+![image](https://github.com/user-attachments/assets/2aa2c6fb-8556-4d25-ace6-b30d163f316d)
+
 
 
 
