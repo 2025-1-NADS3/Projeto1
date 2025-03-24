@@ -89,3 +89,26 @@ exports.atualizarPerfil = (req, res) => {
         });
     }
 };
+
+exports.deletarPerfil = (req, res) => {
+    const { id } = req.user; 
+
+    if (!id) {
+        return res.status(400).json({ erro: "ID do usuário não fornecido." });
+    }
+
+    const sqlDeletar = "DELETE FROM usuarios WHERE id = ?";
+
+    db.query(sqlDeletar, [id], (err, resultado) => {
+        if (err) {
+            console.error("Erro ao deletar o usuário:", err);
+            return res.status(500).json({ erro: "Erro ao deletar o usuário." });
+        }
+
+        if (resultado.affectedRows === 0) {
+            return res.status(404).json({ erro: "Usuário não encontrado." });
+        }
+
+        return res.status(200).json({ mensagem: "Usuário deletado com sucesso." });
+    });
+};
