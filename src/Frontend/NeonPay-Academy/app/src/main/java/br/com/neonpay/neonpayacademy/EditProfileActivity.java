@@ -1,5 +1,7 @@
 package br.com.neonpay.neonpayacademy;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
@@ -25,14 +28,18 @@ import org.json.JSONObject;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class EditProfileActivity extends AppCompatActivity {
 
     private EditText txtNome1, txtEmail1, txtTelefone1, txtSenha1;
-    private Button btnUpdate;
+    private Button btnUpdate, btnDelete;
 
     private String token;
 
@@ -54,11 +61,19 @@ public class EditProfileActivity extends AppCompatActivity {
         txtTelefone1 = findViewById(R.id.txtTelefone1);
         txtSenha1 = findViewById(R.id.txtSenha1);
         btnUpdate = findViewById(R.id.btnUpdate);
+        btnDelete = findViewById(R.id.btnDelete);
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 atualizarPerfil();
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmarExclusao();
             }
         });
 
@@ -117,6 +132,71 @@ public class EditProfileActivity extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
+    }
+    private void confirmarExclusao() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Confirmar exclusão");
+        builder.setMessage("Tem certeza de que deseja deletar sua conta? Esta ação não pode ser desfeita.");
+
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                deletarConta();
+            }
+        });
+
+        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+
+        AlertDialog dialog = builder.create();
+        dialog.setOnShowListener(dialogInterface -> {
+
+            int black = ContextCompat.getColor(this, R.color.black);
+
+            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(black);
+
+            dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(black);
+        });
+        dialog.show();
+    }
+
+    private void deletarConta() {
+        if (token == null) {
+            Toast.makeText(this, "Token não encontrado. Faça login novamente.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String url = "http://10.0.2.2:3000/api/deletar-perfil";
+
+        StringRequest request = new StringRequest(Request.Method.DELETE, url,
+                response -> {
+                    Toast.makeText(this, "Conta deletada com sucesso!", Toast.LENGTH_LONG).show();
+                    logout();
+                },
+                error -> {
+                    Log.e("Erro", error.toString());
+                    Toast.makeText(this, "Erro ao deletar conta", Toast.LENGTH_SHORT).show();
+                }) {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer " + token);
+                return headers;
+            }
+        };
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(request);
+    }
+
+    private void logout() {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove("TOKEN");
+        editor.apply();
+
+        Intent intent = new Intent(EditProfileActivity.this, WelcomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private String obterToken() {
