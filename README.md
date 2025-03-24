@@ -12,8 +12,9 @@
 ## 👨‍🏫 Professores Orientadores:
 
 ## ✏ Introdução
-[Logo](Projeto1/imagens/Component 1.png)
+<div align="center">
 
+<img src="https://github.com/2025-1-NADS3/Projeto1/blob/main/imagens/Logo.png" alt="ODS" border="0">
 
 
 
