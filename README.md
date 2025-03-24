@@ -12,7 +12,7 @@
 ## 👨‍🏫 Professores Orientadores:
 
 ## ✏ Introdução
-[Logo](imagens/Component 1.png)
+[Logo](Projeto1/imagens/Component 1.png)
 
 
 
