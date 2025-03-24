@@ -86,7 +86,50 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
 
+        carregarPerfil();
+
     }
+
+    private void carregarPerfil() {
+        if (token == null) {
+            Toast.makeText(this, "Token não encontrado. Faça login novamente.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String url = "http://10.0.2.2:3000/api/perfil";
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                response -> {
+                    try {
+                        String nome = response.getString("nome");
+                        String email = response.getString("email");
+                        String telefone = response.getString("telefone");
+
+                        txtNome1.setText(nome);
+                        txtEmail1.setText(email);
+                        txtTelefone1.setText(telefone);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Ocorreu um erro ao atualizar as informações. Verifique sua conexão e tente novamente.", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    Log.e("Erro", error.toString());
+                    Toast.makeText(this, "Erro ao carregar perfil", Toast.LENGTH_SHORT).show();
+                }) {
+            @Override
+            public Map<String, String> getHeaders() {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer " + token);
+                return headers;
+            }
+        };
+
+        RequestQueue queue = Volley.newRequestQueue(this);
+        queue.add(request);
+    }
+
 
     private void atualizarPerfil() {
         if (token == null) {
@@ -99,19 +142,19 @@ public class EditProfileActivity extends AppCompatActivity {
         String telefone = txtTelefone1.getText().toString().trim();
         String senha = txtSenha1.getText().toString().trim();
 
-        if (nome.isEmpty() || email.isEmpty() || telefone.isEmpty()) {
-            Toast.makeText(this, "Preencha todos os campos obrigatórios!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
         JSONObject params = new JSONObject();
         try {
-            params.put("nome", nome);
-            params.put("email", email);
-            params.put("telefone", telefone);
+            if (!nome.isEmpty()) params.put("nome", nome);
+            if (!email.isEmpty()) params.put("email", email);
+            if (!telefone.isEmpty()) params.put("telefone", telefone);
             if (!senha.isEmpty()) params.put("senha", senha);
         } catch (JSONException e) {
             e.printStackTrace();
+        }
+
+        if (params.length() == 0) {
+            Toast.makeText(this, "Nenhuma alteração foi feita.", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         String url = "http://10.0.2.2:3000/api/atualizar-perfil";
