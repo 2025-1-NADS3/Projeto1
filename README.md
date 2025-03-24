@@ -57,11 +57,49 @@ Há também 4 pastas que seguem da seguinte forma:
 
 
 ## 🖥️ Ferramentas de Desenvolvimento
+<img src="https://github.com/devicons/devicon/blob/v2.15.0/icons/nodejs/nodejs-original.svg" alt="ODS" border="0"> <img src="https://camo.githubusercontent.com/0d4b500c99671bf83bcb747e4f25f3da28765f2bbb4cdd9733c09f9a46381aaa/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f64657669636f6e732f64657669636f6e2f69636f6e732f6a6176612f6a6176612d6f726967696e616c2e737667>
+## 🚀 Instalação e Configuração
+
+### 📲 1. Instale o Android Studio
+
+Baixe e instale a versão mais recente do <a href="https://developer.android.com/studio"> Android Studio </a>  de acordo com seu sistema operacional:
 
 
+### ⚙️ 2. Configuração Inicial
 
+Após a instalação:
+- Abra o Android Studio.
+- Siga o assistente de configuração para instalar o SDK do Android e demais componentes necessários.
+- Verifique se as dependências estão atualizadas nas configurações do SDK Manager.
 
+### 🆕 3. Crie ou Importe o Projeto
 
+- Para criar um novo projeto: selecione **"Start a new Android Studio project"** e configure as opções conforme as necessidades do aplicativo.
+- Para importar este projeto: selecione **"Open an existing project"** e escolha a pasta do repositório clonado.
+
+### 🏃 4. Execute o Projeto
+
+- Conecte um dispositivo físico via USB (certifique-se que a **depuração USB** está ativada) ou configure um emulador no Android Studio.
+- Clique no botão **"Run"** (ícone ▶) para compilar e executar o aplicativo no dispositivo/emulador.
+
+## 🔧 Ferramentas Utilizadas
+
+| Categoria                    | Ferramenta                                        |
+|------------------------------|---------------------------------------------------|
+| **IDE & Editor de Código**    | Android Studio (Kotlin / Java)                   |
+| **Versionamento de Código**   | Git + GitHub                                     |
+| **Banco de Dados**          | MySQL                                             |
+| **Linguagem de Programação**  | Java                                             |
+| **Sistemas Operacionais**     | Compatível com Windows, macOS e Linux            |
+| **Ferramentas de Design**     | Figma, Canva e StoryboardThat                    |
+
+## ✨ Recursos Adicionais
+
+- Documentação oficial do Android
+
+- Guia de estilo Material Design
+
+- Documentação do MySQL 
 ## 🗃 Histórico de lançamentos
 
 
