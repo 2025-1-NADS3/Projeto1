@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class WelcomeActivity extends AppCompatActivity {
 
+    // Declaração das variáveis dos elementos da interface
     private Button btnRegister, btnLogin;
 
     @Override
@@ -26,6 +27,7 @@ public class WelcomeActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Inicialização dos componentes da interface
         btnRegister = findViewById(R.id.btnRegister);
         btnLogin = findViewById(R.id.btnLogin);
 
