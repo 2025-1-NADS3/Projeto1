@@ -14,21 +14,21 @@ Dotenv (variáveis de ambiente)
 CORS (acesso entre domínios)
 
 ## 📂Estrutura de Pasta 
-
-NeonPay-Academy/
-├── config/
-│   └── db.js
-├── controllers/
-│   └── userController.js
-├── middlewares/
-│   └── autenticarToken.js
-├── routes/
-│   └── userRoutes.js
-├── server.js
-├── .env
-├── package.json
-└── package-lock.json
-
+```
+📂src
+├── 📂config/
+│   └── 📃db.js
+├── 📂controllers/
+│   └── 📃userController.js
+├── 📂middlewares/
+│   └── 📃autenticarToken.js
+├── 📂routes/
+│   └── 📃userRoutes.js
+├── 📂server.js
+├── 📂.env
+├── 📂package.json
+└── 📂package-lock.json
+```
 ## ⚙️ Variáveis de Ambiente (.env)
 ```
 PORT=3000
