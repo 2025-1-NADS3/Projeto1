@@ -78,10 +78,6 @@ Token: Todas as requisições exigem token JWT nos headers (Bearer <token>)
 <br>Utilizados em todas as requisições autenticadas no app.</br>
 
 # 🔁 Fluxo de Navegação
-<br> mermaid</br>
-<br> Copiar</br>
-<br>Editar</br>
-<br>flowchart TD</br>
     <br>A[MainActivity - Splash Screen]</br>
     <br>B[WelcomeActivity]</br>
     <br>C[RegisterActivity]</br>
