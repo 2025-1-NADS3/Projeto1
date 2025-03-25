@@ -58,7 +58,8 @@ Há também 4 pastas que seguem da seguinte forma:
 <a href="https://miro.com/welcomeonboard/YTNNSFdlVmtRTVJjNlBrelMvSFQ2WXU1SkVHQjNNNnZoYkp4ZmxuUXR5VWsxRzdsUFdueDIxM0tOa1p4dHpJSDFxSXlsVHFjSEJsdk1KYnNJQ01zTFBOR0s2YnNxSklQT2k4Y1dVZ1krTXdIYmw5RnFidTUxbFZFV3BqUmRJTkhQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=258966388391"> Fluxograma </a>
 
 ## 🖥️ Ferramentas de Desenvolvimento
-![image](https://github.com/user-attachments/assets/2aa2c6fb-8556-4d25-ace6-b30d163f316d)
+![image](https://github.com/user-attachments/assets/03c49167-fc07-40c8-b167-7fcb7612f573)
+
 
 
 
