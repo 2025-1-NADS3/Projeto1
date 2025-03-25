@@ -96,26 +96,7 @@ Aplicativo Android desenvolvido no Android Studio, com integração via API.
 
 📂 NeonPay-Academy — Projeto completo do app
 
-📄 EditProfileActivity.java — Tela de edição de perfil do usuário
-
-✅ Campos: Nome, E-mail, Telefone, Senha
-
-🔗 Requisições:
-
-GET /api/perfil: Preenche dados no app com informações do backend
-
-PUT /api/atualizar-perfil: Atualiza dados do perfil
-
-DELETE /api/deletar-perfil: Exclui a conta do usuário
-
-🔐 Sessão:
-
-Token JWT salvo no SharedPreferences com chave "TOKEN"
-
-Logout automático após exclusão
-
-Feitas com Volley e RequestQueue
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+📖 README.MD - Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.😊
 
 
 
