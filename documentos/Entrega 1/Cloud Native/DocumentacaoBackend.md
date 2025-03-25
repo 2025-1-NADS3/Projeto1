@@ -24,10 +24,9 @@ CORS (acesso entre domínios)
 │   └── 📃autenticarToken.js
 ├── 📂routes/
 │   └── 📃userRoutes.js
-├── 📂server.js
-├── 📂.env
-├── 📂package.json
-└── 📂package-lock.json
+├── 📃server.js
+├── 📃package.json
+└── 📃package-lock.json
 ```
 ## ⚙️ Variáveis de Ambiente (.env)
 ```
