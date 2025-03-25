@@ -23,6 +23,7 @@
   
 ## 🔎 Descrição
 
+Neon Pay Academy é um app financeiro voltado para o ambiente acadêmico, que permite aos alunos realizarem pagamentos de serviços e produtos da instituição de forma simples e segura, integrado à API do banco Neon. Além dos pagamentos, os estudantes acumulam pontos a cada transação, que podem ser trocados por benefícios exclusivos, como produtos da atlética. A plataforma visa facilitar a gestão financeira e incentivar o engajamento dentro da comunidade universitária.
 
 
 
