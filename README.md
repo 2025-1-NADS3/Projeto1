@@ -31,11 +31,32 @@ Neon Pay Academy é um app financeiro voltado para o ambiente acadêmico, que pe
 
 -Raiz<br>
 |<br>
-|-->documentos<br>
+|-->documentos<br> *Entregas divididas em 3 partes por matéria*
+  &emsp;|-->Entrega 1<br>
+          &emsp;|-->Cloud Native<br>
+          &emsp;|-->Mobile<br>
+          &emsp;|-->Teste de Software<br>
+          &emsp;|-->UX<br>
+  &emsp;|-->Entrega 2<br>
+          &emsp;|-->Cloud Native<br>
+          &emsp;|-->Mobile<br>
+          &emsp;|-->Teste de Software<br>
+          &emsp;|-->UX<br>
+  &emsp;|-->Entrega 3<br>
+          &emsp;|-->Cloud Native<br>
+          &emsp;|-->Mobile<br>
+          &emsp;|-->Teste de Software<br>
+          &emsp;|-->UX<br>
 |-->imagens<br>
 |-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
+  &emsp;|-->Backend<br> *Estrutura em JavaScript*
+          &emsp;|-->config<br>
+          &emsp;|-->controllers<br>
+          &emsp;|-->middlewares<br>
+          &emsp;|-->models<br>
+          &emsp;|-->routes<br>
+&emsp;|-->Frontend<br> *Estrutura mobile em Java*
+         &emsp;|-->NeonPay-Academy<br>
 |readme.md<br>
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
