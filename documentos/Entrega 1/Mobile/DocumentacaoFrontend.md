@@ -73,20 +73,20 @@ deletarConta(): Requisição DELETE para /api/deletar-perfil
 
 Token: Todas as requisições exigem token JWT nos headers (Bearer <token>)
 ```
-## 🔐 Armazenamento Seguro de Token
-Os tokens JWT são armazenados em SharedPreferences sob a chave "TOKEN".
-Utilizados em todas as requisições autenticadas no app.
+# 🔐 Armazenamento Seguro de Token
+<br>Os tokens JWT são armazenados em SharedPreferences sob a chave "TOKEN".</br>
+<br>Utilizados em todas as requisições autenticadas no app.</br>
 
-## 🔁 Fluxo de Navegação
-mermaid
-Copiar
-Editar
-flowchart TD
-    A[MainActivity - Splash Screen]
-    B[WelcomeActivity]
-    C[RegisterActivity]
-    D[LoginActivity]
-    E[EditProfileActivity]
+# 🔁 Fluxo de Navegação
+<br> mermaid</br>
+<br> Copiar</br>
+<br>Editar</br>
+<br>flowchart TD</br>
+    <br>A[MainActivity - Splash Screen]</br>
+    <br>B[WelcomeActivity]</br>
+    <br>C[RegisterActivity]</br>
+   <br> D[LoginActivity]</br>
+   <br> E[EditProfileActivity]</br>
 
     A --> B
     B --> C
