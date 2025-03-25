@@ -31,6 +31,7 @@ import java.util.Locale;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    // Declaração das variáveis dos elementos da interface
     private EditText txtNome, txtCpf, txtDataNasc, txtEmail, txtCelular, txtSenha;
     private Button btnRegister;
     private ImageView imgVoltar;
@@ -46,6 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Inicialização dos componentes da interface
         txtNome = findViewById(R.id.txtNome);
         txtCpf = findViewById(R.id.txtCpf);
         txtDataNasc = findViewById(R.id.txtDataNasc);
@@ -77,34 +79,39 @@ public class RegisterActivity extends AppCompatActivity {
         String celular = txtCelular.getText().toString().trim();
         String senha = txtSenha.getText().toString().trim();
 
+        // Realiza validações antes fazer requisição ao servidor
         if (nome.isEmpty() || cpf.isEmpty() || dataNascimento.isEmpty() ||
                 email.isEmpty() || celular.isEmpty() || senha.isEmpty()) {
             Toast.makeText(this, "Todos os campos são obrigatórios!", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Realiza a validação do CPF chamando a função validarCPF()
         if (!validarCPF(cpf)) {
             Toast.makeText(this, "CPF inválido!", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Realiza a validação do Email chamando a função validarEmail()
         if (!validarEmail(email)) {
             Toast.makeText(this, "E-mail inválido!", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Realiza a validação do Celular chamando a função validarCelular()
         if (!validarCelular(celular)) {
             Toast.makeText(this, "Celular inválido!", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Chama a função converterDataNascimento() e armazena numa String dataConvertida para poder enviar ao banco de dados
         String dataConvertida = converterDataNascimento(dataNascimento);
         if (dataConvertida == null) {
             Toast.makeText(this, "Data de nascimento inválida! ", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Continuar com o cadastro após a validação
+        // Adicionando log para verficar se está sendo feito corretamento o armazenamento das informações nas variaveis
         Log.d("Registro", "Cadastro: ");
         Log.d("Registro", "Nome: " + nome);
         Log.d("Registro", "CPF: " + cpf);
@@ -113,15 +120,16 @@ public class RegisterActivity extends AppCompatActivity {
         Log.d("Registro", "Celular: " + celular);
         Log.d("Registro", "Senha: " + senha);
 
-        JSONObject postData = new JSONObject();
+        // Criando objeto JSON para enviar na requisição
+        JSONObject dadosUsuario = new JSONObject();
         try {
-            postData.put("nome", nome);
-            postData.put("cpf", cpf);
-            postData.put("data_nasc", dataConvertida);
-            postData.put("email", email);
-            postData.put("telefone", celular);
-            postData.put("senha", senha);
-            Log.d("Registro", "JSON criado: " + postData.toString());
+            dadosUsuario.put("nome", nome);
+            dadosUsuario.put("cpf", cpf);
+            dadosUsuario.put("data_nasc", dataConvertida);
+            dadosUsuario.put("email", email);
+            dadosUsuario.put("telefone", celular);
+            dadosUsuario.put("senha", senha);
+            Log.d("Registro", "JSON criado: " + dadosUsuario.toString());
         } catch (JSONException e) {
             Log.e("Registro", "Erro ao criar JSON", e);
             return;
@@ -129,7 +137,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         String url = "http://10.0.2.2:3000/api/cadastro";
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, postData,
+        // Criando requisição POST para o servidor
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, dadosUsuario,
                 response -> {
                     Log.d("Registro", "Resposta da API: " + response.toString());
                     Toast.makeText(RegisterActivity.this, "Cadastro realizado com sucesso!", Toast.LENGTH_LONG).show();
@@ -146,7 +155,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    // Validação de CPF
+    // Validação de CPF (removendo caracteres especiais e verificando se é válido)
     private boolean validarCPF(String cpf) {
 
         // Vai remover pontos e traços digitados pelo usuario
@@ -165,6 +174,7 @@ public class RegisterActivity extends AppCompatActivity {
         return cpf.equals(cpf.substring(0, 9) + digito1 + digito2);
     }
 
+    // Calcula os dígitos verificadores do CPF
     private int calcularDigito(String str, int[] pesos) {
         int soma = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -174,7 +184,7 @@ public class RegisterActivity extends AppCompatActivity {
         return (resto < 2) ? 0 : 11 - resto;
     }
 
-    // Validação do Email
+    // Validação do Email aceitando apenas dominio com @edu
     private boolean validarEmail(String email) {
         String regex = "^[\\w-\\.]+@edu\\.[\\w-]+\\.[a-zA-Z]{2,4}$";
         return email.matches(regex);
