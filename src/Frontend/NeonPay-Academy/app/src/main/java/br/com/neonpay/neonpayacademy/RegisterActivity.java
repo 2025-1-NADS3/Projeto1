@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -30,9 +31,9 @@ import java.util.Locale;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    // Campos do Formulario de Cadastro
     private EditText txtNome, txtCpf, txtDataNasc, txtEmail, txtCelular, txtSenha;
     private Button btnRegister;
+    private ImageView imgVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,25 +53,22 @@ public class RegisterActivity extends AppCompatActivity {
         txtCelular = findViewById(R.id.txtCelular);
         txtSenha = findViewById(R.id.txtSenha);
         btnRegister = findViewById(R.id.btnRegister);
+        imgVoltar = findViewById(R.id.imgVoltar);
 
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registrarUsuario();
-            }
+        // Quando clicar no botão vai chamar a função registrarUsuario()
+        btnRegister.setOnClickListener(view -> {
+            registrarUsuario();
         });
 
-        ImageView imgVoltar = (ImageView) findViewById(R.id.imgVoltar);
-        imgVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegisterActivity.this, WelcomeActivity.class);
-                startActivity(intent);
-            }
+        // Botão para retornar à tela de boas-vindas
+        imgVoltar.setOnClickListener(view -> {
+            Intent intent = new Intent(RegisterActivity.this, WelcomeActivity.class);
+            startActivity(intent);
         });
 
     }
 
+    // Função para realizar o cadastro do usuário através de uma requisição POST
     private void registrarUsuario() {
         String nome = txtNome.getText().toString().trim();
         String cpf = txtCpf.getText().toString().trim();

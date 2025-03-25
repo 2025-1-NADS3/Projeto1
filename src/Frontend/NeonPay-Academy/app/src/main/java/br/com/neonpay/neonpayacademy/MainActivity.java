@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // MainActivity = Tela Splash, ficara por 3 segundos e depois leva para a tela de Welcome
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {

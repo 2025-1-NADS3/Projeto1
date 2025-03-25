@@ -29,6 +29,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText txtCPF, txtSenha;
     private Button btnLogar;
+    private ImageView imgVoltar;
+    private TextView txtCrie;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,33 +46,29 @@ public class LoginActivity extends AppCompatActivity {
         txtCPF = findViewById(R.id.txtCPF);
         txtSenha = findViewById(R.id.txtSenha);
         btnLogar = findViewById(R.id.btnLogar);
+        imgVoltar = findViewById(R.id.imgVoltar);
+        txtCrie = findViewById(R.id.txtCrie);
 
-        btnLogar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logarUsuario();
-            }
+        // Quando clicar no botão vai chamar a função logarUsuario()
+        btnLogar.setOnClickListener(view -> {
+            logarUsuario();
         });
 
-        ImageView imgVoltar = (ImageView) findViewById(R.id.imgVoltar);
-        imgVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
-                startActivity(intent);
-            }
+        // Botão para retornar à tela de boas-vindas
+        imgVoltar.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
+            startActivity(intent);
         });
 
-        TextView txtCrie = (TextView) findViewById(R.id.txtCrie);
-        txtCrie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        // Texto para quando for clicado levar para a tela de cadastro
+        txtCrie.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
+
     }
 
+    // Função para realizar o login do usuário através de uma requisição POST
     private void logarUsuario() {
         String cpf = txtCPF.getText().toString().trim();
         String senha = txtSenha.getText().toString().trim();

@@ -40,6 +40,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private EditText txtNome1, txtEmail1, txtTelefone1, txtSenha1;
     private Button btnUpdate, btnDelete;
+    private ImageView imgVoltar;
 
     private String token;
 
@@ -62,34 +63,31 @@ public class EditProfileActivity extends AppCompatActivity {
         txtSenha1 = findViewById(R.id.txtSenha1);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
+        imgVoltar = findViewById(R.id.imgVoltar1);
 
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                atualizarPerfil();
-            }
-        });
-
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                confirmarExclusao();
-            }
-        });
-
-        ImageView imgVoltar = (ImageView) findViewById(R.id.imgVoltar1);
-        imgVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(EditProfileActivity.this, WelcomeActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        // Carrega os dados do perfil do usuário ao iniciar a tela
         carregarPerfil();
+
+        // Quando clicar no botão vai chamar a função atualizarUsuario()
+        btnUpdate.setOnClickListener(view -> {
+            atualizarPerfil();
+        });
+
+        // Quando clicar no botão vai chamar a função confirmarExclusao()
+        btnDelete.setOnClickListener(view -> {
+            confirmarExclusao();
+        });
+
+        // Botão para retornar à tela de boas-vindas
+        imgVoltar.setOnClickListener(view -> {
+            Intent intent = new Intent(EditProfileActivity.this, WelcomeActivity.class);
+            startActivity(intent);
+        });
 
     }
 
+
+    // Função para obter os dados do perfil do usuário através de uma requisição GET
     private void carregarPerfil() {
         if (token == null) {
             Toast.makeText(this, "Token não encontrado. Faça login novamente.", Toast.LENGTH_SHORT).show();
@@ -131,6 +129,7 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
 
+    // Função para atualiza as informações do perfil do usuário
     private void atualizarPerfil() {
         if (token == null) {
             Toast.makeText(this, "Token não encontrado. Faça login novamente.", Toast.LENGTH_SHORT).show();
@@ -176,6 +175,8 @@ public class EditProfileActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
     }
+
+    // Função para exibir um alerta de confirmação antes de excluir a conta do usuário, caso seja confirmado sera chamado a função deletarConta()
     private void confirmarExclusao() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Confirmar exclusão");
@@ -202,6 +203,7 @@ public class EditProfileActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    // Função para deletar o Perfil do Usuario
     private void deletarConta() {
         if (token == null) {
             Toast.makeText(this, "Token não encontrado. Faça login novamente.", Toast.LENGTH_SHORT).show();
@@ -242,6 +244,7 @@ public class EditProfileActivity extends AppCompatActivity {
         finish();
     }
 
+    // Função para obter o token
     private String obterToken() {
         SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
         return sharedPreferences.getString("TOKEN", null);

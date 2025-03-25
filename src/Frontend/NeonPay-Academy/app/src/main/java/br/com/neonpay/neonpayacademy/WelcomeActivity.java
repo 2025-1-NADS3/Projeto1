@@ -13,6 +13,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class WelcomeActivity extends AppCompatActivity {
 
+    private Button btnRegister, btnLogin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,23 +26,21 @@ public class WelcomeActivity extends AppCompatActivity {
             return insets;
         });
 
-        Button btnRegister = findViewById(R.id.btnRegister);
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        btnRegister = findViewById(R.id.btnRegister);
+        btnLogin = findViewById(R.id.btnLogin);
+
+        // Quando clicar no botão vai para a tela de cadastro
+        btnRegister.setOnClickListener(view -> {
+            Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
 
-        Button btnLogin = findViewById(R.id.btnLogin);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
-                startActivity(intent);
-            }
+        // Quando clicar no botão vai para a tela de login
+        btnLogin.setOnClickListener(view -> {
+            Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+            startActivity(intent);
         });
+
 
     }
 }
