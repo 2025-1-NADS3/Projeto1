@@ -78,11 +78,11 @@ Token: Todas as requisições exigem token JWT nos headers (Bearer <token>)
 <br>Utilizados em todas as requisições autenticadas no app.</br>
 
 # 🔁 Fluxo de Navegação
-    <br>A[MainActivity - Splash Screen]</br>
-    <br>B[WelcomeActivity]</br>
-    <br>C[RegisterActivity]</br>
-   <br> D[LoginActivity]</br>
-   <br> E[EditProfileActivity]</br>
+<br>A - [MainActivity - Splash Screen]</br>
+<br>B - [WelcomeActivity]</br>
+<br>C - [RegisterActivity]</br>
+<br> D - [LoginActivity]</br>
+<br> E - [EditProfileActivity]</br>
 
     A --> B
     B --> C
