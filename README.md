@@ -71,13 +71,10 @@ Há também 4 pastas que seguem da seguinte forma:
 <b>src</b>: Pasta que contém o código fonte.
 
 
-## 📖 Figma
-<br>🎨 WireFrame </br>
-<a href="https://www.figma.com/design/fJi0BJh1UnpZ2pNsil4LDm/WireFrame--Grupo-1.?node-id=49-4&t=pewvPpg1QO1NQwo0-1">WireFrame </a>
-<br>🎨 StoryBoard</br>
-<a href="https://www.canva.com/design/DAGik0tm6I0/M8exD_9sd5LbMnnHM4bcGg/edit?utm_content=DAGik0tm6I0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">StoryBoard </a>
-<br>🎨 Fluxograma</br>
-<a href="https://miro.com/welcomeonboard/YTNNSFdlVmtRTVJjNlBrelMvSFQ2WXU1SkVHQjNNNnZoYkp4ZmxuUXR5VWsxRzdsUFdueDIxM0tOa1p4dHpJSDFxSXlsVHFjSEJsdk1KYnNJQ01zTFBOR0s2YnNxSklQT2k4Y1dVZ1krTXdIYmw5RnFidTUxbFZFV3BqUmRJTkhQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=258966388391"> Fluxograma </a>
+## 📖 Clique abaixo para ver nosso design
+<br><a href="https://www.figma.com/design/fJi0BJh1UnpZ2pNsil4LDm/WireFrame--Grupo-1.?node-id=49-4&t=pewvPpg1QO1NQwo0-1">🎨 WireFrame </a></br>
+<br><a href="https://www.canva.com/design/DAGik0tm6I0/M8exD_9sd5LbMnnHM4bcGg/edit?utm_content=DAGik0tm6I0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">📔 StoryBoard </a></br>
+<br><a href="https://miro.com/welcomeonboard/YTNNSFdlVmtRTVJjNlBrelMvSFQ2WXU1SkVHQjNNNnZoYkp4ZmxuUXR5VWsxRzdsUFdueDIxM0tOa1p4dHpJSDFxSXlsVHFjSEJsdk1KYnNJQ01zTFBOR0s2YnNxSklQT2k4Y1dVZ1krTXdIYmw5RnFidTUxbFZFV3BqUmRJTkhQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=258966388391">👩‍💻 Fluxograma </a></br>
 
 ## 🖥️ Ferramentas de Desenvolvimento
 ![image](https://github.com/user-attachments/assets/03c49167-fc07-40c8-b167-7fcb7612f573)
