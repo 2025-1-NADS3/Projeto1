@@ -38,6 +38,7 @@ import java.util.Map;
 
 public class EditProfileActivity extends AppCompatActivity {
 
+    // Declaração das variáveis dos elementos da interface
     private EditText txtNome1, txtEmail1, txtTelefone1, txtSenha1;
     private Button btnUpdate, btnDelete;
     private ImageView imgVoltar;
@@ -55,8 +56,10 @@ public class EditProfileActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Obtém token salvo no SharedPreferences
         token = obterToken();
 
+        // Inicialização dos componentes da interface
         txtNome1 = findViewById(R.id.txtNome1);
         txtEmail1 = findViewById(R.id.txtEmail1);
         txtTelefone1 = findViewById(R.id.txtTelefone1);
@@ -96,6 +99,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         String url = "http://10.0.2.2:3000/api/perfil";
 
+        // Criando requisição GET para o servidor
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
                     try {
@@ -136,6 +140,7 @@ public class EditProfileActivity extends AppCompatActivity {
             return;
         }
 
+        // Obtém os valores digitados pelo usuário
         String nome = txtNome1.getText().toString().trim();
         String email = txtEmail1.getText().toString().trim();
         String telefone = txtTelefone1.getText().toString().trim();
