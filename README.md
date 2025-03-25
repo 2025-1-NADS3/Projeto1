@@ -25,39 +25,40 @@
 
 Neon Pay Academy é um app financeiro voltado para o ambiente acadêmico, que permite aos alunos realizarem pagamentos de serviços e produtos da instituição de forma simples e segura, integrado à API do banco Neon. Além dos pagamentos, os estudantes acumulam pontos a cada transação, que podem ser trocados por benefícios exclusivos, como produtos da atlética. A plataforma visa facilitar a gestão financeira e incentivar o engajamento dentro da comunidade universitária.
 
+## 📂 Estrutura de Pastas 
 
-
-## 🛠 Estrutura de pastas
-
--Raiz<br>
-|<br>
-|-->documentos<br> *Entregas divididas em 3 partes por matéria*
-  &emsp;|-->Entrega 1<br>
-          &emsp;|-->Cloud Native<br>
-          &emsp;|-->Mobile<br>
-          &emsp;|-->Teste de Software<br>
-          &emsp;|-->UX<br>
-  &emsp;|-->Entrega 2<br>
-          &emsp;|-->Cloud Native<br>
-          &emsp;|-->Mobile<br>
-          &emsp;|-->Teste de Software<br>
-          &emsp;|-->UX<br>
-  &emsp;|-->Entrega 3<br>
-          &emsp;|-->Cloud Native<br>
-          &emsp;|-->Mobile<br>
-          &emsp;|-->Teste de Software<br>
-          &emsp;|-->UX<br>
-|-->imagens<br>
-|-->src<br>
-  &emsp;|-->Backend<br> *Estrutura em JavaScript*
-          &emsp;|-->config<br>
-          &emsp;|-->controllers<br>
-          &emsp;|-->middlewares<br>
-          &emsp;|-->models<br>
-          &emsp;|-->routes<br>
-&emsp;|-->Frontend<br> *Estrutura mobile em Java*
-         &emsp;|-->NeonPay-Academy<br>
-|readme.md<br>
+📁 Raiz  
+├── 📁 documentos  
+│   ├── 📁 Entrega 1  
+│   │   ├── 📁 Cloud Native  
+│   │   ├── 📁 Mobile  
+│   │   ├── 📁 Teste de Software  
+│   │   └── 📁 UX  
+│   ├── 📁 Entrega 2  
+│   │   ├── 📁 Cloud Native  
+│   │   ├── 📁 Mobile  
+│   │   ├── 📁 Teste de Software  
+│   │   └── 📁 UX  
+│   └── 📁 Entrega 3  
+│       ├── 📁 Cloud Native  
+│       ├── 📁 Mobile  
+│       ├── 📁 Teste de Software  
+│       └── 📁 UX  
+│
+├── 📁 imagens  
+│
+├── 📁 src  
+│   ├── 👩‍💻 📁 Backend  
+│   │   ├── 📁 config  
+│   │   ├── 📁 controllers  
+│   │   ├── 📁 middlewares  
+│   │   ├── 📁 models  
+│   │   └── 📁 routes  
+│   │
+│   └── 🎨 📁 Frontend  
+│       └── 📁 NeonPay-Academy  
+│
+└── 📄 readme.md
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
 
