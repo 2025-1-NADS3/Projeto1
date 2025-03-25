@@ -13,17 +13,11 @@
 ## 👨‍🏫 Professores Orientadores:<a href="https://www.linkedin.com/in/aimarlopes/">Aimar Martins Lopes</a>,<a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>,<a href="https://www.linkedin.com/in/vheltai/">Vinicius Heltai</a>, <a href="https://www.linkedin.com/in/jefferson-o-silva/">Jefferson Silva</a>.
 
 ## ✏ Introdução
-
-
-
-<div>
-  <div align="center">
-  <img src="https://github.com/2025-1-NADS3/Projeto1/blob/main/imagens/Logo.png" alt="ODS" border="0">
-</div>
+![Group 126](https://github.com/user-attachments/assets/08ad41a5-2764-4122-a445-6c9050c19c6c)
   
 ## 🔎 Descrição
 
-Neon Pay Academy é um app financeiro voltado para o ambiente acadêmico, que permite aos alunos realizarem pagamentos de serviços e produtos da instituição de forma simples e segura, integrado à API do banco Neon. Além dos pagamentos, os estudantes acumulam pontos a cada transação, que podem ser trocados por benefícios exclusivos, como produtos da atlética. A plataforma visa facilitar a gestão financeira e incentivar o engajamento dentro da comunidade universitária.
+Neon Pay Academy é um aplicativo financeiro voltado para o ambiente acadêmico, que permite aos alunos realizarem pagamentos de serviços e produtos da instituição de forma simples e segura, integrado à API do banco Neon. Além dos pagamentos, os estudantes acumulam pontos a cada transação, que podem ser trocados por benefícios exclusivos, como produtos da atlética. A plataforma visa facilitar a gestão financeira e incentivar o engajamento dentro da comunidade universitária.
 
 ## 📂 Estrutura de Pastas 
 
