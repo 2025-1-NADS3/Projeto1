@@ -106,12 +106,17 @@ Após a instalação:
 
 | Categoria                    | Ferramenta                                        |
 |------------------------------|---------------------------------------------------|
-| **IDE & Editor de Código**    | Android Studio (Kotlin / Java)                   |
-| **Versionamento de Código**   | Git + GitHub                                     |
-| **Banco de Dados**          | MySQL                                             |
-| **Linguagem de Programação**  | Java                                             |
-| **Sistemas Operacionais**     | Compatível com Windows, macOS e Linux            |
-| **Ferramentas de Design**     | Figma, Canva e StoryboardThat                    |
+| **IDE & Editor de Código**   | Android Studio (Kotlin / Java), Visual Studio Code |
+| **Versionamento de Código**  | Git + GitHub                                     |
+| **Banco de Dados**           | MySQL                                            |
+| **Linguagem de Programação** | Java, JavaScript                                 |
+| **Backend/API**              | Node.js + Express                                |
+| **Frontend Mobile**          | Android SDK (Kotlin/Java)                        |
+| **Plataforma de Deploy**     | Microsoft Azure                                  |
+| **Testes de Software**       | Postman                                          |
+| **Ferramentas de Design**    | Figma, Canva, StoryboardThat, Miro              |
+| **Sistemas Operacionais**    | Compatível com Windows, macOS e Linux            |
+
   
 ## 🗃 Histórico de lançamentos
 * 0.1.1 - 25/03/2025
