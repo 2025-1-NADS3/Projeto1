@@ -54,6 +54,73 @@ Neon Pay Academy é um aplicativo financeiro voltado para o ambiente acadêmico,
 │
 └── 📄 readme.md
 
+## 🗂️ Descrição das Pastas
+Navegue pelas pastas do projeto e entenda o que cada uma contém:
+
+📁 documentos
+Documentação geral do projeto, dividida por entregas e disciplinas.
+
+   📂 Entrega 1 / Cloud Native — Arquivos da disciplina Cloud Native
+
+   📂 Entrega 1 / Mobile — Arquivos da disciplina Mobile
+
+   📂 Entrega 1 / Teste de Software — Arquivos da disciplina de Testes
+
+   📂 Entrega 1 / UX — Arquivos da disciplina de UX
+
+   📂 Entrega 2 — Estrutura igual à entrega 1
+
+   📂 Entrega 3 — Estrutura igual à entrega 1
+
+🖼️ imagens
+Imagens utilizadas na documentação, no README e no app.
+
+🧠 src
+Código-fonte principal do projeto, dividido em Backend (API) e Frontend (app mobile).
+
+👩‍💻 Backend
+Servidor em Node.js responsável por processar os dados do app.
+
+   📂 config — Configuração do ambiente e do banco de dados
+
+   📂 controllers — Lógica das rotas e manipulação de dados
+
+   📂 middlewares — Validações, autenticação e logs
+
+   📂 models — Modelos de entidades e ORM (MySQL)
+
+   📂 routes — Definição dos endpoints da API REST
+
+🎨 Frontend
+Aplicativo Android desenvolvido no Android Studio, com integração via API.
+
+📂 NeonPay-Academy — Projeto completo do app
+
+📄 EditProfileActivity.java — Tela de edição de perfil do usuário
+
+✅ Campos: Nome, E-mail, Telefone, Senha
+
+🔗 Requisições:
+
+GET /api/perfil: Preenche dados no app com informações do backend
+
+PUT /api/atualizar-perfil: Atualiza dados do perfil
+
+DELETE /api/deletar-perfil: Exclui a conta do usuário
+
+🔐 Sessão:
+
+Token JWT salvo no SharedPreferences com chave "TOKEN"
+
+Logout automático após exclusão
+
+🎨 Compatibilidade visual:
+
+Usa EdgeToEdge + WindowInsetsCompat para visual moderno
+
+🌐 Requisições:
+
+Feitas com Volley e RequestQueue
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
 
 Há também 4 pastas que seguem da seguinte forma:
