@@ -40,9 +40,6 @@ JWT_SECRET=sua_chave_secreta
 ```
 ## 🛠️ Configuração do Banco de Dados (config/db.js)
 ```
-js
-Copiar
-Editar
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
@@ -62,9 +59,6 @@ module.exports = db;
 ```
 ## 🔐 Middleware de Autenticação JWT (middlewares/autenticarToken.js)
 ```
-js
-Copiar
-Editar
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
@@ -114,9 +108,6 @@ GET /api/perfil
 ```
 ## 🌐 Rotas HTTP (routes/userRoutes.js)
 ```
-js
-Copiar
-Editar
 router.post('/login', login);
 router.post('/cadastro', register);
 router.put('/atualizar-perfil', autenticarToken, atualizarPerfil);
@@ -125,9 +116,6 @@ router.get('/perfil', autenticarToken, getPerfil);
 ```
 ## 🖥️ Inicialização do Servidor (server.js)
 ```
-js
-Copiar
-Editar
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -149,9 +137,6 @@ app.listen(port, () => {
 ```
 ## 📦 Dependências
 ```
-json
-Copiar
-Editar
 "dependencies": {
   "bcrypt": "^5.1.1",
   "cors": "^2.8.5",
