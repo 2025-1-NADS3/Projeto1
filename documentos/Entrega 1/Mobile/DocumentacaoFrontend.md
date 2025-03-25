@@ -94,4 +94,14 @@ Token: Todas as requisições exigem token JWT nos headers (Bearer <token>)
     D --> E
     C --> D
     E --> B
+## 📌 Autores
+Desenvolvido por:
+Alexandra Christine.
+Contato: LinkedIn | GitHub
+Gabrielly Cintra
+Contato: LinkedIn | GitHub
+Hebert Esteves
+Contato: LinkedIn | GitHub
+José Bento
+Contato: LinkedIn | GitHub
 
