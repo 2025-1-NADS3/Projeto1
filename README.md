@@ -112,14 +112,7 @@ Após a instalação:
 | **Linguagem de Programação**  | Java                                             |
 | **Sistemas Operacionais**     | Compatível com Windows, macOS e Linux            |
 | **Ferramentas de Design**     | Figma, Canva e StoryboardThat                    |
-
-## ✨ Recursos Adicionais
-
-- Documentação oficial do Android
-
-- Guia de estilo Material Design
-
-- Documentação do MySQL 
+  
 ## 🗃 Histórico de lançamentos
 * 0.1.1 - 25/03/2025
    * CONCLUÍDO: Tela com função Principal.
@@ -155,4 +148,6 @@ Após a instalação:
 
 ## 🎓 Referências
 
-
+<br><a href="https://source.android.com/docs?hl=pt-br"> - 📖Documentação oficial do Android  </a></br>
+<br><a href="https://nodejs.org/docs/latest/api/"> - 📖Documentação oficial Node.js  </a></br>
+<br><a href="https://dev.mysql.com/doc/"> - 📖Documentação do MySQL  </a></br>
