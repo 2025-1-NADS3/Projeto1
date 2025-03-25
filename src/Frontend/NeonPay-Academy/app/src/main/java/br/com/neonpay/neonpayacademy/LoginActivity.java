@@ -27,6 +27,7 @@ import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // Declaração das variáveis dos elementos da interface
     private EditText txtCPF, txtSenha;
     private Button btnLogar;
     private ImageView imgVoltar;
@@ -43,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Inicialização dos componentes da interface
         txtCPF = findViewById(R.id.txtCPF);
         txtSenha = findViewById(R.id.txtSenha);
         btnLogar = findViewById(R.id.btnLogar);
@@ -73,20 +75,23 @@ public class LoginActivity extends AppCompatActivity {
         String cpf = txtCPF.getText().toString().trim();
         String senha = txtSenha.getText().toString().trim();
 
+        // Realiza validações antes fazer requisição ao servidor
         if (cpf.isEmpty() || senha.isEmpty()) {
             Toast.makeText(this, "Todos os campos são obrigatórios!", Toast.LENGTH_SHORT).show();
             return;
         }
 
+        // Realiza a validação do CPF chamando a função validarCPF()
         if (!validarCPF(cpf)) {
             Toast.makeText(this, "CPF inválido!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        JSONObject postData = new JSONObject();
+        // Criando objeto JSON para enviar na requisição
+        JSONObject dadosUsuario = new JSONObject();
         try {
-            postData.put("cpf", cpf);
-            postData.put("senha", senha);
+            dadosUsuario.put("cpf", cpf);
+            dadosUsuario.put("senha", senha);
         } catch (JSONException e) {
             Log.e("Registro", "Erro ao criar JSON", e);
             return;
@@ -94,14 +99,15 @@ public class LoginActivity extends AppCompatActivity {
 
         String url = "http://10.0.2.2:3000/api/login";
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, postData,
+        // Criando requisição POST para o servidor
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, dadosUsuario,
                 response -> {
                     try {
                         String tokenRecebido = response.getString("token");
                         armazenarToken(tokenRecebido);
                         Toast.makeText(LoginActivity.this, "Login realizado com sucesso!", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(LoginActivity.this, EditProfileActivity.class));
-                        finish();
+                        finish(); // Fecha a tela de login
                     } catch (JSONException e) {
                         Log.e("Registro", "Erro ao ler o token do JSON", e);
                         Toast.makeText(LoginActivity.this, "Erro no servidor.", Toast.LENGTH_LONG).show();
@@ -117,7 +123,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    // Validação de CPF
+    // Validação de CPF (removendo caracteres especiais e verificando se é válido)
     private boolean validarCPF(String cpf) {
 
         // Vai remover pontos e traços digitados pelo usuario
@@ -137,6 +143,7 @@ public class LoginActivity extends AppCompatActivity {
         return cpf.equals(cpf.substring(0, 9) + digito1 + digito2);
     }
 
+    // Calcula os dígitos verificadores do CPF
     private int calcularDigito(String str, int[] pesos) {
         int soma = 0;
         for (int i = 0; i < str.length(); i++) {
@@ -146,6 +153,7 @@ public class LoginActivity extends AppCompatActivity {
         return (resto < 2) ? 0 : 11 - resto;
     }
 
+    // Função para armazenar o token de login no SharedPreferences
     private void armazenarToken(String token) {
         SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
         sharedPreferences.edit().putString("TOKEN", token).apply();
