@@ -114,22 +114,9 @@ Token JWT salvo no SharedPreferences com chave "TOKEN"
 
 Logout automático após exclusão
 
-🎨 Compatibilidade visual:
-
-Usa EdgeToEdge + WindowInsetsCompat para visual moderno
-
-🌐 Requisições:
-
 Feitas com Volley e RequestQueue
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
 
-Há também 4 pastas que seguem da seguinte forma:
-
-<b>documentos</b>: Toda a documentação estará nesta pasta.
-
-<b>imagens</b>: Imagens do sistema
-
-<b>src</b>: Pasta que contém o código fonte.
 
 
 ## 📖 Clique abaixo para ver nosso design
