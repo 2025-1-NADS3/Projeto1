@@ -34,11 +34,17 @@
     <string name="appBtnAtualizar"> Aplicar Mudanças </string>
     <string name="appBtnExcluir"> Excluir conta </string>
 
+    <!-- String da Tela Pix -->
+    <string name="appTituloTelaPix">Área Pix</string>
+    <string name="appTextoTelaPix"> Envie e receba pagamentos em instantes.</string>
+
     <!-- Cores do Projeto -->
     <color name="blue_neon">#0F91FE</color>
     <color name="blue_light_neon">#00D0DA</color>
     <color name="yellow_neon">#FFC800</color>
     <color name="brown_neon">#855B35</color>
+    <color name="appColorBranco">#FFFFFF</color>
+    <color name="appColorPreto">#000000</color>
     <color name="red">#FF0000</color>
 
 </resources>

@@ -9,7 +9,7 @@
     tools:context=".RegisterActivity">
 
     <FrameLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/frameLayoutRegister"
         android:layout_width="415dp"
         android:layout_height="70dp"
         android:background="@color/blue_light_neon"
@@ -20,26 +20,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/txtTitulo"
-            android:layout_width="223dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="70dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingTop="3dp"
-            android:text="@string/appTituloRegister"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="24sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
 
-        <ImageView
-            android:id="@+id/imgVoltar"
-            android:layout_width="37dp"
-            android:layout_height="36dp"
-            android:layout_gravity="center"
-            android:layout_marginEnd="170dp"
-            app:srcCompat="@drawable/seta_voltar" />
+            <ImageView
+                android:id="@+id/imgVoltar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/seta_voltar"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="@string/appTituloRegister"
+                android:textAlignment="center"
+                android:textColor="@color/appColorPreto"
+                android:textSize="24sp"
+                android:paddingTop="3dp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </FrameLayout>
 
     <TextView
@@ -50,13 +58,13 @@
         android:layout_marginBottom="1dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/appTituloNome"
-        android:textColor="#000000"
+        android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtNome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutRegister"
         app:layout_constraintVertical_bias="1.0" />
 
 
@@ -68,12 +76,12 @@
         android:background="@drawable/input_background"
         android:hint="@string/appMascaraNome"
         android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/appColorPreto"
+        android:textColorHint="@color/appColorPreto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayoutRegister" />
 
     <TextView
         android:id="@+id/tituloCPF"
@@ -82,7 +90,7 @@
         android:layout_marginBottom="1dp"
         android:text="@string/appTituloCPF"
         android:fontFamily="@font/poppins_semibold"
-        android:textColor="#000000"
+        android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtCpf"
         app:layout_constraintEnd_toEndOf="parent"
@@ -100,8 +108,8 @@
         android:background="@drawable/input_background"
         android:hint="@string/appMascaraCPF"
         android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/appColorPreto"
+        android:textColorHint="@color/appColorPreto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +122,7 @@
         android:layout_marginBottom="1dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/appTituloDataNascimento"
-        android:textColor="#000000"
+        android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtDataNasc"
         app:layout_constraintEnd_toEndOf="parent"
@@ -132,8 +140,8 @@
         android:hint="@string/appMascaraDataNascimento"
         android:padding="8dp"
         android:maxLength="10"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/appColorPreto"
+        android:textColorHint="@color/appColorPreto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +155,7 @@
         android:layout_marginBottom="1dp"
         android:text="@string/appTituloEmail"
         android:fontFamily="@font/poppins_semibold"
-        android:textColor="#000000"
+        android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtEmail"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,8 +172,8 @@
         android:background="@drawable/input_background"
         android:hint="@string/appMascaraEmail"
         android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/appColorPreto"
+        android:textColorHint="@color/appColorPreto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +186,7 @@
         android:layout_marginBottom="1dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/appTituloCelular"
-        android:textColor="#000000"
+        android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtCelular"
         app:layout_constraintEnd_toEndOf="parent"
@@ -195,8 +203,8 @@
         android:background="@drawable/input_background"
         android:hint="@string/appMascaraCelular"
         android:padding="8dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/appColorPreto"
+        android:textColorHint="@color/appColorPreto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -208,7 +216,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/appTituloSenha"
-        android:textColor="#000000"
+        android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/txtSenha"
         app:layout_constraintEnd_toEndOf="parent"
@@ -226,8 +234,8 @@
         android:hint="@string/appMascaraSenha"
         android:padding="8dp"
         android:inputType="textPassword"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/appColorPreto"
+        android:textColorHint="@color/appColorPreto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
@@ -240,7 +248,7 @@
         android:backgroundTint="@color/blue_light_neon"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/appBtnCadastrar"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/appColorBranco"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -271,8 +279,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtTermoUso1"
         app:layout_constraintVertical_bias="0.109" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
