@@ -28,7 +28,7 @@
             android:name=".TransferirPixActivity"
             android:exported="false" />
         <activity
-            android:name=".TelaPixActivity"
+            android:name=".PixHomeActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
