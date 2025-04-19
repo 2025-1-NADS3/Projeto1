@@ -44,20 +44,34 @@ export async function webhook(req, res) {
 }
 
 export async function enviarPix(req, res) {
-    const { usuario_id, valor, chave_pix_destino } = req.body;
+    const { usuario_id, valor, chave_pix_destino, senha } = req.body;
+    
     try {
-        const [userRows] = await db.execute("SELECT saldo FROM usuarios WHERE id = ?", [usuario_id]);
-        if (userRows.length === 0 || userRows[0].saldo < valor) {
+        const [userRows] = await db.execute("SELECT * FROM usuarios WHERE id = ?", [usuario_id]);
+        if (userRows.length === 0) {
+            return res.status(400).json({ erro: "Usuário não encontrado." });
+        }
+
+        const user = userRows[0];
+
+        const senhaCorreta = await bcrypt.compare(senha, user.senha);
+        if (!senhaCorreta) {
+            return res.status(401).json({ erro: "Senha incorreta." });
+        }
+
+        if (user.saldo < valor) {
             return res.status(400).json({ erro: "Saldo insuficiente." });
         }
 
         await db.execute("UPDATE usuarios SET saldo = saldo - ? WHERE id = ?", [valor, usuario_id]);
+
         await db.execute(
             "INSERT INTO transacoes (usuario_id, tipo, valor, descricao, chave_pix, status) VALUES (?, 'saida', ?, 'Envio Pix', ?, 'confirmado')",
             [usuario_id, valor, chave_pix_destino]
         );
-
+        
         res.json({ mensagem: "Pix enviado." });
+
     } catch (error) {
         res.status(500).json({ erro: error.message });
     }
