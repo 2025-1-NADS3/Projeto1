@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- String da Tela Welcome -->
+    <string name="appTextApresentacao">Pagamentos acadêmicos simples e seguros na palma da sua mão</string>
+    <string name="appBtnRegister"> Quero me cadastrar </string>
+    <string name="appBtnLogin"> Acessar minha conta </string>
+
+    <!-- String da Tela Login -->
+    <string name="appTituloLogin">Entrar na Conta</string>
+    <string name="appTituloCPF"> CPF </string>
+    <string name="appMascaraCPF"> 000.000.000-00 </string>
+    <string name="appTituloSenha"> Senha </string>
+    <string name="appMascaraSenha"> ******** </string>
+    <string name="appTextCrieConta"> Ainda não tem uma conta? Crie uma </string>
+    <string name="appBtnEntrar"> Entrar </string>
+
+    <!-- String da Tela Cadastro -->
+    <string name="appTituloRegister">Criar Conta</string>
+    <string name="appTituloNome"> Nome Completo </string>
+    <string name="appMascaraNome"> Seu nome </string>
+    <string name="appTituloDataNascimento"> Data de Nascimento </string>
+    <string name="appMascaraDataNascimento"> 00/00/0000 </string>
+    <string name="appTituloEmail"> E-mail </string>
+    <string name="appMascaraEmail"> Seu email </string>
+    <string name="appTituloCelular"> Celular </string>
+    <string name="appMascaraCelular"> Seu Celular </string>
+    <string name="appBtnCadastrar"> Cadastrar </string>
+    <string name="appTermoUso1"> Li e concordo com os Termos de Uso. </string>
+    <string name="appTermoUso2"> Aviso Externo de Privacidade. </string>
+
+    <!-- String da Tela Editar Perfil -->
+    <string name="appTituloEditProfile">Editar Perfil</string>
+    <string name="appBtnAtualizar"> Aplicar Mudanças </string>
+    <string name="appBtnExcluir"> Excluir conta </string>
+
+    <!-- Cores do Projeto -->
+    <color name="blue_neon">#0F91FE</color>
+    <color name="blue_light_neon">#00D0DA</color>
+    <color name="yellow_neon">#FFC800</color>
+    <color name="brown_neon">#855B35</color>
+    <color name="red">#FF0000</color>
+
+</resources>
