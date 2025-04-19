@@ -2,21 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/appColorBranco"
     tools:context=".ConfirmPixTransferActivity">
 
-    <!-- Header -->
     <FrameLayout
         android:id="@+id/frameLayoutPix"
         android:layout_width="0dp"
         android:layout_height="70dp"
-        android:background="#00BCD4"
+        android:background="@color/blue_light_neon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayoutHeader"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -25,6 +27,7 @@
             android:paddingEnd="16dp">
 
             <ImageView
+                android:id="@+id/imgVoltar"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:src="@drawable/seta_voltar"
@@ -34,148 +37,207 @@
                 android:id="@+id/txtTituloHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Transferir com Pix"
-                android:textColor="#FFFFFF"
+                android:text="@string/appTituloTransferirPix"
+                android:textColor="@color/appColorBranco"
                 android:textSize="20sp"
                 android:layout_marginStart="12dp"
                 android:textStyle="bold" />
         </LinearLayout>
     </FrameLayout>
 
-    <!-- Título -->
     <TextView
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Confirme sua transferência"
-        android:textColor="#000000"
+        android:text="@string/appTituloConfirmeTransferirPix"
+        android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/frameLayoutPix"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Subtítulo -->
     <TextView
-        android:id="@+id/txtSubtitulo"
+        android:id="@+id/txtSubtituloConfirmeTransferirPix"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Antes de avançar, verifique as informações abaixo:"
+        android:text="@string/appSubtituloConfirmeTransferirPix"
         android:textSize="16sp"
-        android:textColor="#666666"
+        android:textColor="@color/appColorCinza"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@id/txtTitulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Caixa de dados -->
-
-    <!-- Botão -->
-
     <LinearLayout
-        android:id="@+id/layoutInformacoes"
+        android:id="@+id/layoutValor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/card_background"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/txtSubtituloConfirmeTransferirPix"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtSubtitulo">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
-            android:id="@+id/txtLabelValor"
-            android:text="Valor"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:id="@+id/txtTituloValor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appTituloValor"
+            android:textSize="16sp"
+            android:textColor="@color/appColorCinzaEscuro" />
 
         <TextView
             android:id="@+id/txtValor"
-            android:layout_marginBottom="16dp"
-            android:text="R$ 121,00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appMascaraValor"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutDestinatario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/card_background"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutValor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/txtTituloDestinatario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appTituloDestinatario"
+            android:textColor="@color/appColorCinzaEscuro"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/txtLabelDestinatario"
-            android:text="Destinatário"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:id="@+id/txtNomeDestinatario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appMascaraNome"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" />
 
         <TextView
-            android:id="@+id/txtDestinatario"
-            android:layout_marginBottom="4dp"
-            android:text="José Bento"
+            android:id="@+id/txtTituloDocumento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appTituloDocumento"
             android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/txtLabelDocumento"
-            android:text="Documento"
-            android:textSize="14sp"
-            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtDocumento"
-            android:layout_marginBottom="4dp"
-            android:text="*.801.568-**"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appMascaraCPF"
+            android:textColor="@color/appColorPreto"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/txtTituloChave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appTituloChave"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/txtLabelChave"
-            android:text="Chave"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtChave"
-            android:layout_marginBottom="4dp"
-            android:text="47480156839"
+            android:id="@+id/txtChavePix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appMascaraChave"
+            android:textColor="@color/appColorPreto"
             android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutTipoQuando"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/card_background"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/layoutDestinatario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/layoutTipo"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/txtTituloTipo"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:text="@string/appTituloTipo"
+                android:textColor="@color/appColorCinzaEscuro"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/txtLabelTipo"
-                    android:text="Tipo"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txtTipo"
-                    android:text="Pix"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            <TextView
+                android:id="@+id/txtTipo"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:text="@string/appTxtTipo"
+                android:textColor="@color/appColorPreto"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
 
-                <TextView
-                    android:id="@+id/txtLabelQuando"
-                    android:text="Quando"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/layoutQuando"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
-                <TextView
-                    android:id="@+id/txtQuando"
-                    android:text="Agora"
-                    android:textSize="16sp" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/txtTituloQuando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/appTituloQuando"
+                android:textColor="#444444"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtQuando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/appTxtQuando"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -184,12 +246,14 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_margin="24dp"
-        android:backgroundTint="#00BCD4"
-        android:text="Avançar"
-        android:textColor="#FFFFFF"
+        android:layout_marginBottom="92dp"
+        android:backgroundTint="@color/blue_light_neon"
+        android:text="@string/appBtnAvancar"
+        android:textColor="@color/appColorBranco"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/layoutTipoQuando" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,20 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".TransferirPixActivity">
+    android:background="@color/appColorBranco"
+    tools:context=".PixHomeActivity">
 
-    <!-- Topo -->
     <FrameLayout
         android:id="@+id/frameLayoutPix"
         android:layout_width="0dp"
         android:layout_height="70dp"
-        android:background="#00BCD4"
+        android:background="@color/blue_light_neon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayoutHeader"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -34,94 +34,87 @@
                 android:scaleType="centerInside" />
 
             <TextView
-                android:id="@+id/txtTitulo"
+                android:id="@+id/txtTituloHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pix transferir"
-                android:textColor="#FFFFFF"
-                android:textSize="22sp"
+                android:text="@string/appTituloTransferirPix"
+                android:textColor="@color/appColorBranco"
+                android:textSize="20sp"
                 android:layout_marginStart="12dp"
                 android:textStyle="bold" />
         </LinearLayout>
     </FrameLayout>
 
-    <!-- Saldo disponível -->
     <TextView
-        android:id="@+id/txtSaldo"
+        android:id="@+id/txtSaldoDisponivel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Saldo disponível"
-        android:textColor="#000000"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/appTxtSaldoDisponivel"
+        android:textColor="@color/appColorPreto"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/frameLayoutPix"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginStart="24dp"/>
+        app:layout_constraintTop_toBottomOf="@id/frameLayoutPix" />
 
     <TextView
         android:id="@+id/txtValorSaldo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="R$ 800,00"
-        android:textColor="#000000"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/appMascaraValor"
+        android:textColor="@color/appColorPreto"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/frameLayoutPix"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"/>
-
-    <!-- Texto Chave PIX -->
-
-    <!-- Campo chave pix -->
-
-    <!-- Valor -->
-
-    <!-- Cartão com dados do destinatário -->
-
-    <!-- Botão -->
+        app:layout_constraintTop_toBottomOf="@id/frameLayoutPix" />
 
     <TextView
         android:id="@+id/txtChave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
-        android:text="Digite a chave pix"
-        android:textColor="#000000"
+        android:text="@string/appTxtChave"
+        android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtSaldo" />
+        app:layout_constraintTop_toBottomOf="@id/txtSaldoDisponivel" />
 
     <EditText
-        android:id="@+id/edtChavePix"
+        android:id="@+id/txtChavePix"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/input_background"
-        android:hint="ex: email, telefone, CPF"
+        android:hint="@string/appMascaraChavePix"
         android:padding="12dp"
-        android:textColor="#000000"
-        android:textColorHint="#777777"
+        android:textColor="@color/appColorPreto"
+        android:textColorHint="@color/appColorCinza"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtChave" />
 
-    <TextView
+    <EditText
         android:id="@+id/txtValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="R$ 00,00"
-        android:textColor="#000000"
+        android:hint="@string/appMascaraValor"
+        android:textColor="@color/appColorPreto"
         android:textSize="32sp"
         android:textStyle="bold"
+        android:inputType="numberDecimal"
+        android:background="@android:color/transparent"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edtChavePix" />
+        app:layout_constraintTop_toBottomOf="@id/txtChavePix" />
+
 
     <LinearLayout
         android:id="@+id/layoutDestinatario"
@@ -143,7 +136,7 @@
             android:id="@+id/txtNomeDestinatario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="José Bento"
+            android:text="@string/appMascaraDestinatario"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -152,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Banco Fictício do Brasil\nAG. 1000 Conta 45678-0"
+            android:text="@string/appTxtBanco"
             android:textSize="14sp" />
     </LinearLayout>
 
@@ -161,10 +154,11 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_margin="24dp"
-        android:backgroundTint="#00BCD4"
-        android:text="Confirmar"
-        android:textColor="#FFFFFF"
+        android:backgroundTint="@color/blue_light_neon"
+        android:text="@string/appbtnConfirmar"
+        android:textColor="@color/appColorBranco"
         android:textSize="18sp"
+        android:onClick="confirmar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
