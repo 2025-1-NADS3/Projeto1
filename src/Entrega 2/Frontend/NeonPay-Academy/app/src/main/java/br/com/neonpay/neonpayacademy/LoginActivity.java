@@ -104,7 +104,11 @@ public class LoginActivity extends AppCompatActivity {
                 response -> {
                     try {
                         String tokenRecebido = response.getString("token");
+                        int idUsuario = response.getInt("id");
+
                         armazenarToken(tokenRecebido);
+                        armazenarID(idUsuario);
+
                         Toast.makeText(LoginActivity.this, "Login realizado com sucesso!", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                         finish(); // Fecha a tela de login
@@ -157,5 +161,11 @@ public class LoginActivity extends AppCompatActivity {
     private void armazenarToken(String token) {
         SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
         sharedPreferences.edit().putString("TOKEN", token).apply();
+    }
+
+    // Função para armazenar o id do usuario no SharedPreferences
+    private void armazenarID(int id) {
+        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        sharedPreferences.edit().putInt("id_usuario", id).apply();
     }
 }
