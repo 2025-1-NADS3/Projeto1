@@ -42,6 +42,44 @@
     <string name="appIcTransferir">Transferir</string>
     <string name="appIcQRCode">QR Code</string>
 
+    <!-- String da Tela ConfirmPixTransferActivity-->
+    <string name="appTituloTransferirPix">Transferir com Pix</string>
+    <string name="appTituloConfirmeTransferirPix">Confirme sua transferência</string>
+    <string name="appSubtituloConfirmeTransferirPix">Antes de avançar, verifique as informações abaixo:</string>
+    <string name="appTituloValor">Valor</string>
+    <string name="appMascaraValor">R$ 00,00</string>
+    <string name="appTituloDestinatario">Destinatário</string>
+    <string name="appTituloDocumento">Documento</string>
+    <string name="appTituloChave">Chave</string>
+    <string name="appMascaraChave">00000000000</string>
+    <string name="appTituloTipo">Tipo</string>
+    <string name="appTxtTipo">Pix</string>
+    <string name="appTituloQuando">Quando</string>
+    <string name="appTxtQuando">Agora</string>
+    <string name="appBtnAvancar">Avançar</string>
+
+    <!-- String da Tela PixTransferReceiptActivity-->
+    <string name="appTituloComprovante">Comprovante</string>
+    <string name="appTxtStatus">Pix enviado com sucesso!</string>
+    <string name="appTxtBanco">Banco Fictício do Brasil\nAG. 1000 Conta 45678–0</string>
+    <string name="appbtnCompartilhar">Compartilhar comprovante</string>
+    <string name="appBtnMenu">Menu principal</string>
+
+    <!-- String da Tela ConfirmPixPasswordActivity-->
+    <string name="appTituloConfirmeSenha">Digita sua senha</string>
+    <string name="appTxtChave">Digite a chave pix</string>
+    <string name="appMascaraChavePix">ex: email, telefone, CPF</string>
+    <string name="appBtnConfirmar">Confirmar</string>
+
+    <!-- String da Tela PixHomeActivity-->
+    <string name="appTxtSaldoDisponivel">Saldo disponível</string>
+    <string name="appSubtituloConfirmeSenha">Confirme a transação com sua senha de movimentação</string>
+    <string name="appbtnConfirmar">Confirmar</string>
+    <string name="appMascaraDestinatario"> Nome </string>
+
+
+
+
     <!-- Cores do Projeto -->
     <color name="blue_neon">#0F91FE</color>
     <color name="blue_light_neon">#00D0DA</color>
@@ -49,6 +87,8 @@
     <color name="brown_neon">#855B35</color>
     <color name="appColorBranco">#FFFFFF</color>
     <color name="appColorPreto">#000000</color>
+    <color name="appColorCinza">#666666</color>
+    <color name="appColorCinzaEscuro">#444444</color>
     <color name="red">#FF0000</color>
 
 </resources>
