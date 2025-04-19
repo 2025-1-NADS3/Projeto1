@@ -26,8 +26,8 @@ public class HomeActivity extends AppCompatActivity {
 
     // Função para chama a Tela de Pix
     public void abrirTelaPix(View view) {
-        // Invoca a "TelaPixActivity"
-        Intent intent = new Intent(this, TelaPixActivity.class);
+        // Invoca a "PixHomeActivity"
+        Intent intent = new Intent(this, PixHomeActivity.class);
         startActivity(intent);
     }
 }
