@@ -8,7 +8,6 @@
     android:background="@drawable/gradient1"
     tools:context=".WelcomeActivity">
 
-
     <ImageView
         android:id="@+id/imgCard"
         android:layout_width="323dp"
@@ -48,11 +47,11 @@
         app:layout_constraintVertical_bias="0.21" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnLogin"
         android:layout_width="322dp"
         android:layout_height="50dp"
         android:backgroundTint="@color/yellow_neon"
-        android:text="@string/appBtnRegister"
+        android:text="@string/appBtnLogin"
         android:textColor="@color/brown_neon"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,11 +62,11 @@
         app:layout_constraintVertical_bias="0.884" />
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="322dp"
         android:layout_height="50dp"
         android:backgroundTint="@android:color/transparent"
-        android:text="@string/appBtnLogin"
+        android:text="@string/appBtnRegister"
         android:textSize="20sp"
         android:textColor="@color/appColorBranco"
         app:layout_constraintBottom_toBottomOf="parent"

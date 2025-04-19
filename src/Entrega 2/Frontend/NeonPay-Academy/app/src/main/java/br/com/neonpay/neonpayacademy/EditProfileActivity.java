@@ -66,7 +66,7 @@ public class EditProfileActivity extends AppCompatActivity {
         txtSenha1 = findViewById(R.id.txtSenha1);
         btnUpdate = findViewById(R.id.btnUpdate);
         btnDelete = findViewById(R.id.btnDelete);
-        imgVoltar = findViewById(R.id.imgVoltar1);
+        imgVoltar = findViewById(R.id.imgVoltar);
 
         // Carrega os dados do perfil do usuário ao iniciar a tela
         carregarPerfil();

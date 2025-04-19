@@ -37,6 +37,10 @@
     <!-- String da Tela Pix -->
     <string name="appTituloTelaPix">Área Pix</string>
     <string name="appTextoTelaPix"> Envie e receba pagamentos em instantes.</string>
+    <string name="appTituloEnviar">Enviar</string>
+    <string name="appTituloReceber">Receber</string>
+    <string name="appIcTransferir">Transferir</string>
+    <string name="appIcQRCode">QR Code</string>
 
     <!-- Cores do Projeto -->
     <color name="blue_neon">#0F91FE</color>

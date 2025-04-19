@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                         String tokenRecebido = response.getString("token");
                         armazenarToken(tokenRecebido);
                         Toast.makeText(LoginActivity.this, "Login realizado com sucesso!", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(LoginActivity.this, EditProfileActivity.class));
+                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                         finish(); // Fecha a tela de login
                     } catch (JSONException e) {
                         Log.e("Registro", "Erro ao ler o token do JSON", e);

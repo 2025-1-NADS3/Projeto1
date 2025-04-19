@@ -16,6 +16,24 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PixTransferReceiptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmPixPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmPixTransferActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TransferirPixActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TelaPixActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity
