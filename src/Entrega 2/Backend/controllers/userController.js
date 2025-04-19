@@ -25,7 +25,7 @@ export const login = async (req, res) => {
             { expiresIn: '2h' }
         );
 
-        return res.status(200).json({ message: "Login bem-sucedido", token, permissao: 'usuario' });
+        return res.status(200).json({ id: user.id, message: "Login bem-sucedido", token, permissao: 'usuario' });
     } catch (err) {
         return res.status(500).json("Erro ao consultar o banco de dados.");
     }
