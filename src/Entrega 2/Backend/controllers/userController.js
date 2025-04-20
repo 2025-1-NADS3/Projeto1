@@ -174,14 +174,44 @@ export const trocarPontosPorProduto = async (req, res) => {
 
         await db.execute("UPDATE produtos SET quantidade_estoque = quantidade_estoque - 1 WHERE id = ?", [produtoId]);
 
+        await db.execute("INSERT INTO historico_trocas (usuario_id, produto_id, data) VALUES (?, ?, NOW())", [id, produtoId]);
+
         return res.status(200).json({
             mensagem: "Troca realizada com sucesso!",
             produto: produto.nome,
-            pontos_restantes: novoSaldo
         });
 
     } catch (error) {
         console.error(error);
         return res.status(500).json({ erro: "Erro ao processar a troca." });
+    }
+};
+
+export const listarHistoricoPontos = async (req, res) => {
+    const { id } = req.user;
+
+    try {
+        const [rows] = await db.execute(`
+            SELECT 
+                MONTH(data) AS mes,
+                SUM(p.pontos_necessarios) AS pontos_usados
+            FROM historico_trocas h
+            JOIN produtos p ON p.id = h.produto_id
+            WHERE h.usuario_id = ?
+            GROUP BY mes
+            ORDER BY mes
+        `, [id]);
+
+        const nomesMeses = ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"];
+        const resultado = rows.map(row => ({
+            mes: nomesMeses[row.mes - 1],
+            pontos_usados: row.pontos_usados
+        }));
+
+        return res.json(resultado);
+        
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ erro: "Erro ao buscar histórico de pontos." });
     }
 };

@@ -34,6 +34,16 @@
     <string name="appBtnAtualizar"> Aplicar Mudanças </string>
     <string name="appBtnExcluir"> Excluir conta </string>
 
+    <!-- String da Tela HomeActivity-->
+    <string name="appTituloVerExtrato">VER EXTRATO</string>
+    <string name="appTituloPix">PIX</string>
+    <string name="appTituloExtrato">EXTRATO</string>
+    <string name="appTituloPontos">PONTOS</string>
+    <string name="appTituloTotalPontos">Total de Pontos</string>
+    <string name="appBtnResgatarPontos">Resgatar Pontos</string>
+    <string name="appMascaraPonto">0</string>
+    <string name="appTituloGrafico">Acumulo de pontos em 2025</string>
+
     <!-- String da Tela Pix -->
     <string name="appTituloTelaPix">Área Pix</string>
     <string name="appTextoTelaPix"> Envie e receba pagamentos em instantes.</string>
@@ -53,7 +63,6 @@
     <string name="appTituloChave">Chave</string>
     <string name="appMascaraChave">00000000000</string>
     <string name="appTituloTipo">Tipo</string>
-    <string name="appTxtTipo">Pix</string>
     <string name="appTituloQuando">Quando</string>
     <string name="appTxtQuando">Agora</string>
     <string name="appBtnAvancar">Avançar</string>
