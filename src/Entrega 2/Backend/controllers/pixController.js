@@ -63,7 +63,12 @@ export async function enviarPix(req, res) {
             return res.status(400).json({ erro: "Saldo insuficiente." });
         }
 
-        await db.execute("UPDATE usuarios SET saldo = saldo - ? WHERE id = ?", [valor, usuario_id]);
+        const pontosGanhos = Math.floor(valor / 5);
+
+        await db.execute(
+            "UPDATE usuarios SET saldo = saldo - ?, pontos = pontos + ? WHERE id = ?",
+            [valor, pontosGanhos, usuario_id]
+        );
 
         await db.execute(
             "INSERT INTO transacoes (usuario_id, tipo, valor, descricao, chave_pix, status) VALUES (?, 'saida', ?, 'Envio Pix', ?, 'confirmado')",
