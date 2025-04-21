@@ -13,6 +13,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class ConfirmPixTransferActivity extends AppCompatActivity {
 
     // Declaração das variáveis dos elementos da interface
@@ -48,9 +51,9 @@ public class ConfirmPixTransferActivity extends AppCompatActivity {
         valor = bundle.getDouble("valor", 0);
         nomeDestinatario = "Hebert Esteves";
 
-
         // Define os dados na tela
-        txtValor.setText(String.format("R$ %.2f", valor));
+        NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("pt", "BR")); // Formata o valor para o formato em Reais
+        txtValor.setText(format.format(valor));
         txtChavePix.setText(chavePix);
         txtNomeDestinatario.setText(nomeDestinatario); // Simulando Nome
         txtDocumento.setText("123.456.789-00");     // Simulando Documento
