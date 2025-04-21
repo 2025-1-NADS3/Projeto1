@@ -22,6 +22,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import br.com.neonpay.neonpayacademy.utils.SharedPrefsHelper;
+
 public class ConfirmPixPasswordActivity extends AppCompatActivity {
 
     // Declaração das variáveis dos elementos da interface
@@ -55,9 +57,8 @@ public class ConfirmPixPasswordActivity extends AppCompatActivity {
         valor = bundle.getDouble("valor", 0);
         nomeDestinatario = bundle.getString("nome_destinatario");
 
-        // Pega o ID do usuário do shared preferences
-        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
-        idUsuario = sharedPreferences.getInt("id_usuario", -1);
+        // Recupera o ID do usuário a partir do SharedPrefsHelper
+        idUsuario = SharedPrefsHelper.getUsuarioId(this);
 
         // Botão para retornar à ConfirmPixTransferActivity
         imgVoltar.setOnClickListener(view -> {
