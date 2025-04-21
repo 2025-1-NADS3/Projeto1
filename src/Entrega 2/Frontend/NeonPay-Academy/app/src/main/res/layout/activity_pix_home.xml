@@ -6,22 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/appColorBranco"
-    tools:context=".PixTransferActivity">
-
-    <!-- Topo com título e seta voltar -->
+    tools:context=".PixHomeActivity">
+    
     <FrameLayout
         android:id="@+id/frameLayoutPix"
-        android:layout_width="415dp"
+        android:layout_width="0dp"
         android:layout_height="70dp"
         android:background="@color/blue_light_neon"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearLayoutHeader"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -33,25 +30,21 @@
                 android:id="@+id/imgVoltar"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:layout_marginEnd="8dp"
                 android:src="@drawable/seta_voltar"
                 android:scaleType="centerInside" />
 
             <TextView
-                android:id="@+id/txtTitulo"
+                android:id="@+id/txtTituloHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
                 android:text="@string/appTituloTelaPix"
-                android:textAlignment="center"
                 android:textColor="@color/appColorBranco"
-                android:textSize="24sp"
-                android:paddingTop="3dp"
+                android:textSize="20sp"
+                android:layout_marginStart="12dp"
                 android:textStyle="bold" />
         </LinearLayout>
     </FrameLayout>
 
-    <!-- Subtítulo -->
     <TextView
         android:id="@+id/txtSubtitulo"
         android:layout_width="0dp"
@@ -65,7 +58,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Seção Enviar -->
     <TextView
         android:id="@+id/txtEnviar"
         android:layout_width="wrap_content"
@@ -90,7 +82,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Botão Transferir -->
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -98,13 +89,16 @@
             android:orientation="vertical"
             android:background="@drawable/fundo_botao_padrao"
             android:elevation="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="transferirPix"
             android:gravity="center">
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_transferir"
-                android:contentDescription="Transferir" />
+                android:contentDescription="@string/appIcTransferir" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -117,7 +111,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Seção Receber -->
     <TextView
         android:id="@+id/txtReceber"
         android:layout_width="wrap_content"
@@ -142,7 +135,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Botão QR Code -->
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -156,7 +148,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_qrcode"
-                android:contentDescription="QR Code" />
+                android:contentDescription="@string/appIcQRCode" />
 
             <TextView
                 android:layout_width="wrap_content"
