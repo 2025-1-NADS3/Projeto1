@@ -25,6 +25,11 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
+import br.com.neonpay.neonpayacademy.utils.SharedPrefsHelper;
+
 public class PixHomeActivity extends AppCompatActivity {
 
     // Declaração das variáveis dos elementos da interface
@@ -51,9 +56,8 @@ public class PixHomeActivity extends AppCompatActivity {
         txtValor = findViewById(R.id.txtValor);
         imgVoltar = findViewById(R.id.imgVoltar);
 
-        // Recupera o ID do usuário do SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
-        idUsuario = sharedPreferences.getInt("id_usuario", -1);
+        // Recupera o ID do usuário a partir do SharedPrefsHelper
+        idUsuario = SharedPrefsHelper.getUsuarioId(this);
 
         // Validação para caso não encontre o usuario
         if (idUsuario == -1) {
@@ -105,8 +109,12 @@ public class PixHomeActivity extends AppCompatActivity {
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 response -> {
                     try {
+
                         double saldo = response.getDouble("saldo");
-                        txtValorSaldo.setText("R$ " + String.format("%.2f", saldo));
+
+                        // Formata o saldo para o formato em Reais
+                        NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+                        txtValorSaldo.setText(format.format(saldo));
                     } catch (JSONException e) {
                         e.printStackTrace();
                         Toast.makeText(this, "Erro ao ler saldo", Toast.LENGTH_SHORT).show();
