@@ -206,7 +206,7 @@
                 android:id="@+id/txtTipo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/appTxtTipo"
+                android:text="@string/appTituloPix"
                 android:textColor="@color/appColorPreto"
                 android:textSize="16sp"
                 android:textStyle="bold"
