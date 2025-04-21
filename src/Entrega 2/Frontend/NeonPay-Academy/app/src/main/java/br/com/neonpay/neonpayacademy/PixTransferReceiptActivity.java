@@ -12,6 +12,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class PixTransferReceiptActivity extends AppCompatActivity {
 
     // Declaração das variáveis dos elementos da interface
@@ -45,7 +48,8 @@ public class PixTransferReceiptActivity extends AppCompatActivity {
         nomeDestinatario = bundle.getString("nome_destinatario");
 
         // Mostrando dados na tela
-        txtValor.setText(String.format("R$ %.2f", valor));
+        NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("pt", "BR")); // Formata o valor para o formato em Reais
+        txtValor.setText(format.format(valor));
         txtNomeDestinatario.setText(nomeDestinatario);
 
         // Botão para retornar à ConfirmPixTransferActivity
