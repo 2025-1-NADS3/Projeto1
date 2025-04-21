@@ -63,13 +63,15 @@ Oferecer uma plataforma de pagamentos acadêmicos integrada, com uma experiênci
 Splash → Boas-vindas → Login ou Cadastro →
 Dashboard → Edição de Perfil ou Área Pix →
 Transferência → Confirmação → Sucesso
-## 🔗 Acesse o Mockup Interativo
+```
+### **🔗 Acesse o Mockup Interativo**
 
-Para visualizar e testar o fluxo completo do aplicativo NeonPay Academy, acesse nosso mockup interativo no Figma clicando no link abaixo:
+Para visualizar e testar o fluxo completo do aplicativo **NeonPay Academy**, acesse nosso mockup interativo no Figma clicando no link abaixo:
 
 👉 **[Clique aqui para acessar o mockup interativo no Figma](https://www.figma.com/proto/fJi0BJh1UnpZ2pNsil4LDm/MOCKUP-INTERATIVO---Grupo-1.?node-id=194-11&p=f&t=4YVn0GYK44b71uZe-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=143%3A15&show-proto-sidebar=1)**
 
 ---
 
-> 💡 Dica: Use o botão "Present" no canto superior direito do Figma para simular a navegação real entre as telas do app.
+> 💡 **Dica:** Use o botão "Present" no canto superior direito do Figma para simular a navegação real entre as telas do app.
+
 
