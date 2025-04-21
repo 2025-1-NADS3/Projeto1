@@ -198,7 +198,7 @@
         android:id="@+id/btnDelete"
         android:layout_width="360dp"
         android:layout_height="50dp"
-        android:backgroundTint="@color/red"
+        android:backgroundTint="@color/appColorVermelho"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/appBtnExcluir"
         android:textColor="@color/appColorBranco"
