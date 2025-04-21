@@ -81,10 +81,12 @@ public class EditProfileActivity extends AppCompatActivity {
             confirmarExclusao();
         });
 
-        // Botão para retornar à tela de boas-vindas
+        // Botão para retornar à tela Home
         imgVoltar.setOnClickListener(view -> {
-            Intent intent = new Intent(EditProfileActivity.this, WelcomeActivity.class);
+            // Invoca a "HomeActivity"
+            Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
             startActivity(intent);
+            finish();
         });
 
     }
