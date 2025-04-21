@@ -1,11 +1,8 @@
 package br.com.neonpay.neonpayacademy;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,14 +20,13 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.NumberFormat;
 import java.util.Locale;
 
 import br.com.neonpay.neonpayacademy.utils.SharedPrefsHelper;
 
-public class PixHomeActivity extends AppCompatActivity {
+public class PixTransferActivity extends AppCompatActivity {
 
     // Declaração das variáveis dos elementos da interface
     private TextView txtValorSaldo;
@@ -43,7 +39,7 @@ public class PixHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_pix_home);
+        setContentView(R.layout.activity_pix_transfer);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -94,7 +90,7 @@ public class PixHomeActivity extends AppCompatActivity {
         }
 
         // Passa os dados para a tela ConfirmPixTransferActivity
-        Intent intent = new Intent(PixHomeActivity.this, ConfirmPixTransferActivity.class);
+        Intent intent = new Intent(PixTransferActivity.this, ConfirmPixTransferActivity.class);
         intent.putExtra("id_usuario", idUsuario);
         intent.putExtra("chave_pix", chavePix);
         intent.putExtra("valor", valor);

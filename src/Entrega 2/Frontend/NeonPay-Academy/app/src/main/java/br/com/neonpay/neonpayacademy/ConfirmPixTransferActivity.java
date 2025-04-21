@@ -58,7 +58,7 @@ public class ConfirmPixTransferActivity extends AppCompatActivity {
         txtNomeDestinatario.setText(nomeDestinatario); // Simulando Nome
         txtDocumento.setText("123.456.789-00");     // Simulando Documento
 
-        // Botão para retornar à PixHomeActivity
+        // Botão para retornar à PixTransferActivity
         imgVoltar.setOnClickListener(view -> {
             finish();
         });
