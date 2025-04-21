@@ -155,7 +155,7 @@
         android:layout_height="50dp"
         android:layout_margin="24dp"
         android:backgroundTint="@color/blue_light_neon"
-        android:text="@string/appbtnConfirmar"
+        android:text="@string/appBtnConfirmar"
         android:textColor="@color/appColorBranco"
         android:textSize="18sp"
         android:onClick="confirmar"
