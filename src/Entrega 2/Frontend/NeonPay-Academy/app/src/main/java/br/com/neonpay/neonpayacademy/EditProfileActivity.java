@@ -36,6 +36,8 @@ import androidx.core.view.WindowInsetsCompat;
 import java.util.HashMap;
 import java.util.Map;
 
+import br.com.neonpay.neonpayacademy.utils.SharedPrefsHelper;
+
 public class EditProfileActivity extends AppCompatActivity {
 
     // Declaração das variáveis dos elementos da interface
@@ -56,8 +58,8 @@ public class EditProfileActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Obtém token salvo no SharedPreferences
-        token = obterToken();
+        // Recupera o token a partir do SharedPrefsHelper
+        token = SharedPrefsHelper.getToken(this);
 
         // Inicialização dos componentes da interface
         txtNome1 = findViewById(R.id.txtNome1);
@@ -251,9 +253,4 @@ public class EditProfileActivity extends AppCompatActivity {
         finish();
     }
 
-    // Função para obter o token
-    private String obterToken() {
-        SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
-        return sharedPreferences.getString("TOKEN", null);
-    }
 }
