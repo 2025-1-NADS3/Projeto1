@@ -61,7 +61,7 @@ public class PixTransferActivity extends AppCompatActivity {
             finish(); // Fecha a tela se não estiver logado
         }
 
-        // Botão para retornar à tela Home
+        // Botão para retornar à tela PixHomeActivity
         imgVoltar.setOnClickListener(view -> {
             finish();
         });
