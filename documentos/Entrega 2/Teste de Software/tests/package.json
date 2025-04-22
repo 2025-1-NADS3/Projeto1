@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^5.1.0"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "cargaUnitario": "node testes_carga_unitario.test.js",
+    "cargaIntegracao": "node --experimental-vm-modules node_modules/jest/bin/jest.js tests/testes_carga_integracao.test.js"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.9",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.0"
+  }
+}
