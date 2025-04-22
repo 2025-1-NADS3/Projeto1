@@ -44,7 +44,6 @@ public class EditProfileActivity extends AppCompatActivity {
     private EditText txtNome1, txtEmail1, txtTelefone1, txtSenha1;
     private Button btnUpdate, btnDelete;
     private ImageView imgVoltar;
-
     private String token;
 
     @Override
@@ -167,6 +166,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
         String url = "http://10.0.2.2:3000/api/atualizar-perfil";
 
+        // Criando requisição PUT para atualizar o perfil do usuario
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.PUT, url, params,
                 response -> Toast.makeText(this, "Perfil atualizado com sucesso!", Toast.LENGTH_LONG).show(),
                 error -> {
@@ -203,7 +203,7 @@ public class EditProfileActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.setOnShowListener(dialogInterface -> {
 
-            int black = ContextCompat.getColor(this, R.color.black);
+            int black = ContextCompat.getColor(this, R.color.appColorPreto);
 
             dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(black);
 
@@ -221,13 +221,15 @@ public class EditProfileActivity extends AppCompatActivity {
 
         String url = "http://10.0.2.2:3000/api/deletar-perfil";
 
+        // Criando requisição DELETE para deletar a conta do usuario
         StringRequest request = new StringRequest(Request.Method.DELETE, url,
                 response -> {
+                    // Exibe mensagem de que a conta foi excluida com sucesso
                     Toast.makeText(this, "Conta deletada com sucesso!", Toast.LENGTH_LONG).show();
                     logout();
                 },
                 error -> {
-                    Log.e("Erro", error.toString());
+                    // Exibe mensagem de erro, caso tenha dado erro ao deletar a conta
                     Toast.makeText(this, "Erro ao deletar conta", Toast.LENGTH_SHORT).show();
                 }) {
             @Override
@@ -242,6 +244,7 @@ public class EditProfileActivity extends AppCompatActivity {
         queue.add(request);
     }
 
+    // Função de logout do usuário, excluindo o token salvo e redirecionando para tela de boas-vindas
     private void logout() {
         SharedPreferences sharedPreferences = getSharedPreferences("AppPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
