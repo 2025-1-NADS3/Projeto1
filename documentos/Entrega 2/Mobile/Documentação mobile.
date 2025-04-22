@@ -1,1 +1,21 @@
+# Frontend - Projeto1
+
+Este diretório contém o código-fonte do frontend para o Projeto1, desenvolvido como parte da disciplina NADS3 no semestre 2025-1.  
+A aplicação é construída utilizando React.js, proporcionando uma interface interativa para os usuários.
+
+## 📁 Estrutura do Projeto
+
+
+## ✅ Pré-requisitos
+
+- Node.js (versão LTS recomendada)
+- npm (gerenciador de pacotes do Node.js)
+
+## ⚙️ Instalação
+
+1. Clone o repositório:
+
+```
+git clone https://github.com/2025-1-NADS3/Projeto1.git
+```
 
