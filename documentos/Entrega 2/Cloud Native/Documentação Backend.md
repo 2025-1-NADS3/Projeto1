@@ -195,5 +195,5 @@ src/Entrega 2/Frontend/NeonPay-Academy
 
 ## 😁 Autores
 Desenvolvido por:
-<a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine </a>,<a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus	</a>, <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves	</a>, <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/">José Bento Almeida Gama </a>
+<a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine </a>,<a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus	</a>, <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves	</a>, <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/" e >José Bento Almeida Gama </a>.
 
