@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/white"
+    android:background="@color/appColorBranco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
@@ -50,8 +50,6 @@
         </LinearLayout>
     </FrameLayout>
 
-
-
     <TextView
         android:id="@+id/tituloCPF"
         android:layout_width="wrap_content"
@@ -68,7 +66,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayoutLogin"
         app:layout_constraintVertical_bias="1.0" />
-
 
     <EditText
         android:id="@+id/txtCPF"
