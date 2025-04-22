@@ -1,7 +1,7 @@
-import request from 'supertest';
-import app from '../../../../src/Entrega 2/Backend/server.js';
-import db from '../../../../src/Entrega 2/Backend/config/db.js';
-import bcrypt from 'bcrypt';
+import request from 'supertest'; // Importação do supertest, fazer requisições HTTP simuladas à nossa API
+import app from '../../../../../src/Entrega 2/Backend/server.js'; // Importação do app que representa nosso servidor
+import db from '../../../../../src/Entrega 2/Backend/config/db.js'; // Importação da conexão com o banco de dados
+import bcrypt from 'bcrypt'; // Importação do bcrypt para criptografar a senha (como é feito no sistema real)
 
 // TESTE DE INTEGRAÇÃO PIX - SIMULADA - TEMPO DE CARGA
 console.log("========== TESTE DE INTEGRAÇÃO PIX - SIMULADAS ==========");
