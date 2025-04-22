@@ -9,7 +9,7 @@ Este é o backend do projeto **NeonPay Academy**, desenvolvido como parte do Pro
 ```
 Backend/
 ├── config/
-│   └── db.js                      # Configuração da conexão com o banco de dados MySQL
+│   └── db.js                     # Configuração da conexão com o banco de dados MySQL
 ├── controllers/
 │   ├── pixController.js          # Lógica de envio e recebimento de Pix
 │   └── userController.js         # Lógica de cadastro, login, perfil e atualizações
@@ -18,8 +18,6 @@ Backend/
 ├── routes/
 │   ├── pixRoutes.js              # Rotas relacionadas ao Pix
 │   └── userRoutes.js             # Rotas relacionadas a usuário (login, cadastro, perfil)
-├── uploads/
-│   └── (imagens salvas via Multer)
 ├── .env                          # Variáveis de ambiente (não enviado ao repositório)
 ├── .gitignore                    # Ignora arquivos sensíveis e node_modules
 ├── package.json                  # Lista de dependências e scripts
@@ -122,7 +120,7 @@ Headers:
 ```
 Authorization: Bearer <token>
 ```
-🔸 POST /api/pix/enviar
+🔸 POST /pix/enviar
 Descrição: Realiza uma transferência via Pix.
 
 Headers:
@@ -165,7 +163,7 @@ git clone https://github.com/2025-1-NADS3/Projeto1
 ```
 2. Navegar até o diretório do backend:
 ```
-cd Projeto1/src/Entrega\ 2/Backend
+cd Projeto1/src/Entrega 2/Backend
 ```
 3. Instalar as dependências:
 ```
