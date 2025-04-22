@@ -4,16 +4,16 @@
 ## 📁Estrutura de Pasta
 tests/  
 ├── unitarios/  
-│   ├── cadastro.test.js  
-│   ├── consultaPontos.test.js  
-│   ├── login.test.js  
-│   ├── trocaPontos.test.js  
-│   └── cargaUnitario.test.js  
+│   ├── cadastro_unitario_test.js  
+│   ├── consultaPontos_unitario_test.js  
+│   ├── login_unitario_test.js  
+│   ├── trocaPontos_unitario_test.js  
+│   └── testes_carga_unitario.test.js  
 │  
 ├── integracao/  
-│   ├── pix.test.js  
-│   ├── pixSenhaIncorreta.test.js  
-│   └── cargaIntegracao.test.js  
+│   ├── pix.integration.test.js  
+│   ├── pix.senha.incorreta.test.js  
+│   └── testes_carga_integracao.test.js  
 │  
 ├── jest.config.js  
 ├── package.json  
