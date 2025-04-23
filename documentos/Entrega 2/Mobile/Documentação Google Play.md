@@ -25,15 +25,10 @@ Preparar e fornecer todas as informações necessárias para o cadastro do app *
 
 ## 📷 Recursos Gráficos
 
-
-  - Splash Screen:
-   ![image](https://github.com/user-attachments/assets/e78d5717-35ba-4e25-b448-6a96150bdab8)
-  - Tela de Boas-vindas
-     ![image](https://github.com/user-attachments/assets/933cd4b0-bde4-4999-afa6-2ddda8670b9f)
-  - Tela de Cadastro
-    ![image](https://github.com/user-attachments/assets/e08b20b4-76df-402b-9b83-5b72d833b1c8)
-  - Tela de Login
-    ![image](https://github.com/user-attachments/assets/12c93e4e-2736-4ed2-ae52-25f661f3ca27)
+![image](https://github.com/user-attachments/assets/e78d5717-35ba-4e25-b448-6a96150bdab8)
+![image](https://github.com/user-attachments/assets/933cd4b0-bde4-4999-afa6-2ddda8670b9f)
+![image](https://github.com/user-attachments/assets/e08b20b4-76df-402b-9b83-5b72d833b1c8)
+![image](https://github.com/user-attachments/assets/12c93e4e-2736-4ed2-ae52-25f661f3ca27)
 
 
 
