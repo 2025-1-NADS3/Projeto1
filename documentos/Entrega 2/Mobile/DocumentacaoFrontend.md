@@ -129,7 +129,7 @@ RegisterActivity   LoginActivity
 
 Localização:
 ```
-src/FrontEnd/NeonPay-Academy/app/src/main/java/br/com/neonpay/neonpayacademy/utils/SharedPrefsHelper.java
+src/Entrega 2/FrontEnd/NeonPay-Academy/app/src/main/java/br/com/neonpay/neonpayacademy/utils/SharedPrefsHelper.java
 ```
 
 Essa classe fornece métodos utilitários para acessar os dados armazenados no `SharedPreferences`, como o ID do usuário e o token de autenticação JWT.
