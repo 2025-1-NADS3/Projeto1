@@ -1,133 +1,128 @@
-# 📱 Documentação do Frontend - NeonPay Academy
+# 📱 Documentação do Frontend - NeonPay Academy - Entrega 2
 
-O aplicativo mobile **NeonPay Academy** está localizado em:
+O aplicativo mobile **NeonPay Academy** foi desenvolvido em Android Studio com linguagem Java. Ele permite o cadastro, login e edição de perfil de usuários acadêmicos, com comunicação a uma API REST.
+
+📍 **Localização do Projeto:**
+```
+src/FrontEnd/NeonPay-Academy
+Pacote Android: br.com.neonpay.neonpayacademy
+```
+
+---
+
+# 📂 Estrutura de Pastas
+
+```
+📂NeonPay-Academy
+├── 📁.idea/
+├── 📁app/
+│   ├── 📁src/
+│   │   ├── 📁main/
+│   │   │   ├── 📁java/
+│   │   │   │   └── 📁br/com/neonpay/neonpayacademy/
+│   │   │   │       ├── 📃CadastroActivity.java
+│   │   │   │       ├── 📃EditProfileActivity.java
+│   │   │   │       ├── 📃LoginActivity.java
+│   │   │   │       ├── 📃MainActivity.java
+│   │   │   │       └── 📃WelcomeActivity.java
+│   │   │   ├── 📁res/
+│   │   │   │   ├── 📁layout/
+│   │   │   │   └── 📁drawable/
+│   │   │   │   └── 📁values/
+│   └── 📃AndroidManifest.xml
+└── 📃build.gradle
+```
 
 ---
 
 # 📄 Telas do Aplicativo
 
-## 🟣 SplashActivity.java (Splash Screen)
+## 🟣 MainActivity.java (Splash Screen)
 
-- **Função**: Tela de abertura do app, exibida por 3 segundos.
-- **Destino**: Redireciona automaticamente para `BoasVindasActivity`.
-- **Detalhes Técnicos**: Utiliza `Handler` e `Looper` para controle do tempo.
+- **Função:** Tela de introdução do app.
+- **Destino:** Redireciona automaticamente para `WelcomeActivity` após 3 segundos.
+- **Implementação Técnica:** Uso de `Handler` e `Looper`.
 
 ---
 
-## 🟦 BoasVindasActivity.java (Tela de Boas-Vindas)
+## 🟦 WelcomeActivity.java (Tela de Boas-Vindas)
 
-- **Função**: Tela de boas-vindas com entrada para login ou cadastro.
-- **Botões**:
-  - `btnCadastrar` → Redireciona para `CadastroActivity`
+- **Função:** Tela inicial com opções para login ou cadastro.
+- **Botões:**
   - `btnEntrar` → Redireciona para `LoginActivity`
+  - `btnCadastrar` → Redireciona para `CadastroActivity`
 
 ---
 
 ## 🔵 CadastroActivity.java (Tela de Cadastro)
 
-- **Campos**: Nome, CPF, Data de Nascimento, E-mail, Celular, Senha
-- **Validações**:
-  - **CPF**: Formato válido e 11 dígitos
-  - **E-mail**: Deve conter domínio institucional `@edu.fecap.br`
-  - **Celular**: 10 ou 11 dígitos numéricos
-  - **Data de nascimento**: Convertida para `yyyy-MM-dd`
-- **Requisição**:  
-  ```
-  POST /api/cadastro
-  Content-Type: application/json
-  ```
-  
-Envia os dados do formulário em JSON
+- **Campos:** Nome, CPF, Data de Nascimento, E-mail, Celular, Senha
+- **Validações:**
+  - CPF: Apenas numérico e com 11 dígitos
+  - E-mail: Deve conter domínio institucional `@edu.fecap.br`
+  - Celular: 10 ou 11 dígitos
+  - Data de Nascimento: Conversão para o formato `yyyy-MM-dd`
+- **Requisição:** `POST` para `/api/cadastro`
 
-Fluxo: Cadastro bem-sucedido → LoginActivity
+---
 
-🟢 LoginActivity.java (Tela de Login)
-Campos: CPF, Senha
+## 🟢 LoginActivity.java (Tela de Login)
 
-Validações:
+- **Campos:** CPF, Senha
+- **Validações:** CPF válido e senha obrigatória
+- **Requisição:** `POST` para `/api/login`
+- **Ações:**
+  - Armazena `token JWT` em `SharedPreferences`
+  - Redireciona para `EditProfileActivity`
 
-CPF formatado e válido
-```
-Requisição:
-POST /api/login
-Content-Type: application/json
-```
+---
 
-Resposta retorna um token JWT
+## 🟡 EditProfileActivity.java (Tela de Perfil)
 
-Após Login:
+- **Campos Editáveis:** Nome, E-mail, Celular, Senha
+- **Botões:**
+  - `btnUpdate`: Atualiza dados do usuário
+  - `btnDelete`: Exclui o perfil com alerta de confirmação
+  - `imgVoltar`: Volta para tela de boas-vindas
 
-Armazena o token em SharedPreferences com a chave "TOKEN"
+---
 
-Redireciona para HomeActivity
+# ⚙️ Funções de Requisição
 
-🏠 HomeActivity.java (Tela Principal)
-Função: Tela principal pós-login com saldo, pontos e gráfico de movimentações.
-
-Componentes:
-
-Gráfico de barras (MPAndroidChart)
-
-Botão de envio Pix → TransferirPixActivity
-```
-Requisição de saldo/pontos:
-GET /api/saldo
-GET /api/pontos
-Headers: Authorization: Bearer <TOKEN>
-```
-💸 TransferirPixActivity.java (Tela de Envio de Pix)
-Campos: Valor, Chave Pix, Senha
-
-Validações:
-
-Verifica se a senha digitada está correta
-
-Verifica se há saldo suficiente
-
-Requisição:
-```
-POST /api/pix/enviar
-Headers: Authorization: Bearer <TOKEN>
-Body: { usuario_id, valor, chave_pix_destino, senha }
-```
-Resposta:
-
-Em caso de sucesso: Redireciona para ConfirmPixTransferActivity
-
-Em caso de falha: Mensagem "Senha incorreta"
-
-🧾 ConfirmPixTransferActivity.java (Comprovante de Transação)
-Função: Exibe o comprovante com os dados da transação:
-
-Valor enviado
-
-Chave Pix
-
-Status e hora da transação
-
-Fluxo: Pode retornar para HomeActivity
-
-🔐 Armazenamento Seguro de Token
-Os tokens JWT são armazenados localmente em SharedPreferences sob a chave:
-```
-"TOKEN"
-```
-Todas as requisições autenticadas enviam o token no header:
-```
-Authorization: Bearer <TOKEN>
+```java
+carregarPerfil()           // GET para /api/perfil
+atualizarPerfil()          // PUT para /api/atualizar-perfil
+deletarConta()             // DELETE para /api/deletar-perfil
 ```
 
-🔁 Fluxo de Navegação
-SplashActivity
+Todas as funções utilizam o token JWT no cabeçalho da requisição:  
+`Authorization: Bearer <token>`
+
+---
+
+# 🔐 Armazenamento Seguro de Token
+
+- Tokens JWT são armazenados localmente via `SharedPreferences` na chave `"TOKEN"`.
+- Utilizados em todas as chamadas autenticadas da aplicação.
+
+---
+
+# 🔁 Fluxo de Navegação
+
+```plaintext
+MainActivity (Splash)
      ↓
-BoasVindasActivity
-     ├──→ CadastroActivity ──→ LoginActivity
-     └──→ LoginActivity ──→ HomeActivity ──→ TransferirPixActivity ──→ ConfirmPixTransferActivity
+WelcomeActivity
+     ↙︎         ↘︎
+LoginActivity  CadastroActivity
+     ↓              ↓
+EditProfileActivity ←──────
+```
 
-     
-## 😁 Autores
-Desenvolvido por:
-<a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine </a>,<a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus	</a>, <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves	</a>, <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/">José Bento Almeida Gama </a>.
+---
 
-
-
+## 📌 Autores
+- <a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine</a>  
+- <a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus</a>  
+- <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves</a>  
+- <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/">José Bento Almeida Gama</a>
