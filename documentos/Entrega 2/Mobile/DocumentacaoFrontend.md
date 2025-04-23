@@ -4,7 +4,7 @@ Aplicativo Android desenvolvido em Java para gerenciamento de perfil estudantil 
 
 📍 **Localização do Projeto:**
 ```
-src/FrontEnd/NeonPay-Academy
+main/src/Entrega 2/FrontendNeonPay-Academy
 Pacote Android: br.com.neonpay.neonpayacademy
 ```
 
@@ -107,18 +107,43 @@ RegisterActivity   LoginActivity
         ↓                ↓
      (volta)        HomeActivity
                           ↓
-                    PixHomeActivity
-                          ↓
-                  PixTransferActivity
-                          ↓
-              ConfirmPixPasswordActivity
-                          ↓
-              ConfirmPixTransferActivity
-                          ↓
-              PixTransferReceiptActivity
+                ┌──────────────┐
+                ↓              ↓
+     PixHomeActivity     EditProfileActivity
+                ↓              ↑
+      PixTransferActivity     (volta)
+                ↓
+  ConfirmPixPasswordActivity
+                ↓
+  ConfirmPixTransferActivity
+                ↓
+  PixTransferReceiptActivity
 ```
 
 ---
+
+
+---
+
+# 🧠 Classe Utilitária - SharedPrefsHelper.java
+
+Localização:
+```
+src/FrontEnd/NeonPay-Academy/app/src/main/java/br/com/neonpay/neonpayacademy/utils/SharedPrefsHelper.java
+```
+
+Essa classe fornece métodos utilitários para acessar os dados armazenados no `SharedPreferences`, como o ID do usuário e o token de autenticação JWT.
+
+### 🔐 getUsuarioId(Context context)
+- Recupera o ID do usuário salvo em `SharedPreferences`.
+- Se não houver valor, retorna `-1`.
+
+### 🔑 getToken(Context context)
+- Recupera o token JWT salvo localmente após login.
+- Se não houver token salvo, retorna `null`.
+
+Esses métodos são amplamente utilizados nas Activities como `LoginActivity`, `EditProfileActivity` e `PixTransferActivity`, para facilitar o uso seguro e centralizado de dados do usuário logado.
+
 
 ## 📌 Autores
 - [Alexandra Christine](https://www.linkedin.com/in/alexandra-christine-silva-590092257)  
