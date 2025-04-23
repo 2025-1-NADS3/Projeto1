@@ -1,197 +1,144 @@
-# 🖥️ Backend - NeonPay Academy
+# 💳 NeonPay Academy — Backend
 
-Este é o backend do projeto **NeonPay Academy**, desenvolvido como parte do Projeto 1 da disciplina de Desenvolvimento Web Full Stack da FECAP. Ele fornece uma API RESTful para autenticação de usuários, cadastro, envio de transações Pix e gerenciamento de perfil.
+Backend do NeonPay Academy, um sistema de pagamentos para estudantes com funcionalidades de login, cadastro, PIX, pontuação por uso e resgate de prêmios. Utiliza Node.js com MySQL, autenticação JWT e criptografia de senhas.
 
----
+## 🚀 Tecnologias Utilizadas
 
-## 📁 Estrutura de Pastas
-
-```
-Backend/
-├── config/
-│   └── db.js                     # Configuração da conexão com o banco de dados MySQL
-├── controllers/
-│   ├── pixController.js          # Lógica de envio e recebimento de Pix
-│   └── userController.js         # Lógica de cadastro, login, perfil e atualizações
-├── middlewares/
-│   └── auth.js                   # Middleware de autenticação com JWT
-├── routes/
-│   ├── pixRoutes.js              # Rotas relacionadas ao Pix
-│   └── userRoutes.js             # Rotas relacionadas a usuário (login, cadastro, perfil)
-├── .env                          # Variáveis de ambiente (não enviado ao repositório)
-├── .gitignore                    # Ignora arquivos sensíveis e node_modules
-├── package.json                  # Lista de dependências e scripts
-├── package-lock.json             # Registro de versões exatas das dependências
-└── server.js                     # Arquivo principal que inicializa o servidor
-```
-
----
-
-## ⚙️ Tecnologias Utilizadas
-
-- Node.js
-- Express.js
-- MongoDB com Mongoose
-- JWT (JSON Web Token)
+- Node.js + Express.js
+- MySQL (mysql2/promise)
+- JWT (autenticação)
 - Bcrypt (criptografia de senhas)
 - Dotenv (variáveis de ambiente)
-- CORS
+- CORS (acesso entre domínios)
 
----
-
-## 🔐 Autenticação
-
-- **Token JWT**: Gerado no login e enviado no header `Authorization: Bearer <token>` para rotas protegidas.
-- **Middleware de Autenticação**: Verifica a validade do token em rotas que requerem autenticação.
-
----
-
-## 📄 Endpoints da API
-
-### 🔸 POST `/api/cadastro`
-
-- **Descrição**: Cadastra um novo usuário.
-- **Corpo da Requisição**:
-  ```json
-  {
-    "nome": "João Silva",
-    "cpf": "12345678900",
-    "data_nascimento": "1990-01-01",
-    "email": "joao@edu.fecap.br",
-    "telefone": "11999999999",
-    "senha": "senhaSegura123"
-  }
-## Validações:
-
-CPF válido e único
-
-E-mail com domínio @edu.fecap.br
-
-Telefone com 10 ou 11 dígitos numéricos
-
-Data de nascimento no formato yyyy-MM-dd
-
-🔸 POST /api/login
-Descrição: Autentica o usuário e retorna um token JWT.
-
-Corpo da Requisição:
-```
-{
-  "cpf": "12345678900",
-  "senha": "senhaSegura123"
-}
-```
-Resposta:
+## 📂 Estrutura de Pastas
 
 ```
-{
-  "token": "jwt.token.aqui"
-}
+📂src
+├── 📂config
+│   └── 📃db.js
+├── 📂controllers
+│   ├── 📃pixController.js
+│   └── 📃userController.js
+├── 📂middlewares
+│   └── 📃autenticarToken.js
+├── 📂routes
+│   ├── 📃pixRoutes.js
+│   └── 📃userRoutes.js
+├── 📃server.js
+├── 📃package.json
+└── 📃package-lock.json
 ```
-🔸 GET /api/perfil
-Descrição: Retorna os dados do perfil do usuário autenticado.
 
-Headers:
+## ⚙️ Variáveis de Ambiente (.env)
 
-```
-Authorization: Bearer <token>
-
-```
-🔸 PUT /api/atualizar-perfil
-Descrição: Atualiza os dados do perfil do usuário autenticado.
-
-Headers:
-```
-Authorization: Bearer <token>
-```
-Corpo da Requisição:
-```
-{
-  "nome": "João da Silva",
-  "email": "joao.silva@edu.fecap.br",
-  "telefone": "11988888888",
-  "senha": "novaSenhaSegura123"
-}
-```
-🔸 DELETE /api/deletar-perfil
-Descrição: Exclui o perfil do usuário autenticado.
-
-Headers:
-```
-Authorization: Bearer <token>
-```
-🔸 POST /pix/enviar
-Descrição: Realiza uma transferência via Pix.
-
-Headers:
-```
-Authorization: Bearer <token>
-```
-Corpo da Requisição:
-
-```
-{
-  "valor": 100.00,
-  "chave_pix_destino": "destino@pix.com",
-  "senha": "senhaSegura123"
-}
-```
-Validações:
-
-Verifica se a senha está correta
-
-Verifica se há saldo suficiente
-
-🔄 Fluxo de Requisições
-```
-[POST] /api/cadastro
-   ↓
-[POST] /api/login → retorna token JWT
-   ↓
-[GET] /api/perfil → requer token
-   ↓
-[PUT] /api/atualizar-perfil → requer token
-   ↓
-[POST] /api/pix/enviar → requer token
-   ↓
-[DELETE] /api/deletar-perfil → requer token
-```
-▶️ Como Executar o Backend
-1. Clonar o repositório:
-```
-git clone https://github.com/2025-1-NADS3/Projeto1
-```
-2. Navegar até o diretório do backend:
-```
-cd Projeto1/src/Entrega 2/Backend
-```
-3. Instalar as dependências:
-```
-npm install
-Configurar as variáveis de ambiente:
-```
-4. Criar um arquivo .env com as seguintes variáveis:
 ```
 PORT=3000
-MONGO_URI=seu_mongo_uri_aqui
-JWT_SECRET=sua_chave_secreta_aqui
-```
-Iniciar o servidor:
-```
-npm start
-```
-
-📌 Observações
-Certifique-se de que o MongoDB esteja em execução e acessível através da URI fornecida.
-
-Utilize ferramentas como Postman ou Insomnia para testar os endpoints da API.
-
-O frontend do projeto está localizado em:
-```
-src/Entrega 2/Frontend/NeonPay-Academy
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=suasenha
+DB_NAME=neonpay
+JWT_SECRET=sua_chave_super_secreta
 ```
 
-## 😁 Autores
+## 🛠️ Configuração do Banco (config/db.js)
+
+```js
+import mysql from 'mysql2/promise';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const db = mysql.createPool({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  ssl: { rejectUnauthorized: false }
+});
+
+export default db;
+```
+
+## 🔐 Middleware de Autenticação (middlewares/autenticarToken.js)
+
+- Verifica se o token JWT está presente e válido
+- Usa `promisify` para validar tokens de forma assíncrona
+
+## 👤 Controle de Usuários (controllers/userController.js)
+
+- `POST /login`: autentica o usuário e retorna um JWT
+- `POST /cadastro`: registra novo usuário com senha criptografada
+- `PUT /atualizar-perfil`: atualiza dados pessoais e senha (opcional)
+- `DELETE /deletar-perfil`: remove usuário autenticado
+- `GET /perfil`: retorna informações do usuário logado
+- `POST /trocar-pontos`: permite troca de pontos por produtos
+- `GET /historico-pontos`: retorna resumo mensal do uso de pontos
+
+## 💸 Controle de Pix (controllers/pixController.js)
+
+- `POST /pix/gerar-cobranca`: simula a geração de QR Code para depósito
+- `POST /pix/webhook`: simula a confirmação de pagamento e atualização do saldo
+- `POST /pix/enviar`: envia PIX com validação de senha e saldo, e gera pontos
+- `GET /pix/saldo/:id`: retorna o saldo do usuário
+- `GET /pix/pontos/:id`: retorna os pontos acumulados
+
+## 🌐 Rotas de Usuário (routes/userRoutes.js)
+
+```js
+router.post('/login', login);
+router.post('/cadastro', register);
+router.put('/atualizar-perfil', autenticarToken, atualizarPerfil);
+router.delete('/deletar-perfil', autenticarToken, deletarPerfil);
+router.get('/perfil', autenticarToken, getPerfil);
+router.post('/trocar-pontos', autenticarToken, trocarPontosPorProduto);
+router.get('/historico-pontos', autenticarToken, listarHistoricoPontos);
+```
+
+## 💳 Rotas de Pix (routes/pixRoutes.js)
+
+```js
+router.post("/gerar-cobranca", gerarCobranca);
+router.post("/webhook", webhook);
+router.post("/enviar", enviarPix);
+router.get("/saldo/:id", consultarSaldo);
+router.get("/pontos/:id", consultarPontos);
+```
+
+## 🚀 Inicialização do Servidor (server.js)
+
+```js
+app.use('/api', userRoutes);
+app.use('/pix', pixRoutes);
+
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
+});
+```
+
+## 📦 Dependências (package.json)
+
+```json
+"dependencies": {
+  "bcrypt": "^5.1.1",
+  "cors": "^2.8.5",
+  "dotenv": "^16.4.7",
+  "express": "^4.21.2",
+  "jsonwebtoken": "^9.0.2",
+  "mysql2": "^3.14.0"
+}
+```
+
+## ✅ Segurança e Boas Práticas
+
+- Autenticação com JWT (2h de validade)
+- Criptografia de senha com Bcrypt
+- Proteção de rotas via middleware
+- Validação de dados em todas as requisições
+
+## 👥 Autores
+
 Desenvolvido por:
-<a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine </a>,<a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus	</a>, <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves	</a>, e <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/" >José Bento Almeida Gama </a>.
-
+- [Alexandra Christine](https://www.linkedin.com/in/alexandra-christine-silva-590092257)
+- [Gabrielly Cintra de Jesus](https://www.linkedin.com/in/gabrielly-cintra/)
+- [Hebert dos Reis Esteves](https://linkedin.com/in/hebert-/)
+- [José Bento Almeida Gama](https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256)
