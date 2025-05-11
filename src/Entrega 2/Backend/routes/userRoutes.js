@@ -10,6 +10,6 @@ router.put('/atualizar-perfil', autenticarToken, atualizarPerfil);
 router.delete('/deletar-perfil', autenticarToken, deletarPerfil);
 router.get('/perfil', autenticarToken, getPerfil);
 router.post('/trocar-pontos', autenticarToken, trocarPontosPorProduto);
-router.get('/historico-pontos', autenticarToken, listarHistoricoPontos);
+router.get('/historico-pontos/:id', listarHistoricoPontos);
 
 export default router;
