@@ -107,7 +107,7 @@ public class HomeActivity extends AppCompatActivity {
 
     // Função para carregar o grafico do historico de pontos do usuario
     private void carregarGraficoHistoricoPontos() {
-        String url = "http://10.0.2.2:3000/api/historico-pontos";
+        String url = "http://10.0.2.2:3000/api/historico-pontos/" + idUsuario;
 
         // Criando requisição GET para obter o histórico de pontos
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -119,10 +119,16 @@ public class HomeActivity extends AppCompatActivity {
                         try {
                             JSONObject obj = response.getJSONObject(i);
                             String mes = obj.getString("mes");
-                            int pontos = obj.getInt("pontos_usados");
+                            int pontos = Integer.parseInt(obj.getString("total_pontos"));
+
+                            // Transformar "YYYY-MM" em "MES"
+                            String[] partes = mes.split("-");
+                            int numeroMes = Integer.parseInt(partes[1]);
+                            String[] nomesMeses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
+                            String nomeMes = nomesMeses[numeroMes - 1];
 
                             entries.add(new BarEntry(i, pontos)); // Adicionando pontos na barra
-                            labels.add(mes.toUpperCase()); // Adicionando nome dos meses
+                            labels.add(nomeMes); // Adicionando nome dos meses
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -165,7 +171,15 @@ public class HomeActivity extends AppCompatActivity {
                     barChart.getAxisLeft().setDrawAxisLine(false);
                     barChart.getAxisLeft().setTextSize(12f);
                     barChart.getAxisLeft().setAxisMinimum(0f);
-                    barChart.getAxisLeft().setAxisMaximum(2000f);
+                    // Encontrar o maior valor de pontos
+                    float maxPontos = 0f;
+                    for (BarEntry entry : entries) {
+                        if (entry.getY() > maxPontos) {
+                            maxPontos = entry.getY();
+                        }
+                    }
+                    // Ajustar o eixo Y com base no maior valor +20%
+                    barChart.getAxisLeft().setAxisMaximum(maxPontos * 1.2f);
 
                     barChart.getDescription().setEnabled(false);
                     barChart.getLegend().setEnabled(false); // Remove a legenda
@@ -196,6 +210,13 @@ public class HomeActivity extends AppCompatActivity {
     public void abrirTelaPix(View view) {
         // Invoca a "PixHomeActivity"
         Intent intent = new Intent(this, PixHomeActivity.class);
+        startActivity(intent);
+    }
+
+    // Função para chama a Tela Extrato
+    public void abrirTelaExtrato(View view) {
+        // Invoca a "ExtractActivity"
+        Intent intent = new Intent(this, ExtractActivity.class);
         startActivity(intent);
     }
 
