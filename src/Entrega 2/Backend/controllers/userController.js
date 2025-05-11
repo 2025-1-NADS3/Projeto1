@@ -188,30 +188,20 @@ export const trocarPontosPorProduto = async (req, res) => {
 };
 
 export const listarHistoricoPontos = async (req, res) => {
-    const { id } = req.user;
-
+    const { id } = req.params;
     try {
         const [rows] = await db.execute(`
             SELECT 
-                MONTH(data) AS mes,
-                SUM(p.pontos_necessarios) AS pontos_usados
-            FROM historico_trocas h
-            JOIN produtos p ON p.id = h.produto_id
-            WHERE h.usuario_id = ?
-            GROUP BY mes
+                DATE_FORMAT(mes, '%Y-%m') AS mes, 
+                SUM(pontos_usados) AS total_pontos
+            FROM historico_pontos
+            WHERE id_usuario = ?
+            GROUP BY mes 
             ORDER BY mes
         `, [id]);
 
-        const nomesMeses = ["JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"];
-        const resultado = rows.map(row => ({
-            mes: nomesMeses[row.mes - 1],
-            pontos_usados: row.pontos_usados
-        }));
-
-        return res.json(resultado);
-        
+        res.json(rows);
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({ erro: "Erro ao buscar histórico de pontos." });
+        res.status(500).json({ erro: error.message });
     }
 };
