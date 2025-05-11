@@ -27,21 +27,31 @@ export async function gerarCobranca(req, res) {
 
 export async function webhook(req, res) {
     const { transacao_id } = req.body;
-    try {
-        await db.execute("UPDATE transacoes SET status = 'confirmado' WHERE id = ?", [transacao_id]);
 
-        const result = await db.execute("SELECT usuario_id, valor FROM transacoes WHERE id = ?", [transacao_id]);
-        const rows = result[0];
-        if (rows.length > 0) {
-            const { usuario_id, valor } = rows[0];
-            await db.execute("UPDATE usuarios SET saldo = saldo + ? WHERE id = ?", [valor, usuario_id]);
+    try {
+        const [transacaoResultado] = await db.execute("SELECT usuario_id, valor, status FROM transacoes WHERE id = ?", [transacao_id]);
+
+        if (transacaoResultado.length === 0) {
+            return res.status(404).json({ erro: "Transação não encontrada." });
         }
 
-        res.json({ mensagem: "Transação confirmada." });
+        const { usuario_id, valor, status } = transacaoResultado[0];
+
+        if (status === 'confirmado') {
+            return res.status(400).json({ erro: "Transação já confirmada." });
+        }
+
+        await db.execute("UPDATE transacoes SET status = 'confirmado' WHERE id = ?", [transacao_id]);
+
+        await db.execute("UPDATE usuarios SET saldo = saldo + ? WHERE id = ?", [valor, usuario_id]);
+
+        res.json({ mensagem: "Transação confirmada com sucesso." });
+
     } catch (error) {
         res.status(500).json({ erro: error.message });
     }
 }
+
 
 export async function enviarPix(req, res) {
     const { usuario_id, valor, chave_pix_destino, senha } = req.body;
@@ -107,3 +117,18 @@ export async function consultarPontos(req, res) {
         res.status(500).json({ erro: error.message });
     }
 }
+
+export async function extrato(req, res) {
+    const { usuario_id } = req.params;
+  
+    try {
+      const [transacoes] = await db.execute(
+        "SELECT tipo, valor, descricao, chave_pix, status, data FROM transacoes WHERE usuario_id = ? ORDER BY data DESC",
+        [usuario_id]
+      );
+  
+      res.json({ usuario_id, extrato: transacoes });
+    } catch (error) {
+      res.status(500).json({ erro: error.message });
+    }
+};
