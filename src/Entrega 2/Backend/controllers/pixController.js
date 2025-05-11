@@ -75,6 +75,13 @@ export async function enviarPix(req, res) {
 
         const pontosGanhos = Math.floor(valor / 5);
 
+        const dataTransacao = new Date().toISOString().split('T')[0]; 
+
+        await db.execute(
+            "INSERT INTO historico_pontos (id_usuario, mes, pontos_usados) VALUES (?, ?, ?)",
+            [usuario_id, dataTransacao, pontosGanhos] 
+        );
+
         await db.execute(
             "UPDATE usuarios SET saldo = saldo - ?, pontos = pontos + ? WHERE id = ?",
             [valor, pontosGanhos, usuario_id]
