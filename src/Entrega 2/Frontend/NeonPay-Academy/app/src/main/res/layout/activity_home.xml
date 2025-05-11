@@ -106,6 +106,7 @@
             android:layout_width="60dp"
             android:layout_height="63dp"
             android:layout_margin="8dp"
+            android:onClick="abrirTelaExtrato"
             android:background="@drawable/fundo_botao_padrao"
             android:padding="8dp">
 
