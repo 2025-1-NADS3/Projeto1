@@ -205,3 +205,24 @@ export const listarHistoricoPontos = async (req, res) => {
         res.status(500).json({ erro: error.message });
     }
 };
+
+export async function buscarUsuarioPorChavePix(req, res) {
+    const { chave_pix } = req.params;
+
+    try {
+        const [rows] = await db.execute(
+            "SELECT nome, cpf FROM usuarios WHERE chave_pix = ?",
+            [chave_pix]
+        );
+
+        if (rows.length === 0) {
+            return res.status(404).json({ erro: "Usuário não encontrado com essa chave Pix." });
+        }
+
+        res.json(rows[0]);
+
+    } catch (error) {
+        res.status(500).json({ erro: error.message });
+    }
+}
+
