@@ -55,13 +55,12 @@ export async function webhook(req, res) {
 
 export async function enviarPix(req, res) {
     const { usuario_id, valor, chave_pix_destino, senha } = req.body;
-    
+
     try {
         const [userRows] = await db.execute("SELECT * FROM usuarios WHERE id = ?", [usuario_id]);
         if (userRows.length === 0) {
             return res.status(400).json({ erro: "Usuário não encontrado." });
         }
-
         const user = userRows[0];
 
         const senhaCorreta = await bcrypt.compare(senha, user.senha);
@@ -73,14 +72,14 @@ export async function enviarPix(req, res) {
             return res.status(400).json({ erro: "Saldo insuficiente." });
         }
 
+        const [destRows] = await db.execute("SELECT * FROM usuarios WHERE chave_pix = ?", [chave_pix_destino]);
+        if (destRows.length === 0) {
+            return res.status(404).json({ erro: "Destinatário não encontrado." });
+        }
+        const destinatario = destRows[0];
+
         const pontosGanhos = Math.floor(valor / 5);
-
-        const dataTransacao = new Date().toISOString().split('T')[0]; 
-
-        await db.execute(
-            "INSERT INTO historico_pontos (id_usuario, mes, pontos_usados) VALUES (?, ?, ?)",
-            [usuario_id, dataTransacao, pontosGanhos] 
-        );
+        const dataTransacao = new Date().toISOString().split('T')[0];
 
         await db.execute(
             "UPDATE usuarios SET saldo = saldo - ?, pontos = pontos + ? WHERE id = ?",
@@ -88,16 +87,32 @@ export async function enviarPix(req, res) {
         );
 
         await db.execute(
+            "UPDATE usuarios SET saldo = saldo + ? WHERE id = ?",
+            [valor, destinatario.id]
+        );
+
+        await db.execute(
+            "INSERT INTO historico_pontos (id_usuario, mes, pontos_usados) VALUES (?, ?, ?)",
+            [usuario_id, dataTransacao, pontosGanhos]
+        );
+
+        await db.execute(
             "INSERT INTO transacoes (usuario_id, tipo, valor, descricao, chave_pix, status) VALUES (?, 'saida', ?, 'Envio Pix', ?, 'confirmado')",
             [usuario_id, valor, chave_pix_destino]
         );
-        
-        res.json({ mensagem: "Pix enviado." });
+
+        await db.execute(
+            "INSERT INTO transacoes (usuario_id, tipo, valor, descricao, chave_pix, status) VALUES (?, 'entrada', ?, 'Recebimento Pix', ?, 'confirmado')",
+            [destinatario.id, valor, user.chave_pix || "Sem chave"]
+        );
+
+        res.json({ mensagem: "Pix enviado com sucesso." });
 
     } catch (error) {
         res.status(500).json({ erro: error.message });
     }
 }
+
 
 export async function consultarSaldo(req, res) {
     const { id } = req.params;
