@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- String da Tela Welcome -->
+    <string name="appTextApresentacao">Pagamentos acadêmicos simples e seguros na palma da sua mão</string>
+    <string name="appBtnRegister"> Quero me cadastrar </string>
+    <string name="appBtnLogin"> Acessar minha conta </string>
+
+    <!-- String da Tela Login -->
+    <string name="appTituloLogin">Entrar na Conta</string>
+    <string name="appTituloCPF"> CPF </string>
+    <string name="appMascaraCPF"> 000.000.000-00 </string>
+    <string name="appTituloSenha"> Senha </string>
+    <string name="appMascaraSenha"> ******** </string>
+    <string name="appTextCrieConta"> Ainda não tem uma conta? Crie uma </string>
+    <string name="appBtnEntrar"> Entrar </string>
+
+    <!-- String da Tela Cadastro -->
+    <string name="appTituloRegister">Criar Conta</string>
+    <string name="appTituloNome"> Nome Completo </string>
+    <string name="appMascaraNome"> Seu nome </string>
+    <string name="appTituloDataNascimento"> Data de Nascimento </string>
+    <string name="appMascaraDataNascimento"> 00/00/0000 </string>
+    <string name="appTituloEmail"> E-mail </string>
+    <string name="appMascaraEmail"> Seu email </string>
+    <string name="appTituloCelular"> Celular </string>
+    <string name="appMascaraCelular"> Seu Celular </string>
+    <string name="appBtnCadastrar"> Cadastrar </string>
+    <string name="appTermoUso1"> Li e concordo com os Termos de Uso. </string>
+    <string name="appTermoUso2"> Aviso Externo de Privacidade. </string>
+
+    <!-- String da Tela Editar Perfil -->
+    <string name="appTituloEditProfile">Editar Perfil</string>
+    <string name="appBtnAtualizar"> Aplicar Mudanças </string>
+    <string name="appBtnExcluir"> Excluir conta </string>
+
+    <!-- String da Tela HomeActivity-->
+    <string name="appTituloVerExtrato">VER EXTRATO</string>
+    <string name="appTituloPix">PIX</string>
+    <string name="appTituloExtrato">EXTRATO</string>
+    <string name="appTituloPontos">PONTOS</string>
+    <string name="appTituloTotalPontos">Total de Pontos</string>
+    <string name="appBtnResgatarPontos">Resgatar Pontos</string>
+    <string name="appMascaraPonto">0</string>
+    <string name="appTituloGrafico">Acumulo de pontos em 2025</string>
+
+    <!-- String da Tela PixTransferActivity -->
+    <string name="appTituloTelaPix">Área Pix</string>
+    <string name="appTextoTelaPix"> Envie e receba pagamentos em instantes.</string>
+    <string name="appTituloEnviar">Enviar</string>
+    <string name="appTituloReceber">Receber</string>
+    <string name="appIcTransferir">Transferir</string>
+    <string name="appIcQRCode">QR Code</string>
+
+    <!-- String da Tela ConfirmPixTransferActivity-->
+    <string name="appTituloConfirmeTransferirPix">Confirme sua transferência</string>
+    <string name="appSubtituloConfirmeTransferirPix">Antes de avançar, verifique as informações abaixo:</string>
+    <string name="appTituloValor">Valor</string>
+    <string name="appTituloDestinatario">Destinatário</string>
+    <string name="appTituloDocumento">Documento</string>
+    <string name="appTituloChave">Chave</string>
+    <string name="appMascaraChave">00000000000</string>
+    <string name="appTituloTipo">Tipo</string>
+    <string name="appTituloQuando">Quando</string>
+    <string name="appTxtQuando">Agora</string>
+    <string name="appBtnAvancar">Avançar</string>
+
+    <!-- String da Tela PixTransferReceiptActivity-->
+    <string name="appTituloComprovante">Comprovante</string>
+    <string name="appTxtStatus">Pix enviado com sucesso!</string>
+    <string name="appbtnCompartilhar">Compartilhar comprovante</string>
+    <string name="appBtnMenu">Menu principal</string>
+    <string name="appTxtBanco">Banco Fictício do Brasil\nAG. 1000 Conta 45678–0</string>
+
+    <!-- String da Tela ConfirmPixPasswordActivity-->
+    <string name="appTituloConfirmeSenha">Digita sua senha</string>
+    <string name="appSubtituloConfirmeSenha">Confirme a transação com sua senha</string>
+
+    <!-- String da Tela PixTransferActivity-->
+    <string name="appTituloTransferirPix">Transferir com Pix</string>
+    <string name="appMascaraDestinatario">Nome</string>
+    <string name="appTxtSaldoDisponivel">Saldo disponível</string>
+    <string name="appMascaraValor">R$ 00,00</string>
+    <string name="appTxtChave">Digite a chave pix</string>
+    <string name="appMascaraChavePix">ex: email, telefone, CPF</string>
+    <string name="appBtnConfirmar">Confirmar</string>
+
+    <!-- String da Tela ExtractActivity-->
+    <string name="appTituloTelaExtrato">Extrato</string>
+    <string name="appTituloConta">Conta</string>
+    <string name="appTituloPesquise">Pesquise</string>
+    <string name="appTituloMes">Mes</string>
+
+
+    <!-- Cores do Projeto -->
+    <color name="blue_neon">#0F91FE</color>
+    <color name="blue_light_neon">#00D0DA</color>
+    <color name="yellow_neon">#FFC800</color>
+    <color name="brown_neon">#855B35</color>
+    <color name="appColorBranco">#FFFFFF</color>
+    <color name="appColorPreto">#000000</color>
+    <color name="appColorCinza">#666666</color>
+    <color name="appColorCinzaEscuro">#444444</color>
+    <color name="appColorVermelho">#FF0000</color>
+    <color name="appColorVerde">#2ECC71</color>
+    <color name="appColorCinzaClaro">#FFDDDDDD</color>
+
+</resources>

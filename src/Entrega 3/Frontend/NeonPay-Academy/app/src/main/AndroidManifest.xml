@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ExtractActivity"
+            android:exported="false" />
+        <activity
             android:name=".PixHomeActivity"
             android:exported="false" />
         <activity

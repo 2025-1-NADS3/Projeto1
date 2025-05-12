@@ -102,10 +102,11 @@ public class ConfirmPixTransferActivity extends AppCompatActivity {
                 response -> {
                     try {
                         nomeDestinatario = response.getString("nome");
-                        String documento = response.getString("cpf");
+                        String cpf = response.getString("cpf");
+                        String cpfMascarado = mascararCpf(cpf);
 
                         txtNomeDestinatario.setText(nomeDestinatario);
-                        txtDocumento.setText(documento);
+                        txtDocumento.setText(cpfMascarado);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -115,6 +116,12 @@ public class ConfirmPixTransferActivity extends AppCompatActivity {
                 error -> {
                     error.printStackTrace();
                     Toast.makeText(this, "Chave Pix inválida ou não encontrada!", Toast.LENGTH_SHORT).show();
+
+                    // Redireciona para a tela inicial (LoginActivity ou outra Activity desejada)
+                    Intent intent = new Intent(ConfirmPixTransferActivity.this, PixTransferActivity.class); // Substitua por sua tela de destino
+                    startActivity(intent);
+                    finish(); // Finaliza a atividade atual para evitar que o usuário volte
+
                 }) {
 
             @Override
@@ -127,5 +134,13 @@ public class ConfirmPixTransferActivity extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
+    }
+
+    private String mascararCpf(String cpf) {
+        // Valida se o CPF tem o formato correto (11 dígitos)
+        if (cpf != null && cpf.length() == 11) {
+            return cpf.substring(0, 3) + ".***.***-" + cpf.substring(9);
+        }
+        return cpf; // Caso não seja um CPF válido, retorna o CPF original
     }
 }

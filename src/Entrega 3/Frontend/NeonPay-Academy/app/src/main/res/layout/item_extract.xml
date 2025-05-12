@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="@drawable/bg_item"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+    <ImageView
+        android:id="@+id/imgIcone"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_saida"
+        android:contentDescription="Ícone" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:id="@+id/textDescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Transferência enviada"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/appColorPreto" />
+
+        <TextView
+            android:id="@+id/textChavePix"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/appMascaraChavePix"
+            android:textSize="12sp"
+            android:textColor="@color/appColorCinzaEscuro" />
+
+        <TextView
+            android:id="@+id/textData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="05/05/2024"
+            android:textSize="12sp"
+            android:textColor="@color/appColorCinzaEscuro" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textValor"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="@string/appMascaraValor"
+        android:textColor="@color/appColorVermelho"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+</LinearLayout>
