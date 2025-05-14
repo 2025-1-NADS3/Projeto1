@@ -44,4 +44,11 @@ public class PixHomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PixTransferActivity.class);
         startActivity(intent);
     }
+
+    // Função para levar a tela PixAddAmountActivity
+    public void adicionarDinheiro(View view) {
+        // Invoca a "PixAddAmountActivity"
+        Intent intent = new Intent(this, PixAddAmountActivity.class);
+        startActivity(intent);
+    }
 }
