@@ -24,7 +24,7 @@
     <string name="appTituloEmail"> E-mail </string>
     <string name="appMascaraEmail"> Seu email </string>
     <string name="appTituloCelular"> Celular </string>
-    <string name="appMascaraCelular"> Seu Celular </string>
+    <string name="appMascaraCelular">(00) 00000-0000</string>
     <string name="appBtnCadastrar"> Cadastrar </string>
     <string name="appTermoUso1"> Li e concordo com os Termos de Uso. </string>
     <string name="appTermoUso2"> Aviso Externo de Privacidade. </string>
@@ -91,10 +91,16 @@
     <string name="appTituloPesquise">Pesquise</string>
     <string name="appTituloMes">Mes</string>
 
+    <!-- String da Tela ExtractActivity-->
+    <string name="appTituloAddDinheiro">Adicionar Dinheiro</string>
+
 
     <!-- Cores do Projeto -->
-    <color name="blue_neon">#0F91FE</color>
-    <color name="blue_light_neon">#00D0DA</color>
+    <color name="appColorAzul">#0F91FE</color>
+    <color name="appColorRoxo">#8A04BD</color>
+    <color name="appColorRoxoEscuro">#6600CC</color>
+    <color name="appColorRoxoClaro">#1AAB66F2</color>
+    <color name="appColorRoxoClaroSolido">#AB66F2</color>
     <color name="yellow_neon">#FFC800</color>
     <color name="brown_neon">#855B35</color>
     <color name="appColorBranco">#FFFFFF</color>
@@ -104,5 +110,7 @@
     <color name="appColorVermelho">#FF0000</color>
     <color name="appColorVerde">#2ECC71</color>
     <color name="appColorCinzaClaro">#FFDDDDDD</color>
+    <color name="appColorInputCinza">#F0F0F0</color>
+
 
 </resources>
