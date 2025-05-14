@@ -16,6 +16,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PixAddAmountReceiptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixPaymentDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixConfirmAmountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixAddAmountActivity"
+            android:exported="false" />
+        <activity
             android:name=".ExtractActivity"
             android:exported="false" />
         <activity
