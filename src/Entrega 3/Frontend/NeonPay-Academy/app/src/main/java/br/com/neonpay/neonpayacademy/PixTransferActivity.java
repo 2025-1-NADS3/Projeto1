@@ -2,6 +2,8 @@ package br.com.neonpay.neonpayacademy;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -67,12 +69,45 @@ public class PixTransferActivity extends AppCompatActivity {
         });
 
         consultarSaldo(); // Chama a função para mostrar o saldo
+
+        txtValor.addTextChangedListener(new TextWatcher() {
+            private String current = "";
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (!s.toString().equals(current)) {
+                    txtValor.removeTextChangedListener(this);
+
+                    String cleanString = s.toString().replaceAll("[R$,.\\s]", "");
+
+                    try {
+                        double parsed = Double.parseDouble(cleanString) / 100;
+                        NumberFormat format = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+                        String formatted = format.format(parsed);
+
+                        current = formatted;
+                        txtValor.setText(formatted);
+                        txtValor.setSelection(formatted.length());
+                    } catch (NumberFormatException e) {
+                        s.clear();
+                    }
+
+                    txtValor.addTextChangedListener(this);
+                }
+            }
+        });
     }
 
     // Função para validar os campos de chave pix, valor e encaminhar os dados para a próxima tela de confirmação
     public void confirmar(View view) {
         String chavePix = txtChavePix.getText().toString().trim();
-        String valorString = txtValor.getText().toString().trim();
+        String valorString = txtValor.getText().toString().trim().replaceAll("[^\\d]", "");
 
         // Verifica se o campo de chave pix ou valor está vazio, caso esteja ele vai usar um return para o usuario não prosseguir sem digitar
         if (chavePix.isEmpty() || valorString.isEmpty()) {
@@ -83,7 +118,7 @@ public class PixTransferActivity extends AppCompatActivity {
         // Transformar o valorString em um valor double
         double valor;
         try {
-            valor = Double.parseDouble(valorString);
+            valor = Double.parseDouble(valorString) / 100;
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Valor inválido!", Toast.LENGTH_SHORT).show();
             return;

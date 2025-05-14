@@ -25,6 +25,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import br.com.neonpay.neonpayacademy.utils.CPFTextWatcher;
+
 public class LoginActivity extends AppCompatActivity {
 
     // Declaração das variáveis dos elementos da interface
@@ -51,6 +53,9 @@ public class LoginActivity extends AppCompatActivity {
         imgVoltar = findViewById(R.id.imgVoltar);
         txtCrie = findViewById(R.id.txtCrie);
 
+        // Adicionando mascara ao usuario digitar o cpf
+        txtCPF.addTextChangedListener(new CPFTextWatcher(txtCPF));
+
         // Quando clicar no botão vai chamar a função logarUsuario()
         btnLogar.setOnClickListener(view -> {
             logarUsuario();
@@ -72,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // Função para realizar o login do usuário através de uma requisição POST
     private void logarUsuario() {
-        String cpf = txtCPF.getText().toString().trim();
+        String cpf = txtCPF.getText().toString().trim().replaceAll("[^\\d]", ""); // Remove pontos e traço do cpf
         String senha = txtSenha.getText().toString().trim();
 
         // Realiza validações antes fazer requisição ao servidor
@@ -98,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         String url = "http://10.0.2.2:3000/api/login";
+        //String url = "https://plyhcd-3000.csb.app/api/login";
 
         // Criando requisição POST para o servidor
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, dadosUsuario,

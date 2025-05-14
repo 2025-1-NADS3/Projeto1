@@ -29,6 +29,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import br.com.neonpay.neonpayacademy.utils.CPFTextWatcher;
+import br.com.neonpay.neonpayacademy.utils.DateTextWatcher;
+import br.com.neonpay.neonpayacademy.utils.PhoneTextWatcher;
+
 public class RegisterActivity extends AppCompatActivity {
 
     // Declaração das variáveis dos elementos da interface
@@ -57,6 +61,11 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         imgVoltar = findViewById(R.id.imgVoltar);
 
+        // Adicionando mascara ao usuario digitar o cpf, celular e data de nascimento
+        txtCpf.addTextChangedListener(new CPFTextWatcher(txtCpf));
+        txtCelular.addTextChangedListener(new PhoneTextWatcher(txtCelular));
+        txtDataNasc.addTextChangedListener(new DateTextWatcher(txtDataNasc));
+
         // Quando clicar no botão vai chamar a função registrarUsuario()
         btnRegister.setOnClickListener(view -> {
             registrarUsuario();
@@ -73,10 +82,10 @@ public class RegisterActivity extends AppCompatActivity {
     // Função para realizar o cadastro do usuário através de uma requisição POST
     private void registrarUsuario() {
         String nome = txtNome.getText().toString().trim();
-        String cpf = txtCpf.getText().toString().trim();
+        String cpf = txtCpf.getText().toString().trim().replaceAll("[^\\d]", ""); // Remover pontos e traço do cpf
         String dataNascimento = txtDataNasc.getText().toString().trim();
         String email = txtEmail.getText().toString().trim();
-        String celular = txtCelular.getText().toString().trim();
+        String celular = txtCelular.getText().toString().trim().replaceAll("[^\\d]", ""); // Remover pontos e traço do celular
         String senha = txtSenha.getText().toString().trim();
 
         // Realiza validações antes fazer requisição ao servidor
