@@ -138,15 +138,16 @@ public class HomeActivity extends AppCompatActivity {
                     // Configurações visuais do gráfico
                     BarDataSet dataSet = new BarDataSet(entries, "");
                     dataSet.setColors(new int[]{
-                            Color.rgb(0, 122, 255),
-                            Color.rgb(0, 102, 255),
-                            Color.rgb(0, 82, 255),
-                            Color.rgb(0, 62, 255),
-                            Color.rgb(0, 42, 255),
-                            Color.rgb(0, 22, 255),
-                            Color.rgb(0, 0, 204),
-                            Color.rgb(0, 0, 153)
+                            Color.parseColor("#AB66F2"),
+                            Color.parseColor("#9A4EDF"),
+                            Color.parseColor("#8A04BD"),
+                            Color.parseColor("#7A03A8"),
+                            Color.parseColor("#6B0293"),
+                            Color.parseColor("#5B017E"),
+                            Color.parseColor("#4C0169"),
+                            Color.parseColor("#3D0054")
                     });
+
                     dataSet.setValueTextColor(Color.BLACK);
                     dataSet.setValueTextSize(12f);
                     dataSet.setDrawValues(true); // Mostra os valores que estiverem acima das barras
