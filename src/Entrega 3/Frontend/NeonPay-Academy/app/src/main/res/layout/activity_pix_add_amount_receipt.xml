@@ -89,23 +89,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp" />
 
-        <TextView
-            android:id="@+id/txtNomeDestinatario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/appMascaraNome"
-            android:textColor="@color/appColorCinzaEscuro"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/txtBanco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/appTxtBanco"
-            android:textSize="14sp"
-            android:textColor="@color/appColorCinza" />
     </LinearLayout>
 
     <Button
