@@ -226,3 +226,33 @@ export async function buscarUsuarioPorChavePix(req, res) {
     }
 }
 
+export async function cadastrarChavePix(req, res) {
+    const { usuario_id, chave_pix, senha } = req.body;
+
+    try {
+        const [userRows] = await db.execute("SELECT * FROM usuarios WHERE id = ?", [usuario_id]);
+        if (userRows.length === 0) {
+            return res.status(400).json({ erro: "Usuário não encontrado." });
+        }
+
+        const user = userRows[0];
+
+        const senhaCorreta = await bcrypt.compare(senha, user.senha);
+        if (!senhaCorreta) {
+            return res.status(401).json({ erro: "Senha incorreta." });
+        }
+
+        const [chaveExistente] = await db.execute("SELECT * FROM usuarios WHERE chave_pix = ?", [chave_pix]);
+        if (chaveExistente.length > 0) {
+            return res.status(400).json({ erro: "Chave Pix já cadastrada por outro usuário." });
+        }
+
+        await db.execute("UPDATE usuarios SET chave_pix = ? WHERE id = ?", [chave_pix, usuario_id]);
+
+        res.json({ mensagem: "Chave Pix cadastrada com sucesso." });
+
+    } catch (error) {
+        res.status(500).json({ erro: error.message });
+    }
+}
+
