@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import db from './config/db.js';
 import userRoutes from './routes/userRoutes.js';
 import pixRoutes from './routes/pixRoutes.js';
+import asaRoutes from './routes/asaRoutes.js';
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(cors());
 
 app.use('/api', userRoutes);
 app.use('/pix', pixRoutes);
+app.use('/asa', asaRoutes);
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
