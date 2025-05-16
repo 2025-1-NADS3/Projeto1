@@ -107,9 +107,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/appIcTransferir"
+                android:fontFamily="monospace"
                 android:textColor="@color/appColorPreto"
                 android:textSize="14sp"
-                android:fontFamily="monospace"
                 android:layout_marginTop="8dp" />
         </LinearLayout>
     </LinearLayout>
@@ -150,19 +150,69 @@
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/imgLogoQrCode"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_qrcode"
                 android:contentDescription="@string/appIcQRCode" />
 
             <TextView
-                android:id="@+id/tituloQrCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="monospace"
                 android:text="@string/appIcQRCode"
-                android:textColor="@color/appColorPreto"
-                android:layout_marginTop="8dp" />
+                android:textColor="@color/appColorPreto" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Cadastrar"
+        android:textColor="@color/appColorPreto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearReceber" />
+
+    <LinearLayout
+        android:id="@+id/linearCadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:onClick="cadastrarChavePix"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/txtCadastrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/fundo_botao_padrao"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_pix"
+                android:contentDescription="@string/appIcQRCode" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="monospace"
+                android:text="Chave Pix"
+                android:textColor="@color/appColorPreto" />
         </LinearLayout>
     </LinearLayout>
 
