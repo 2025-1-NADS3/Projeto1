@@ -94,6 +94,61 @@
     <!-- String da Tela ExtractActivity-->
     <string name="appTituloAddDinheiro">Adicionar Dinheiro</string>
 
+    <!-- String da Tela PixIntroSendReceiveActivity-->
+    <string name="appTituloSendReceive">Envie e receba de forma fácil</string>
+    <string name="appSubTituloSendReceive">Crie chaves com o seu CPF, celular, e-mail ou uma chave aleatória</string>
+    <string name="appBtnPular">Pular</string>
+
+    <!-- String da Tela PixIntroManageKeysActivity-->
+    <string name="appTituloManageKeys">Gerencie suas chaves</string>
+
+    <!-- String da Tela PixIntroCreateKeyActivity-->
+    <string name="appTituloCreateKeys">Crie uma chave agora</string>
+    <string name="appSubTituloCreateKeys">Você pode começar a receber pagamentos Pix pela sua chave.</string>
+    <string name="appBtnComecar">Começar</string>
+
+    <!-- String da Tela PixChooseKeyTypeActivity-->
+    <string name="appTituloCreateKeysPix">Criar chave Pix</string>
+    <string name="appTituloCreateTypeKey">Tipo da chave</string>
+    <string name="appSubTituloTypeKey">Selecione o tipo da chave Pix que você quer criar</string>
+    <string name="appRadioChaveAleatoria">Chave aleatória</string>
+
+    <!-- Radio Button da Tela PixChooseKeyTypeActivity-->
+    <style name="CustomRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/custom_radio_selector</item>
+        <item name="android:buttonTint">@color/appColorRoxo</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_marginBottom">32dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/appColorPreto</item>
+    </style>
+
+    <!-- String da Tela PixKeyConfirmationActivity-->
+    <string name="appSubConfirmeSenhaChave">Confirme o registro com sua senha de movimentação</string>
+
+    <!-- String da Tela PixKeySuccessActivity-->
+    <string name="appTituloConfirmado">Tudo certo!</string>
+    <string name="appSubtituloConfirmadoChave">Sua chave foi registrada e você já pode usá-la.</string>
+    <string name="appBtnConcluir">Concluir</string>
+
+    <!-- String da Tela PixRegisterCpfKeyActivity-->
+    <string name="appTituloRegisterKeyCPF">Registrar CPF</string>
+    <string name="appSubtituloRegisterKeyCPF">Você poderá receber transferências pelo Pix informando apenas o seu CPF.</string>
+
+    <!-- String da Tela PixRegisterEmailKeyActivity-->
+    <string name="appTituloRegisterKeyEmail">Registrar Email</string>
+    <string name="appSubtituloRegisterKeyEmail">Você poderá receber transferências pelo Pix informando apenas o seu Email.</string>
+
+    <!-- String da Tela PixRegisterPhoneKeyActivity-->
+    <string name="appTituloRegisterKeyPhone">Registrar Celular</string>
+    <string name="appSubtituloRegisterKeyPhone">Você poderá receber transferências pelo Pix informando apenas o seu Celular.</string>
+
+    <!-- String da Tela PixRegisterRandomKeyActivity-->
+    <string name="appTituloRegisterRandomKey">Registrar Chave Aleatória</string>
+    <string name="appSubtituloRegisterRandomKey">Você poderá receber transferências pelo Pix informando apenas o seu chave aleatória.</string>
+    <string name="appTituloRandomKey">Chave aleatória</string>
+    <string name="appMascaraRandomKey">f8e75a1c-45d3-43b8-a9e1-829c5f02d7cf</string>
+
 
     <!-- Cores do Projeto -->
     <color name="appColorAzul">#0F91FE</color>
@@ -109,6 +164,7 @@
     <color name="appColorCinzaEscuro">#444444</color>
     <color name="appColorVermelho">#FF0000</color>
     <color name="appColorVerde">#2ECC71</color>
+    <color name="appColorVerdeEscuro">#009254</color>
     <color name="appColorCinzaClaro">#FFDDDDDD</color>
     <color name="appColorInputCinza">#F0F0F0</color>
 
