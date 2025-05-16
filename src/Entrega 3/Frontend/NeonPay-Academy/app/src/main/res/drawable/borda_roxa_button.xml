@@ -7,6 +7,6 @@
     <stroke
         android:width="4dp"
         android:color="@color/appColorRoxo" />
-    
+
     <corners android:radius="25dp" />
 </shape>
