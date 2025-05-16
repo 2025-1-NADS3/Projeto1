@@ -115,7 +115,7 @@
         android:layout_marginBottom="48dp"
         android:backgroundTint="@color/appColorRoxo"
         android:onClick="avancar"
-        android:text="Avançar"
+        android:text="@string/appBtnAvancar"
         android:textColor="@color/appColorBranco"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
