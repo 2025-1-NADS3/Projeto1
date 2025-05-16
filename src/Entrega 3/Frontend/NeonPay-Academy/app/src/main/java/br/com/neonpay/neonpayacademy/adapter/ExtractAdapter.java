@@ -8,27 +8,30 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
-
 import br.com.neonpay.neonpayacademy.R;
 import br.com.neonpay.neonpayacademy.model.ExtractItem;
-
 import java.util.List;
 
+// ExtractAdapter é um Adapter responsável por exibir o extrato do usuario
 public class ExtractAdapter extends RecyclerView.Adapter<ExtractAdapter.ViewHolder> {
 
     private List<ExtractItem> lista;
     private Context context;
 
+    // Construtor do ExtractAdapter
     public ExtractAdapter(Context context, List<ExtractItem> lista) {
         this.context = context;
         this.lista = lista;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
+
+        // Declaração das variáveis dos elementos da interface
         TextView textDescricao, textData, textValor, textChavePix;
         ImageView imgIcone;
 
         public ViewHolder(View itemView) {
+            // Inicialização dos componentes da interface
             super(itemView);
             textDescricao = itemView.findViewById(R.id.textDescricao);
             textData = itemView.findViewById(R.id.textData);
@@ -52,6 +55,7 @@ public class ExtractAdapter extends RecyclerView.Adapter<ExtractAdapter.ViewHold
         holder.textValor.setText(item.getValor());
         holder.textChavePix.setText(item.getChavePix());
 
+        // Verificação para ver se a transação é de Entrada ou Saida
         if (item.getTipo() == ExtractItem.Tipo.ENTRADA) {
             holder.textValor.setTextColor(ContextCompat.getColor(context, R.color.appColorVerde));
             holder.imgIcone.setImageResource(R.drawable.ic_entrada);
