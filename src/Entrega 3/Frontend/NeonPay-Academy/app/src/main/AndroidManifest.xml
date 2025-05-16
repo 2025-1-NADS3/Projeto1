@@ -16,6 +16,36 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PixKeySuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixRegisterRandomKeyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixRegisterPhoneKeyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixRegisterEmailKeyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixKeyConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixRegisterCpfKeyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixChooseKeyTypeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixIntroCreateKeyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixIntroManageKeysActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixIntroSendReceiveActivity"
+            android:exported="false" />
+        <activity
             android:name=".PixAddAmountReceiptActivity"
             android:exported="false" />
         <activity
