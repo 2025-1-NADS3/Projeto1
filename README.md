@@ -169,23 +169,23 @@ Após a instalação:
 * 0.4.4 - 25/03/2025
    * CONCLUÍDO:  Wireframe e Storyboard do projeto.
 * 0.5.5 - 22/04/2025
-   * ANDAMENTO: Criptografia.
+   * CONCLUÍDO: Criptografia.
 * 0.6.6 -  22/04/2025
-   * ANDAMENTO: Implementação do banco de dados.
+   * CONCLUÍDO: Implementação do banco de dados.
 * 0.7.7 -  22/04/2025
-   * ANDAMENTO: Teste de sistema.
+   * CONCLUÍDO: Teste de sistema.
 * 0.8.8 -  22/04/2025
-   * ANDAMENTO: Mockup Prototipado e navegável de todas as telas.
+   * CONCLUÍDO: Mockup Prototipado e navegável de todas as telas.
 * 0.9.9 -  22/04/2025
-   * ANDAMENTO: Entrega do aplicativo concluido.
+   * CONCLUÍDO: Entrega do aplicativo concluido.
 * 0.10.10 -  18/05/2025
-   * ANDAMENTO: Implementação da rotina de verificação e restart automático do servidor.
+   * CONCLUÍDO: Implementação da rotina de verificação e restart automático do servidor.
 * 0.11.11 -  18/05/2025
-     * ANDAMENTO: Qualidade de Software.
+     * CONCLUÍDO: Qualidade de Software.
 * 0.12.12 -  18/05/2025
-    * ANDAMENTO: Análise heurística e de usabilidade do projeto.
+    * CONCLUÍDO: Análise heurística e de usabilidade do projeto.
 * 0.13.13 -  18/05/2025
-
+   * CONCLUÍDO: Projeto concluído.
  
 
 ## 📋 Licença/License
