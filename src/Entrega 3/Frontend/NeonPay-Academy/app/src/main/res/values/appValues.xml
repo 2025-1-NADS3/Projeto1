@@ -149,6 +149,29 @@
     <string name="appTituloRandomKey">Chave aleatória</string>
     <string name="appMascaraRandomKey">f8e75a1c-45d3-43b8-a9e1-829c5f02d7cf</string>
 
+    <!-- String da Tela AsaIntroActivity-->
+    <string name="appTituloIntroAsaServices">Pague seus Serviços Asa de forma Fácil!</string>
+    <string name="appSubtituloIntroAsaServices">Solicite via portal do aluno o serviço e clique na opção “Pagar com Bank Pay Academy.</string>
+
+    <!-- String da Tela AsaServiceActivity-->
+    <string name="appTituloAsaServices">Asa Serviços</string>
+
+    <!-- String da Tela AsaServiceCartActivity-->
+    <string name="appTituloAsaServicesCart">Carrinho de Serviços</string>
+    <string name="appTituloTotal">Total</string>
+    <string name="appBtnPagamento">Pagamento</string>
+
+    <!-- String da Tela AsaServiceReceiptActivity-->
+    <string name="appBtnBaixarComprovante">Baixar Comprovante</string>
+
+    <!-- String da Tela item_servico.xml-->
+    <string name="appTituloServico">Título do Serviço</string>
+    <string name="appBtnComprar">Comprar</string>
+
+    <!-- String da Tela item_carrinho.xml-->
+    <string name="appTituloNomeCarrinho">Nome do Serviço</string>
+    <string name="appDescIconeDelete">Remover item</string>
+    <string name="appDescImgCarrinho">Imagem do serviço</string>
 
     <!-- Cores do Projeto -->
     <color name="appColorAzul">#0F91FE</color>
