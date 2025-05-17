@@ -13,7 +13,9 @@
 ## 👨‍🏫 Professores Orientadores:<a href="https://www.linkedin.com/in/aimarlopes/">Aimar Martins Lopes</a>,<a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>,<a href="https://www.linkedin.com/in/vheltai/">Vinicius Heltai</a> e <a href="https://www.linkedin.com/in/jefferson-o-silva/">Jefferson Silva</a>.
 
 ## ✏ Introdução
-![image](https://github.com/user-attachments/assets/2b474310-248b-44f7-bfcd-ebd54d561338)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2b474310-248b-44f7-bfcd-ebd54d561338" alt="image" />
+</div>
 
 
   
