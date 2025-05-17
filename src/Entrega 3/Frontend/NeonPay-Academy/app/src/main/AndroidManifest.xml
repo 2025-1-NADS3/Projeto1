@@ -16,6 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AsaServiceReceiptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AsaServiceConfirmPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AsaServiceCartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AsaServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AsaIntroActivity"
+            android:exported="false" />
+        <activity
             android:name=".PixKeySuccessActivity"
             android:exported="false" />
         <activity
@@ -103,9 +118,20 @@
             </intent-filter>
         </activity>
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 
 </manifest>
