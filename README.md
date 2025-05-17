@@ -16,9 +16,6 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/2b474310-248b-44f7-bfcd-ebd54d561338" alt="image" />
 </div>
-
-![Group 127](https://github.com/user-attachments/assets/a21eeac4-f111-4155-87c0-d8eb3db58a8c)
-
   
 ## 🔎 Descrição
 
