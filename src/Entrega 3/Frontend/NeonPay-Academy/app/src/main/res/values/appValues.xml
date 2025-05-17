@@ -173,6 +173,26 @@
     <string name="appDescIconeDelete">Remover item</string>
     <string name="appDescImgCarrinho">Imagem do serviço</string>
 
+    <!-- String da Tela CanteenIntroActivity-->
+    <string name="appTituloIntroCanteenServices">Pague seu lanche de forma Fácil!</string>
+    <string name="appSubtituloIntroCanteenServices">Após o pagamento, um código será gerado. Apresente-o ao funcionário da Cantiana para retirar seu lanche e aproveite.</string>
+
+    <!-- String da Tela CanteenActivity-->
+    <string name="appTituloCanteen">Cantina</string>
+    <string name="appDescRecyclerCantina">Lista de alimentos disponíveis na cantina</string>
+
+    <!-- String da Tela CanteenCartActivity-->
+    <string name="appTituloCarrinhoItens">Carrinho de Itens</string>
+    <string name="appDescRecyclerCarinho">Lista de itens no carrinho</string>
+
+    <!-- String da Tela CanteenConfirmPasswordActivity-->
+    <string name="appTxtStatusCanteen">Pagamento realizado com sucesso!</string>
+    <string name="appMascaraSenhaPedido">Senha do Pedido: 000</string>
+
+    <!-- String da Tela item_canteen.xml-->
+    <string name="appSubTituloDescricaoItem">Descrição do item</string>
+
+
     <!-- Cores do Projeto -->
     <color name="appColorAzul">#0F91FE</color>
     <color name="appColorRoxo">#8A04BD</color>
