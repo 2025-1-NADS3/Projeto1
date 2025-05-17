@@ -1,7 +1,6 @@
 import db from '../config/db.js';
 import bcrypt from 'bcrypt';
 
-// Lista os alimentos da cantina
 export const listarCantina = async (req, res) => {
     try {
         const [results] = await db.execute("SELECT * FROM cantina");
@@ -17,7 +16,6 @@ export const listarCantina = async (req, res) => {
     }
 };
 
-// Pagar por alimentos da cantina
 export async function pagarCantina(req, res) {
     const { usuario_id, senha, itens_ids } = req.body;
 
@@ -68,13 +66,12 @@ export async function pagarCantina(req, res) {
         const descricaoItens = itens.map(item => item.titulo).join(', ');
         const chavePix = "cantina@edu.fecap.br";
 
-        // ➕ Geração da senha do pedido
-        const [result] = await db.execute(
+        const [resultadoSenha] = await db.execute(
             "SELECT MAX(senha_pedido) AS ultimaSenha FROM transacoes WHERE senha_pedido IS NOT NULL"
         );
         let novaSenha = 1;
-        if (result[0].ultimaSenha !== null) {
-            novaSenha = result[0].ultimaSenha + 1;
+        if (resultadoSenha[0].ultimaSenha !== null) {
+            novaSenha = resultadoSenha[0].ultimaSenha + 1;
         }
 
         await db.execute(
