@@ -59,6 +59,7 @@ public class AsaServiceConfirmPasswordActivity extends AppCompatActivity {
         // Recupera o token
         token = SharedPrefsHelper.getToken(this);
 
+        // Verificação se o token é null, se for voltar para tela de login
         if (token == null) {
             Toast.makeText(this, "Token não encontrado. Faça login novamente.", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, LoginActivity.class));
@@ -66,6 +67,7 @@ public class AsaServiceConfirmPasswordActivity extends AppCompatActivity {
             return;
         }
 
+        // Chama o metodo para buscar dados do usuario
         buscarDadosUsuario();
 
         // Recebendo os dados da Tela que foram enviados pelo Intent:
@@ -91,7 +93,7 @@ public class AsaServiceConfirmPasswordActivity extends AppCompatActivity {
                 return;
             }
 
-            // Chama a função confirmar pagamengo do servico
+            // Chama a função confirmar pagamento do servico
             confirmarPagamentoServico(chave_pix, senha, servicoIds);
         });
 

@@ -109,7 +109,7 @@ public class AsaServiceReceiptActivity extends AppCompatActivity {
         int valorTotal = bundle.getInt("valor_total", 0);
         txtValor.setText(formatarValor(valorTotal));
 
-        // Botões de compartilhar - para compartilhar o último arquivo gerado (por simplicidade)
+        // Botão para compartilhar o pdf
         btnBaixarComprovante.setOnClickListener(v -> {
             if (!pdfFiles.isEmpty()) {
                 compartilharPDF(pdfFiles.get(pdfFiles.size() - 1));
