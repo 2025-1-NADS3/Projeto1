@@ -16,6 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".CanteenReceiptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CanteenConfirmPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CanteenCartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CanteenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CanteenIntroActivity"
+            android:exported="false" />
+        <activity
             android:name=".AsaServiceReceiptActivity"
             android:exported="false" />
         <activity
@@ -132,6 +147,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 
 </manifest>
