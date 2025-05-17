@@ -5,7 +5,7 @@
 </p>
 
 
-## 🎓 NeonPay Academy
+## 🎓 Bank Pay Academy
 
 ## 👥 Integrantes: <a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine </a>,<a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus	</a>, <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves	</a> e <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/">José Bento Almeida Gama </a>.
 
@@ -13,11 +13,13 @@
 ## 👨‍🏫 Professores Orientadores:<a href="https://www.linkedin.com/in/aimarlopes/">Aimar Martins Lopes</a>,<a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>,<a href="https://www.linkedin.com/in/vheltai/">Vinicius Heltai</a> e <a href="https://www.linkedin.com/in/jefferson-o-silva/">Jefferson Silva</a>.
 
 ## ✏ Introdução
-![Group 126](https://github.com/user-attachments/assets/08ad41a5-2764-4122-a445-6c9050c19c6c)
+![image](https://github.com/user-attachments/assets/2b474310-248b-44f7-bfcd-ebd54d561338)
+
+
   
 ## 🔎 Descrição
 
-Neon Pay Academy é um aplicativo financeiro voltado para o ambiente acadêmico, que permite aos alunos realizarem pagamentos de serviços e produtos da instituição de forma simples e segura, integrado à API do banco Neon. Além dos pagamentos, os estudantes acumulam pontos a cada transação, que podem ser trocados por benefícios exclusivos, como produtos da atlética. A plataforma visa facilitar a gestão financeira e incentivar o engajamento dentro da comunidade universitária.
+Bank Pay Academy é um aplicativo financeiro voltado para o ambiente acadêmico, que permite aos alunos realizarem pagamentos de serviços e produtos da instituição de forma simples e segura, integrado à API. Além dos pagamentos, os estudantes acumulam pontos a cada transação, que podem ser trocados por benefícios exclusivos, como produtos da cantina. A plataforma visa facilitar a gestão financeira e incentivar o engajamento dentro da comunidade universitária.
 
 ## 📂 Estrutura de Pastas 
 
@@ -94,7 +96,7 @@ Servidor em Node.js responsável por processar os dados do app.
 🎨 Frontend
 Aplicativo Android desenvolvido no Android Studio, com integração via API.
 
-📂 NeonPay-Academy — Projeto completo do app
+📂 Bank Pay-Academy — Projeto completo do app
 
 📖 README.MD - Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.😊
 
