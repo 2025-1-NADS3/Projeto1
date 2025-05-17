@@ -3,6 +3,7 @@ package br.com.neonpay.neonpayacademy;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import br.com.neonpay.neonpayacademy.model.Servico;
 public class AsaServiceCartActivity extends AppCompatActivity implements CarrinhoAdapter.OnItemDeleteClickListener {
 
     // Declaração das variáveis dos elementos da interface
+    private ImageView imgVoltar;
     private RecyclerView recyclerCarrinho;
     private CarrinhoAdapter adapter;
     private ArrayList<Servico> listaCarrinho;
@@ -39,10 +41,16 @@ public class AsaServiceCartActivity extends AppCompatActivity implements Carrinh
         });
 
         // Inicialização dos componentes da interface
+        imgVoltar = findViewById(R.id.imgVoltar);
         recyclerCarrinho = findViewById(R.id.recyclerCarrinho);
         recyclerCarrinho.setLayoutManager(new LinearLayoutManager(this));
         txtTotalCarrinho = findViewById(R.id.txtTotalCarrinho);
         btnPagamento = findViewById(R.id.btnPagamento);
+
+        // Botão (imagem) para retornar à tela anterior
+        imgVoltar.setOnClickListener(view -> {
+            finish();
+        });
 
         // Recebe a lista do carrinho pela Intent
         listaCarrinho = (ArrayList<Servico>) getIntent().getSerializableExtra("carrinho");
