@@ -115,7 +115,7 @@ export const getPerfil = async (req, res) => {
 
     try {
         const [result] = await db.execute(
-            "SELECT id, nome, cpf, email, telefone FROM usuarios WHERE id = ?", [id]
+            "SELECT id, nome, cpf, email, telefone, chave_pix FROM usuarios WHERE id = ?", [id]
         );
 
         if (result.length === 0) {
