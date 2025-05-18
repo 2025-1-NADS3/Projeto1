@@ -19,6 +19,7 @@ public class Canteen implements Serializable {
         this.imagemNome = imagemNome;
     }
 
+    // Get's da classe Canteen
     public int getId() {
         return id;
     }

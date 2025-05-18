@@ -1,5 +1,6 @@
 package br.com.neonpay.neonpayacademy.model;
 
+// Classe ExtractItem
 public class ExtractItem {
     public enum Tipo {
         ENTRADA, SAIDA
@@ -11,6 +12,7 @@ public class ExtractItem {
     private Tipo tipo;
     private String chavePix;
 
+    // Construtor
     public ExtractItem(String descricao, String data, String valor, Tipo tipo, String chavePix) {
         this.descricao = descricao;
         this.data = data;
@@ -19,6 +21,7 @@ public class ExtractItem {
         this.chavePix = chavePix;
     }
 
+    // Get's da classe ExtractItem
     public String getDescricao() {
         return descricao;
     }
