@@ -126,7 +126,7 @@ public class CanteenConfirmPasswordActivity extends AppCompatActivity {
                     try {
                         String mensagem = response.getString("mensagem");
                         String descricao = response.getString("descricao");
-                        int valorTotal = response.getInt("valor_total");
+                        double valorTotal = response.getDouble("valor_total");
                         int senhaPedido = response.getInt("senha_pedido");
                         String data = response.getString("data");
                         String chave_pix = response.getString("chave_pix");
