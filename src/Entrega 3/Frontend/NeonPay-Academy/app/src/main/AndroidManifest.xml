@@ -16,6 +16,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".RedeemPointsReceiptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RedeemPointsConfirmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RedeemPointsIntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RedeemPointsActivity"
+            android:exported="false" />
+        <activity
             android:name=".FecapServicesActivity"
             android:exported="false" />
         <activity
