@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_white"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/txtDialogTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appTituloDialogDeletarChave"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/appColorPreto"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/txtDialogMensagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/appTituloDialogMensagemDeletarChave"
+        android:textSize="14sp"
+        android:textColor="@color/appColorCinza"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmarExclusao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/appBtnExcluirDialog"
+        android:textColor="@color/appColorBranco"
+        android:backgroundTint="@color/appColorRoxo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/appBtnCancelar"
+        android:textColor="@color/appColorRoxo"
+        android:backgroundTint="@color/appColorBranco"
+        android:strokeColor="@color/appColorRoxo"
+        android:layout_marginTop="8dp" />
+</LinearLayout>

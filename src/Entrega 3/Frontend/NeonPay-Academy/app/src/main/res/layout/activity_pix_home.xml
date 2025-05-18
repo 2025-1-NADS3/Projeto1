@@ -172,7 +172,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Cadastrar"
+        android:text="@string/appBtnCadastrar"
         android:textColor="@color/appColorPreto"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -203,7 +203,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/ic_pix"
+                android:src="@drawable/ic_criar"
                 android:contentDescription="@string/appIcQRCode" />
 
             <TextView
@@ -211,9 +211,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="monospace"
-                android:text="Chave Pix"
+                android:text="@string/appIcCriarChave"
                 android:textColor="@color/appColorPreto" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/fundo_botao_padrao"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:onClick="checarChavePix"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_chave"
+                android:contentDescription="@string/appIcQRCode" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="monospace"
+                android:text="@string/appIcMinhaChave"
+                android:textAlignment="center"
+                android:textColor="@color/appColorPreto" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
