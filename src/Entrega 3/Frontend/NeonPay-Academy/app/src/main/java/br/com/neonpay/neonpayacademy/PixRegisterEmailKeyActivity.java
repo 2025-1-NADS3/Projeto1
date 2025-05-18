@@ -65,6 +65,7 @@ public class PixRegisterEmailKeyActivity extends AppCompatActivity {
         // Passa os dados para a tela PixKeyConfirmationActivity
         Intent intent = new Intent(PixRegisterEmailKeyActivity.this, PixKeyConfirmationActivity.class);
         intent.putExtra("chave_pix", email);
+        intent.putExtra("tipo_chave_pix", "email");
         startActivity(intent);
     }
 

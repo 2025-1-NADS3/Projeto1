@@ -75,6 +75,7 @@ public class PixRegisterCpfKeyActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(PixRegisterCpfKeyActivity.this, PixKeyConfirmationActivity.class);
                 intent.putExtra("chave_pix", cpf);
+                intent.putExtra("tipo_chave_pix", "cpf");
                 startActivity(intent);
             }
         });

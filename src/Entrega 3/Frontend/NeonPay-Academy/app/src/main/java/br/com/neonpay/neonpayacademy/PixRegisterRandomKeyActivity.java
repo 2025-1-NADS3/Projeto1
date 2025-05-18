@@ -61,6 +61,7 @@ public class PixRegisterRandomKeyActivity extends AppCompatActivity {
 
         Intent intent = new Intent(PixRegisterRandomKeyActivity.this, PixKeyConfirmationActivity.class);
         intent.putExtra("chave_pix", chaveAleatoria);
+        intent.putExtra("tipo_chave_pix", "chave_aleatoria");
         startActivity(intent);
     }
 }

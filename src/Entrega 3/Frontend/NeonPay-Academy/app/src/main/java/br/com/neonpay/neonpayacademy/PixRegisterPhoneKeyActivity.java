@@ -70,6 +70,7 @@ public class PixRegisterPhoneKeyActivity extends AppCompatActivity {
         // Passa os dados para a tela PixKeyConfirmationActivity
         Intent intent = new Intent(PixRegisterPhoneKeyActivity.this, PixKeyConfirmationActivity.class);
         intent.putExtra("chave_pix", celular);
+        intent.putExtra("tipo_chave_pix", "celular");
         startActivity(intent);
     }
 
