@@ -32,6 +32,7 @@
     <!-- String da Tela Editar Perfil -->
     <string name="appTituloEditProfile">Editar Perfil</string>
     <string name="appBtnAtualizar"> Aplicar Mudanças </string>
+    <string name="appBtnSairConta">Sair da Conta</string>
     <string name="appBtnExcluir"> Excluir conta </string>
 
     <!-- String da Tela HomeActivity-->
