@@ -14,11 +14,10 @@
 
 ## ✏ Introdução
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/2b474310-248b-44f7-bfcd-ebd54d561338" alt="image" />
+  <img src="https://github.com/user-attachments/assets/dffb5ab1-887d-493d-9cec-754eb9874957" alt="image" />
 </div>
-
-
   
+
 ## 🔎 Descrição
 
 Bank Pay Academy é um aplicativo financeiro voltado para o ambiente acadêmico, que permite aos alunos realizarem pagamentos de serviços e produtos da instituição de forma simples e segura, integrado à API. Além dos pagamentos, os estudantes acumulam pontos a cada transação, que podem ser trocados por benefícios exclusivos, como produtos da cantina. A plataforma visa facilitar a gestão financeira e incentivar o engajamento dentro da comunidade universitária.
