@@ -16,6 +16,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".PixKeyConfirmDeleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixKeyDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NoPixKeyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PixKeyListActivity"
+            android:exported="false" />
+        <activity
             android:name=".CanteenReceiptActivity"
             android:exported="false" />
         <activity
