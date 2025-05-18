@@ -44,13 +44,15 @@
     <string name="appMascaraPonto">0</string>
     <string name="appTituloGrafico">Acumulo de pontos em 2025</string>
 
-    <!-- String da Tela PixTransferActivity -->
+    <!-- String da Tela PixHomeActivity -->
     <string name="appTituloTelaPix">Área Pix</string>
     <string name="appTextoTelaPix"> Envie e receba pagamentos em instantes.</string>
     <string name="appTituloEnviar">Enviar</string>
     <string name="appTituloReceber">Receber</string>
     <string name="appIcTransferir">Transferir</string>
     <string name="appIcQRCode">QR Code</string>
+    <string name="appIcCriarChave">Criar Chave</string>
+    <string name="appIcMinhaChave">Minha Chave</string>
 
     <!-- String da Tela ConfirmPixTransferActivity-->
     <string name="appTituloConfirmeTransferirPix">Confirme sua transferência</string>
@@ -192,6 +194,24 @@
     <!-- String da Tela item_canteen.xml-->
     <string name="appSubTituloDescricaoItem">Descrição do item</string>
 
+    <!-- String da Tela NoPixKeyActivity-->
+    <string name="appTituloChavePix">Chave Pix</string>
+    <string name="appTituloMinhaChavePix">Minha chave</string>
+    <string name="appSubtituloNaoChavePix">Você ainda não possui nenhuma chave.</string>
+    <string name="appSubtituloMinhaChavePix">Gerencie suas chaves para receber transferências pelo Pix.</string>
+
+    <!-- String da Tela PixKeyConfirmDeleteActivity -->
+    <string name="appSubConfirmeExclusaoChave">Confirme a exclusão com sua senha de movimentação.</string>
+
+    <!-- String da Tela PixKeyDetailsActivity -->
+    <string name="appSubDetalheChave">Visão geral da sua chave Pix.</string>
+    <string name="appBtnExcluirChavePix">Excluir chave Pix</string>
+
+    <!-- String da Tela dialog_confirm_delete_key_pix.xml-->
+    <string name="appTituloDialogDeletarChave">Excluir chave Pix?</string>
+    <string name="appTituloDialogMensagemDeletarChave">Você pode a qualquer momento criar uma outra chave.</string>
+    <string name="appBtnExcluirDialog">Excluir</string>
+    <string name="appBtnCancelar">Cancelar</string>
 
     <!-- Cores do Projeto -->
     <color name="appColorAzul">#0F91FE</color>
