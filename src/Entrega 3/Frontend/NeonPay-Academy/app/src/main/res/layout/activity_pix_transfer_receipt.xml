@@ -50,7 +50,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/concluido"
+        app:srcCompat="@drawable/img_concluido"
         app:layout_constraintTop_toBottomOf="@+id/frameLayoutPix"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -98,24 +98,16 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtBanco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/appTxtBanco"
-            android:textSize="14sp"
-            android:textColor="@color/appColorCinza" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnCompartilhar"
+        android:id="@+id/btnBaixarComprovante"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginTop="16dp"
-        android:text="@string/appbtnCompartilhar"
+        android:text="@string/appBtnBaixarComprovante"
         android:textSize="16sp"
         android:textColor="@color/appColorBranco"
         android:backgroundTint="@color/appColorRoxo"
@@ -134,7 +126,7 @@
         android:textSize="16sp"
         android:textColor="@color/appColorPreto"
         android:backgroundTint="@color/appColorBranco"
-        app:layout_constraintTop_toBottomOf="@id/btnCompartilhar"
+        app:layout_constraintTop_toBottomOf="@id/btnBaixarComprovante"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
