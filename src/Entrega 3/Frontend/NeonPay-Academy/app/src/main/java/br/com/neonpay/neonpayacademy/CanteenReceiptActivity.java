@@ -7,6 +7,7 @@ import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,7 +28,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class CanteenReceiptActivity extends AppCompatActivity {
 
@@ -38,6 +43,7 @@ public class CanteenReceiptActivity extends AppCompatActivity {
     private String valor, chavePix, nomeServico, data;
     private String nome, email, cpf;
     private File pdfFile;
+    double valorTotal;
     private int senhaPedido;
     private ArrayList<File> pdfFiles = new ArrayList<>();
 
@@ -83,6 +89,11 @@ public class CanteenReceiptActivity extends AppCompatActivity {
             email = bundle.getString("email", "Email não informado");
             senhaPedido = bundle.getInt("senha_pedido", 0);
 
+            // Exibe o valor total na tela
+            valorTotal = bundle.getDouble("valor_total", 0);
+            txtValor.setText(formatarValor(valorTotal));
+            txtSenhaPedido.setText("Senha do Pedido: " + senhaPedido);
+
             // Recebe os itens e gera os PDFs
             String itensJsonString = bundle.getString("itens");
             if (itensJsonString != null) {
@@ -90,6 +101,7 @@ public class CanteenReceiptActivity extends AppCompatActivity {
                     JSONArray itensArray = new JSONArray(itensJsonString);
 
                     ArrayList<String> listaItensFormatados = new ArrayList<>();
+                    String precoFormatado = "";
                     if (itensJsonString != null) {
                         try {
 
@@ -98,7 +110,7 @@ public class CanteenReceiptActivity extends AppCompatActivity {
                                 String titulo = itensObj.getString("titulo");
                                 double preco = itensObj.getDouble("preco");
 
-                                String precoFormatado = formatarValor(preco);
+                                precoFormatado = formatarValor(preco);
                                 listaItensFormatados.add(titulo + " - " + precoFormatado);
                             }
 
@@ -118,12 +130,9 @@ public class CanteenReceiptActivity extends AppCompatActivity {
                     Toast.makeText(this, "Erro ao processar serviços.", Toast.LENGTH_SHORT).show();
                 }
             }
-        }
 
-        // Exibe o valor total na tela
-        int valorTotal = bundle.getInt("valor_total", 0);
-        txtValor.setText(formatarValor(valorTotal));
-        txtSenhaPedido.setText("Senha do Pedido: " + senhaPedido);
+
+        }
 
         // Botão para compartilhar o pdf
         btnBaixarComprovante.setOnClickListener(v -> {
@@ -171,11 +180,11 @@ public class CanteenReceiptActivity extends AppCompatActivity {
         }
 
         y += 20;
-        canvas.drawText("Valor Total: " + txtValor.getText().toString(), 50, y, paint);
+        canvas.drawText("Valor Total: " + txtValor.getText(), 50, y, paint);
         y += 20;
         canvas.drawText("Chave PIX: " + chavePix, 50, y, paint);
         y += 20;
-        canvas.drawText("Data: " + data, 50, y, paint);
+        canvas.drawText("Data: " + converterDataNascimento(data), 50, y, paint);
         y += 30;
         canvas.drawText("────────────────────────────────────", 50, y, paint);
         y += 30;
@@ -222,6 +231,20 @@ public class CanteenReceiptActivity extends AppCompatActivity {
     private String formatarValor(double valor) {
         DecimalFormat df = new DecimalFormat("R$ #,##0.00");
         return df.format(valor);
+    }
+
+    // Função para converter data de nascimento (yyyy-MM-dd) para (dd/MM/YYYY)
+    private String converterDataNascimento(String dataNascimento) {
+        SimpleDateFormat formatoEntrada = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        SimpleDateFormat formatoSaida = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+        try {
+            Date data = formatoEntrada.parse(dataNascimento);
+            return formatoSaida.format(data);
+        } catch (ParseException e) {
+            Log.e("Registro", "Erro ao converter data: " + dataNascimento, e);
+            return null;
+        }
     }
 
 }

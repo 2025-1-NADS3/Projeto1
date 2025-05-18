@@ -7,6 +7,7 @@ import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,8 +34,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import br.com.neonpay.neonpayacademy.utils.SharedPrefsHelper;
@@ -164,7 +169,7 @@ public class AsaServiceReceiptActivity extends AppCompatActivity {
         y += 20;
         canvas.drawText("Chave PIX: " + chavePix, 50, y, paint);
         y += 20;
-        canvas.drawText("Data: " + data, 50, y, paint);
+        canvas.drawText("Data: " + converterDataNascimento(data), 50, y, paint);
         y += 30;
         canvas.drawText("────────────────────────────────────", 50, y, paint);
         y += 30;
@@ -212,6 +217,20 @@ public class AsaServiceReceiptActivity extends AppCompatActivity {
     private String formatarValor(double valor) {
         DecimalFormat df = new DecimalFormat("R$ #,##0.00");
         return df.format(valor);
+    }
+
+    // Função para converter data de nascimento (yyyy-MM-dd) para (dd/MM/YYYY)
+    private String converterDataNascimento(String dataNascimento) {
+        SimpleDateFormat formatoEntrada = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        SimpleDateFormat formatoSaida = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+
+        try {
+            Date data = formatoEntrada.parse(dataNascimento);
+            return formatoSaida.format(data);
+        } catch (ParseException e) {
+            Log.e("Registro", "Erro ao converter data: " + dataNascimento, e);
+            return null;
+        }
     }
 
 }
