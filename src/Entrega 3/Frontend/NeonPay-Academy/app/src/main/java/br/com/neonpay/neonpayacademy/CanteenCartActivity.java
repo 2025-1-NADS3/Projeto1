@@ -49,7 +49,7 @@ public class CanteenCartActivity extends AppCompatActivity {
         txtTotalCarrinho = findViewById(R.id.txtTotalCarrinho);
         btnPagamento = findViewById(R.id.btnPagamento);
 
-        // Botão para retornar à tela anterior
+        // Botão (imagem) para retornar à tela anterior
         imgVoltar.setOnClickListener(view -> {
             finish();
         });
