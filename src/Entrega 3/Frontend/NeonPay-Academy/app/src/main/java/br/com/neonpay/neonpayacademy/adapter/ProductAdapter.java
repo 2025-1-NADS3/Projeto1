@@ -21,16 +21,16 @@ import br.com.neonpay.neonpayacademy.model.Product;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
     // Interface para capturar o clique no botão trocar
-    public interface OnComprarClickListener {
-        void onComprarClick(Product item);
+    public interface OnTrocarClickListener {
+        void onTrocarClick(Product item);
     }
 
     private Context context;
     private List<Product> listaProduct;
-    private OnComprarClickListener listener;
+    private OnTrocarClickListener listener;
 
     // Construtor do ProductAdapter
-    public ProductAdapter(Context context, List<Product> listaProduct, OnComprarClickListener listener) {
+    public ProductAdapter(Context context, List<Product> listaProduct, OnTrocarClickListener listener) {
         this.context = context;
         this.listaProduct = listaProduct;
         this.listener = listener;
@@ -57,7 +57,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         // Ao clicar no botão de trocar o produto, chamara a interface para comprar o produto
         holder.btnTrocar.setOnClickListener(v -> {
             if (listener != null) {
-                listener.onComprarClick(item);
+                listener.onTrocarClick(item);
             }
         });
     }
