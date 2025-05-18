@@ -91,34 +91,21 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnCompartilhar"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/appbtnCompartilhar"
-        android:textSize="16sp"
-        android:textColor="@color/appColorBranco"
-        android:backgroundTint="@color/appColorRoxo"
-        app:layout_constraintTop_toBottomOf="@id/layoutDestinatario"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnMenu"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/appBtnMenu"
-        android:textSize="16sp"
-        android:textColor="@color/appColorPreto"
         android:backgroundTint="@color/appColorBranco"
-        app:layout_constraintTop_toBottomOf="@id/btnCompartilhar"
+        android:text="@string/appBtnMenu"
+        android:textColor="@color/appColorPreto"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/layoutDestinatario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
