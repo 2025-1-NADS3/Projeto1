@@ -213,6 +213,14 @@
     <string name="appBtnExcluirDialog">Excluir</string>
     <string name="appBtnCancelar">Cancelar</string>
 
+    <!-- String da Tela FecapServicesActivity -->
+    <string name="appTituloServicosFecap">Área de Serviços Fecap</string>
+    <string name="appSubTituloServicosFecap">Serviços Acadêmicos na palma da sua mão</string>
+    <string name="appTituloCantina">Cantina</string>
+    <string name="appIcCantina">Serviços Cantina</string>
+    <string name="appTituloAsa">Asa</string>
+    <string name="appIcAsa">Serviços ASA</string>
+
     <!-- Cores do Projeto -->
     <color name="appColorAzul">#0F91FE</color>
     <color name="appColorRoxo">#8A04BD</color>
