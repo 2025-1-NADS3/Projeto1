@@ -6,6 +6,7 @@ import userRoutes from './routes/userRoutes.js';
 import pixRoutes from './routes/pixRoutes.js';
 import asaRoutes from './routes/asaRoutes.js';
 import canteenRoutes from './routes/canteenRoutes.js';
+import productRoutes from './routes/productRoutes.js';
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use('/api', userRoutes);
 app.use('/pix', pixRoutes);
 app.use('/asa', asaRoutes);
 app.use('/cantina', canteenRoutes);
+app.use('/produto', productRoutes);
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
