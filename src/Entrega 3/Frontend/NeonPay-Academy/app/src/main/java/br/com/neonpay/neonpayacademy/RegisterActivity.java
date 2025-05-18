@@ -193,12 +193,11 @@ public class RegisterActivity extends AppCompatActivity {
         return (resto < 2) ? 0 : 11 - resto;
     }
 
-    // Validação do Email aceitando apenas dominio com @edu
+    // Validação do Email aceitando apenas dominio com @edu.fecap.br
     private boolean validarEmail(String email) {
-        String regex = "^[\\w-\\.]+@edu\\.[\\w-]+\\.[a-zA-Z]{2,4}$";
+        String regex = "^[\\w.-]+@edu\\.fecap\\.br$";
         return email.matches(regex);
     }
-
     // Função para converter data de nascimento (dd/MM/YYYY) para (yyyy-MM-dd)
     private String converterDataNascimento(String dataNascimento) {
         SimpleDateFormat formatoEntrada = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
