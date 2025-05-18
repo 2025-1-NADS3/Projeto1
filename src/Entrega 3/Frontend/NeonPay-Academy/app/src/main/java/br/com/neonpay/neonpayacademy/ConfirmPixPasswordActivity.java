@@ -14,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -22,11 +23,14 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import br.com.neonpay.neonpayacademy.utils.SharedPrefsHelper;
 
 public class ConfirmPixPasswordActivity extends AppCompatActivity {
 
-    // Declaração das variáveis dos elementos da interface
+    // Declaração das variáveis dos elementos da interface e armazenamento de valores
     private ImageView imgVoltar;
     private EditText txtSenha;
     private Button btnConfirmarPagamento;
@@ -93,16 +97,16 @@ public class ConfirmPixPasswordActivity extends AppCompatActivity {
             return;
         }
 
-        // Criando requisição POST para o servidor
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, url, json,
                 response -> {
-                    Toast.makeText(this, "Pix enviado com sucesso!", Toast.LENGTH_LONG).show();
-
-                    // Avança para a tela de comprovante, passando o valor e o nome destinatario
-                    Intent intent = new Intent(ConfirmPixPasswordActivity.this, PixTransferReceiptActivity.class);
-                    intent.putExtra("valor", valor);
-                    intent.putExtra("nome_destinatario", nomeDestinatario);
-                    startActivity(intent);
+                    try {
+                        String data = response.getString("data"); // Recebendo data como resposta da rota
+                        Toast.makeText(this, "Pix enviado com sucesso!", Toast.LENGTH_LONG).show();
+                        buscarDadosUsuario(data);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Erro ao processar resposta do servidor.", Toast.LENGTH_SHORT).show();
+                    }
                 },
                 error -> {
                     error.printStackTrace();
@@ -110,7 +114,49 @@ public class ConfirmPixPasswordActivity extends AppCompatActivity {
                 }
         );
 
-        RequestQueue queue = Volley.newRequestQueue(this);
-        queue.add(request);
+        Volley.newRequestQueue(this).add(request);
+    }
+
+    // Função para consultar os dados do usuario, passando data como parametro
+    private void buscarDadosUsuario(String data) {
+        String url = "http://10.0.2.2:3000/api/perfil";
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                response -> {
+                    try {
+                        String nomeRemetente = response.getString("nome");
+                        String cpfRemetente = response.getString("cpf");
+                        String chavePixRemetente = response.getString("chave_pix");
+
+                        // Vai para a tela de comprovante com todos os dados
+                        Intent intent = new Intent(ConfirmPixPasswordActivity.this, PixTransferReceiptActivity.class);
+                        intent.putExtra("valor", valor);
+                        intent.putExtra("nome_destinatario", nomeDestinatario);
+                        intent.putExtra("chave_pix_destinatario", chavePix);
+                        intent.putExtra("data_transacao", data);
+                        intent.putExtra("nome_remetente", nomeRemetente);
+                        intent.putExtra("cpf_remetente", cpfRemetente);
+                        intent.putExtra("chave_pix_remetente", chavePixRemetente);
+                        startActivity(intent);
+                        finish();
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Toast.makeText(this, "Erro ao processar dados do usuário.", Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> {
+                    error.printStackTrace();
+                    Toast.makeText(this, "Erro ao buscar dados do perfil.", Toast.LENGTH_SHORT).show();
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> headers = new HashMap<>();
+                headers.put("Authorization", "Bearer " + SharedPrefsHelper.getToken(ConfirmPixPasswordActivity.this));
+                return headers;
+            }
+        };
+
+        Volley.newRequestQueue(this).add(request);
     }
 }
