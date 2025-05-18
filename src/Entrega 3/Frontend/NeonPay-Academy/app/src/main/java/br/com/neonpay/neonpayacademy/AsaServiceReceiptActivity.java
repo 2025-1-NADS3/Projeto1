@@ -68,6 +68,19 @@ public class AsaServiceReceiptActivity extends AppCompatActivity {
         btnBaixarComprovante = findViewById(R.id.btnBaixarComprovante);
         btnMenu = findViewById(R.id.btnMenu);
 
+        // Botão (imagem) para retornar à HomeActivity
+        imgVoltar.setOnClickListener(view -> {
+            // Invoca a "HomeActivity"
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        });
+
+        // Botão para retornar à HomeActivity
+        btnMenu.setOnClickListener(view -> {
+            // Invoca a "HomeActivity"
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        });
 
         // Receber dados da Intent
         Bundle bundle = getIntent().getExtras();

@@ -71,8 +71,9 @@ public class AsaServiceActivity extends AppCompatActivity {
         // Botão para retornar à HomeActivity
         imgVoltar.setOnClickListener(view -> {
             // Invoca a "HomeActivity"
-            Intent intent = new Intent(this, HomeActivity.class);
+            Intent intent = new Intent(this, FecapServicesActivity.class);
             startActivity(intent);
+            finish();
         });
 
         // Cliando no icone de carrinho, leva para a tela de Carrinho (AsaServiceCartActivity)
