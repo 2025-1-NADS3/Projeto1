@@ -171,7 +171,7 @@ public class RedeemPointsReceiptActivity extends AppCompatActivity {
         y += 20;
         canvas.drawText("Chave PIX: " + chavePix, 50, y, paint);
         y += 20;
-        canvas.drawText("Data: " + converterDataNascimento(data), 50, y, paint);
+        canvas.drawText("Data: " + converterData(data), 50, y, paint);
         y += 30;
         canvas.drawText("────────────────────────────────────", 50, y, paint);
         y += 30;
@@ -214,8 +214,8 @@ public class RedeemPointsReceiptActivity extends AppCompatActivity {
         }
     }
 
-    // Função para converter data de nascimento (yyyy-MM-dd) para (dd/MM/YYYY)
-    private String converterDataNascimento(String dataNascimento) {
+    // Função para converter data (yyyy-MM-dd) para (dd/MM/YYYY)
+    private String converterData(String dataNascimento) {
         SimpleDateFormat formatoEntrada = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         SimpleDateFormat formatoSaida = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
 
