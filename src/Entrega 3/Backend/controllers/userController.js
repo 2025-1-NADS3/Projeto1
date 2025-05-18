@@ -227,7 +227,7 @@ export async function buscarUsuarioPorChavePix(req, res) {
 }
 
 export async function cadastrarChavePix(req, res) {
-    const { usuario_id, chave_pix, senha } = req.body;
+    const { usuario_id, chave_pix, tipo_chave_pix, senha } = req.body;
 
     try {
         const [userRows] = await db.execute("SELECT * FROM usuarios WHERE id = ?", [usuario_id]);
@@ -247,7 +247,7 @@ export async function cadastrarChavePix(req, res) {
             return res.status(400).json({ erro: "Chave Pix já cadastrada por outro usuário." });
         }
 
-        await db.execute("UPDATE usuarios SET chave_pix = ? WHERE id = ?", [chave_pix, usuario_id]);
+        await db.execute("UPDATE usuarios SET chave_pix = ?, tipo_chave_pix = ? WHERE id = ?", [chave_pix, tipo_chave_pix, usuario_id]);
 
         res.json({ mensagem: "Chave Pix cadastrada com sucesso." });
 
@@ -256,3 +256,53 @@ export async function cadastrarChavePix(req, res) {
     }
 }
 
+export async function buscarChavePix(req, res) {
+    const { usuario_id } = req.params;
+
+    if (!usuario_id || isNaN(Number(usuario_id))) {
+        return res.status(400).json({ erro: "ID do usuário inválido." });
+    }
+
+    try {
+        const [rows] = await db.execute(
+            "SELECT chave_pix, tipo_chave_pix FROM usuarios WHERE id = ?",
+            [usuario_id]
+        );
+
+        if (rows.length === 0 || !rows[0].chave_pix) {
+            return res.status(404).json({ erro: "Usuário não possui chave PIX cadastrada." });
+        }
+
+        return res.status(200).json({ chave_pix: rows[0].chave_pix, tipo_chave_pix: rows[0].tipo_chave_pix });
+
+    } catch (error) {
+        console.error("Erro ao buscar chave PIX:", error);
+        return res.status(500).json({ erro: "Erro interno ao buscar chave PIX." });
+    }
+}
+
+export async function excluirChavePix(req, res) {
+    const { usuario_id, senha } = req.body;
+
+    try {
+
+        const [userRows] = await db.execute("SELECT * FROM usuarios WHERE id = ?", [usuario_id]);
+        if (userRows.length === 0) {
+            return res.status(400).json({ erro: "Usuário não encontrado." });
+        }
+
+        const user = userRows[0];
+
+        const senhaCorreta = await bcrypt.compare(senha, user.senha);
+        if (!senhaCorreta) {
+            return res.status(401).json({ erro: "Senha incorreta." });
+        }
+
+        await db.execute("UPDATE usuarios SET chave_pix = NULL, tipo_chave_pix = NULL WHERE id = ?", [usuario_id]);
+
+        res.json({ mensagem: "Chave Pix excluída com sucesso." });
+
+    } catch (error) {
+        res.status(500).json({ erro: error.message });
+    }
+}
