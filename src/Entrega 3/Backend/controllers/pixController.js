@@ -106,10 +106,10 @@ export async function enviarPix(req, res) {
             [destinatario.id, valor, user.chave_pix || "Sem chave"]
         );
 
-        res.json({ mensagem: "Pix enviado com sucesso." });
+        res.json({ mensagem: "Pix enviado com sucesso.", data: dataTransacao });
 
     } catch (error) {
-        res.status(500).json({ erro: error.message });
+        res.status(500).json({ erro: error.message }); 
     }
 }
 
