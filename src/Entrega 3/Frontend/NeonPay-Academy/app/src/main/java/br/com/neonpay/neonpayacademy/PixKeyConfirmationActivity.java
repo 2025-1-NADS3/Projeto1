@@ -32,7 +32,7 @@ public class PixKeyConfirmationActivity extends AppCompatActivity {
     // Declaração das variáveis dos elementos da interface
     private ImageView imgVoltar;
     private EditText txtSenha;
-    private String chave_pix;
+    private String chave_pix, tipo_chave_pix;
     private int idUsuario;
     private Button btnConfirmarPagamento;
     private String token;
@@ -57,11 +57,11 @@ public class PixKeyConfirmationActivity extends AppCompatActivity {
         // Recebendo os dados da Tela que foram enviados pelo Intent:
         Bundle bundle = getIntent().getExtras();
         chave_pix = bundle.getString("chave_pix");
+        tipo_chave_pix = bundle.getString("tipo_chave_pix");
 
         // Recupera o token
         token = SharedPrefsHelper.getToken(this);
 
-        token = SharedPrefsHelper.getToken(this);
         if (token == null) {
             Toast.makeText(this, "Token não encontrado. Faça login novamente.", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, LoginActivity.class));
@@ -97,6 +97,7 @@ public class PixKeyConfirmationActivity extends AppCompatActivity {
         try {
             json.put("usuario_id", idUsuario);
             json.put("chave_pix", chavePix);
+            json.put("tipo_chave_pix", tipo_chave_pix);
             json.put("senha", senha);
         } catch (JSONException e) {
             e.printStackTrace();
