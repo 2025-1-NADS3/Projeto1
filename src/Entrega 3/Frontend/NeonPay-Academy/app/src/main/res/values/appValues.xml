@@ -76,7 +76,7 @@
 
     <!-- String da Tela ConfirmPixPasswordActivity-->
     <string name="appTituloConfirmeSenha">Digita sua senha</string>
-    <string name="appSubtituloConfirmeSenha">Confirme a transação com sua senha</string>
+    <string name="appSubtituloConfirmeSenha">Confirme a transação com sua senha.</string>
 
     <!-- String da Tela PixTransferActivity-->
     <string name="appTituloTransferirPix">Transferir com Pix</string>
@@ -220,6 +220,27 @@
     <string name="appIcCantina">Serviços Cantina</string>
     <string name="appTituloAsa">Asa</string>
     <string name="appIcAsa">Serviços ASA</string>
+
+    <!-- String da Tela RedeemPointsIntroActivity-->
+    <string name="appTituloIntroRedeemPoints">Troque seus Pontos!</string>
+    <string name="appSubtituloIntroRedeemPoints">A cada R$5,00 gastos no app, você ganha 1 ponto. Os pontos são acumulativos, não expiram e podem ser trocados por produtos da Atlética da FECAP. Você pode trocar apenas 1 produto por vez. Após finalizar a sua troca, mostre o código gerado para algum membro da Atlética e retire seu produto.</string>
+
+    <!-- String da Tela RedeemPointsActivity-->
+    <string name="appTituloRedeemPoints">Trocar Pontos</string>
+    <string name="appDescRecyclerProdutos">Lista de itens dos produtos</string>
+    appTxtStatusCanteen
+
+    <!-- String da Tela RedeemPointsReceiptActivity-->
+    <string name="appTxtStatusRedeem">Troca realizado com sucesso!</string>
+    <string name="appMascaraPontos">0 pontos</string>
+
+    <!-- String da Tela dialog_confirm_delete_redeem_point_product.xml-->
+    <string name="appTituloDialogTituloPonto">Deseja trocar seus pontos?</string>
+    <string name="appTituloDialogMensagemSeuPonto">Seu saldo de Pontos é:</string>
+    <string name="appTituloDialogDebitado">Após a confirmação, serão debitados 0 pontos do seu saldo atual.</string>
+
+    <!-- String da Tela item_product.xml-->
+    <string name="appBtnTrocar">Trocar</string>
 
     <!-- Cores do Projeto -->
     <color name="appColorAzul">#0F91FE</color>
