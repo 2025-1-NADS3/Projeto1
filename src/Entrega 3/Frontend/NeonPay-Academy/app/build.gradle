@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'br.com.neonpay.neonpayacademy'
+    namespace 'br.com.bankpay.bankpayacademy'
     compileSdk 35
 
     defaultConfig {
-        applicationId "br.com.neonpay.neonpayacademy"
+        applicationId "br.com.bankpay.bankpayacademy"
         minSdk 24
         targetSdk 35
         versionCode 1
