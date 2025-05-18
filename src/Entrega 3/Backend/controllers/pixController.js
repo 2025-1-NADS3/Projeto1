@@ -2,6 +2,7 @@ import db from '../config/db.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import crypto from 'crypto';
 
 dotenv.config();
 const JWT_SECRET = process.env.JWT_SECRET;
@@ -9,8 +10,8 @@ const JWT_SECRET = process.env.JWT_SECRET;
 export async function gerarCobranca(req, res) {
     const { usuario_id, valor } = req.body;
     try {
-        const fakeQrCode = "https://fake.qr/pix";
-        const fakeChave = "pix@neonpay.com";
+        const fakeQrCode = "https://fake.qrcode/pix";
+        const fakeChave = crypto.randomUUID();
         
         const [result] = await db.execute(
             "INSERT INTO transacoes (usuario_id, tipo, valor, descricao, chave_pix, status) VALUES (?, 'entrada', ?, 'Depósito via Pix', ?, 'pendente')",
