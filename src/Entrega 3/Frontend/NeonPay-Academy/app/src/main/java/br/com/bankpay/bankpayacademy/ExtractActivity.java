@@ -29,10 +29,11 @@ import br.com.bankpay.bankpayacademy.utils.SharedPrefsHelper;
 
 public class ExtractActivity extends AppCompatActivity {
 
-    // Declaração das variáveis dos elementos da interface
+    // Declaração das variáveis dos elementos da interface e armazenamento de valores
     private RecyclerView recyclerExtrato;
     private ImageView imgVoltar;
     private TextView txtValorSaldo;
+    private TextView txtMes;
     private int idUsuario;
 
     @Override
@@ -44,6 +45,7 @@ public class ExtractActivity extends AppCompatActivity {
         txtValorSaldo = findViewById(R.id.txtValorSaldo);
         recyclerExtrato = findViewById(R.id.recyclerExtrato);
         imgVoltar = findViewById(R.id.imgVoltar);
+        txtMes = findViewById(R.id.txtMes);
 
         // Recupera o ID do usuário a partir do SharedPrefsHelper
         idUsuario = SharedPrefsHelper.getUsuarioId(this);
@@ -89,10 +91,24 @@ public class ExtractActivity extends AppCompatActivity {
                             String valorFormatado = (tipo == ExtractItem.Tipo.ENTRADA ? "R$ +" : "R$ -") +
                                     String.format(Locale.getDefault(), "%.2f", valorDouble).replace(".", ",");
 
+                            // Array dos meses 
+                            String[] nomesMeses = {
+                                    "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+                                    "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+                            };
+
                             // Formatar data para dd/MM/yyyy
                             String dataOriginal = obj.getString("data");
                             String[] partes = dataOriginal.substring(0, 10).split("-");
                             String dataFormatada = partes[2] + "/" + partes[1] + "/" + partes[0];
+
+                            // Definir nome do mês
+                            int mesIndex = Integer.parseInt(partes[1]) - 1;
+                            String nomeMes = nomesMeses[mesIndex];
+
+                            if (i == 0) {
+                                txtMes.setText(nomeMes);
+                            }
 
                             // Adiciona o item à lista
                             lista.add(new ExtractItem(descricao, dataFormatada, valorFormatado, tipo, chavePix));
