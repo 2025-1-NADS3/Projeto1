@@ -89,59 +89,60 @@ Usado principalmente em: `LoginActivity`, `EditProfileActivity`, `PixTransferAct
 
 ---
 
+
 ## 🔁 Fluxo de Navegação
 
-MainActivity (Splash)
-↓
-WelcomeActivity (Boas-vindas)
-├── btnCadastrar → RegisterActivity
-└── btnEntrar → LoginActivity
-↓
-HomeActivity (Tela Inicial)
-├── PixHomeActivity
-│ ├── PixTransferActivity
-│ │ ├── ConfirmPixPasswordActivity
-│ │ ├── ConfirmPixTransferActivity
-│ │ └── PixTransferReceiptActivity
-│ └── PixIntroManageKeysActivity
-│ ├── PixIntroCreateKeyActivity
-│ │ ├── PixRegisterCpfKeyActivity
-│ │ ├── PixRegisterEmailKeyActivity
-│ │ ├── PixRegisterPhoneKeyActivity
-│ │ └── PixRegisterRandomKeyActivity
-│ ├── PixKeyListActivity
-│ │ ├── PixKeyDetailsActivity
-│ │ ├── PixKeyConfirmDeleteActivity
-│ │ └── PixKeySuccessActivity
-│ ├── PixConfirmationActivity
-│ ├── PixPaymentDetailsActivity
-│ ├── PixIntroSendReceiveActivity
-│ ├── PixChooseKeyTypeActivity
-│ ├── PixAddAmountActivity
-│ │ └── PixAddAmountReceiptActivity
-│ ├── PixConfirmAmountActivity
-│ └── NoPixKeyActivity
-│
-├── CanteenIntroActivity
-│ ├── CanteenActivity
-│ │ └── CanteenCartActivity
-│ │ ├── CanteenConfirmPasswordActivity
-│ │ └── CanteenReceiptActivity
-│
-├── AsaIntroActivity
-│ ├── AsaServiceActivity
-│ │ └── AsaServiceCartActivity
-│ │ ├── AsaServiceConfirmPasswordActivity
-│ │ └── AsaServiceReceiptActivity
-│
-├── RedeemPointsIntroActivity
-│ └── RedeemPointsActivity
-│ ├── RedeemPointsConfirmActivity
-│ └── RedeemPointsReceiptActivity
-│
-├── EditProfileActivity
-├── ExtractActivity (Extrato)
-└── FecapServicesActivity
+MainActivity (Splash)  
+↓  
+WelcomeActivity (Boas-vindas)  
+├── btnCadastrar → RegisterActivity  
+└── btnEntrar → LoginActivity  
+    ↓  
+  HomeActivity (Tela Inicial)  
+  ├── PixHomeActivity  
+  │   ├── PixTransferActivity  
+  │   │   ├── ConfirmPixPasswordActivity  
+  │   │   ├── ConfirmPixTransferActivity  
+  │   │   └── PixTransferReceiptActivity  
+  │   └── PixIntroManageKeysActivity  
+  │       ├── PixIntroCreateKeyActivity  
+  │       │   ├── PixRegisterCpfKeyActivity  
+  │       │   ├── PixRegisterEmailKeyActivity  
+  │       │   ├── PixRegisterPhoneKeyActivity  
+  │       │   └── PixRegisterRandomKeyActivity  
+  │       ├── PixKeyListActivity  
+  │       │   ├── PixKeyDetailsActivity  
+  │       │   ├── PixKeyConfirmDeleteActivity  
+  │       │   └── PixKeySuccessActivity  
+  │       ├── PixConfirmationActivity  
+  │       ├── PixPaymentDetailsActivity  
+  │       ├── PixIntroSendReceiveActivity  
+  │       ├── PixChooseKeyTypeActivity  
+  │       ├── PixAddAmountActivity  
+  │       │   └── PixAddAmountReceiptActivity  
+  │       ├── PixConfirmAmountActivity  
+  │       └── NoPixKeyActivity  
+  │  
+  ├── CanteenIntroActivity  
+  │   ├── CanteenActivity  
+  │   │   └── CanteenCartActivity  
+  │   │       ├── CanteenConfirmPasswordActivity  
+  │   │       └── CanteenReceiptActivity  
+  │  
+  ├── AsaIntroActivity  
+  │   ├── AsaServiceActivity  
+  │   │   └── AsaServiceCartActivity  
+  │   │       ├── AsaServiceConfirmPasswordActivity  
+  │   │       └── AsaServiceReceiptActivity  
+  │  
+  ├── RedeemPointsIntroActivity  
+  │   └── RedeemPointsActivity  
+  │       ├── RedeemPointsConfirmActivity  
+  │       └── RedeemPointsReceiptActivity  
+  │  
+  ├── EditProfileActivity  
+  ├── ExtractActivity (Extrato)  
+  └── FecapServicesActivity  
 
 
 ## 📦 APK de Instalação
