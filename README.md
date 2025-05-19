@@ -142,6 +142,14 @@ Após a instalação:
 - Conecte um dispositivo físico via USB (certifique-se que a **depuração USB** está ativada) ou configure um emulador no Android Studio.
 - Clique no botão **"Run"** (ícone ▶) para compilar e executar o aplicativo no dispositivo/emulador.
 
+##  CodeSandbox
+
+<p align="center">
+  <a href="https://codesandbox.io/SEU-LINK-AQUI" target="_blank">
+    <img src="https://img.shields.io/badge/abrir%20no-CodeSandbox-151515?style=for-the-badge&logo=codesandbox&logoColor=white" alt="Abrir no CodeSandbox"/>
+  </a>
+</p>
+
 ## 🎥 Demonstrações do App
 
 <p align="center">
