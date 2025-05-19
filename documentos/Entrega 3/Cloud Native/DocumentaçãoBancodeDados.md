@@ -9,7 +9,6 @@ Sistema de gestão de pagamentos, produtos e pontos acadêmicos.
 ```bash
 src/
 ├── /backend              ← Backend principal (produção)
-├── /backend-sandbox      ← Backend do CodeSandbox (desenvolvimento/teste)
 └── /frontend             ← Frontend (ex: React, Android, etc)
 ```
 
