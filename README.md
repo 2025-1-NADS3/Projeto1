@@ -111,12 +111,42 @@ Aplicativo Android desenvolvido no Android Studio, com integração via API.
 
 
 
-## 📖 Clique abaixo para ver nossas documentações e design
+## 🎨 Clique abaixo para ver nosso Mockup design, Storyboard e Fluxograma
 <br><a href="https://www.figma.com/design/fJi0BJh1UnpZ2pNsil4LDm/WireFrame--Grupo-1.?node-id=49-4&t=pewvPpg1QO1NQwo0-1">🎨 WireFrame </a></br>
 <br><a href="https://www.canva.com/design/DAGik0tm6I0/M8exD_9sd5LbMnnHM4bcGg/edit?utm_content=DAGik0tm6I0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">📔 StoryBoard </a></br>
 <br><a href="https://miro.com/welcomeonboard/YTNNSFdlVmtRTVJjNlBrelMvSFQ2WXU1SkVHQjNNNnZoYkp4ZmxuUXR5VWsxRzdsUFdueDIxM0tOa1p4dHpJSDFxSXlsVHFjSEJsdk1KYnNJQ01zTFBOR0s2YnNxSklQT2k4Y1dVZ1krTXdIYmw5RnFidTUxbFZFV3BqUmRJTkhQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=258966388391">👩‍💻 Fluxograma </a></br>
-<br><a href="https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%201/Cloud%20Native/DocumentacaoBackend.md">📖 Documentação Backend </a></br>
-<br><a href="https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%201/Mobile/DocumentacaoFrontend.md">📖 Documentação Frontend </a></br>
+
+## 📖 Documentações por Entrega e Disciplina
+
+### 📦 Entrega 1
+
+- 🌐 [Cloud Native - Documentação Backend](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%201/Cloud%20Native/DocumentacaoBackend.md)
+- 📱 [Mobile - Documentação Frontend](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%201/Mobile/DocumentacaoFrontend.md)
+- 🧪 [Teste de Software - Fluxograma](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%201/Teste%20de%20Software/Fluxograma.md)
+- 🖼️ [UX - Storyboard (imagem)](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%201/UX/StoryBoard%20-%20Grupo%201%20(3).png)
+- 🔗 [UX - Link do Storyboard (.txt)](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%201/UX/LinkStoryBoard.txt)
+
+---
+
+### 📦 Entrega 2
+
+- 🌐 [Cloud Native - Documentação Backend](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%202/Cloud%20Native/Documenta%C3%A7%C3%A3o%20Backend.md)
+- 📱 [Mobile - Documentação Frontend](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%202/Mobile/DocumentacaoFrontend.md)
+- 📱 [Mobile - Documentação Google Play](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%202/Mobile/Documenta%C3%A7%C3%A3o%20Google%20Play.md)
+- 🧪 [Teste de Software - Detalhamento dos Testes](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%202/Teste%20de%20Software/Detalhamento%20dos%20Testes.md)
+- 📄 [Teste de Software - Documentação PDF](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%202/Teste%20de%20Software/DOCUMENTA%C3%87%C3%83O%20DE%20TESTES%20DO%20PROJETO%20INTEGRADOR.%20(1).pdf)
+- 🖼️ [UX - Documentação.md](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%202/UX/Documenta%C3%A7%C3%A3o.md)
+- 🔗 [UX - Mockup Interativo (.txt)](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%202/UX/MOUCKUP%20INTERATIVO.txt)
+
+---
+
+### 📦 Entrega 3
+
+- 🌐 [Cloud Native - Documentação Geral](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%203/Cloud%20Native/Documenta%C3%A7%C3%A3o.md)
+- 🗄️ [Cloud Native - Documentação Banco de Dados](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%203/Cloud%20Native/Documenta%C3%A7%C3%A3oBancodeDados.md)
+- 📱 [Mobile - Documentação do App](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%203/Mobile/documenta%C3%A7%C3%A3o.md)
+- 🧪 [Teste de Software - Teste de Sistema (PDF)](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%203/Teste%20de%20Software/Teste%20de%20Sistema%20%E2%80%93%20BankPay%20Academy.pdf)
+- 🧠 [UX - Análise Heurística e Usabilidade (PDF)](https://github.com/2025-1-NADS3/Projeto1/blob/main/documentos/Entrega%203/UX/ANALISE%20DE%20HEURISTICA%20E%20USABILIDADE%20-%20GRUPO%201.pdf)
 
 ## 🖥️ Ferramentas de Desenvolvimento
 ![image](https://github.com/user-attachments/assets/03c49167-fc07-40c8-b167-7fcb7612f573)
@@ -164,6 +194,16 @@ Após a instalação:
   <img src="imagens/asa.gif" alt="Tela ASA" width="200"/> <img src="imagens/cantina.gif" alt="Tela Cantina" width="200"/><img src="imagens/trocar.gif" alt="Tela Trocar Pontos" width="200"/><img src="imagens/pix.gif" alt="Tela Pix" width="200"/>
 </p>
 
+### 📲 Download do Aplicativo
+
+<p align="center">
+  <a href="https://github.com/2025-1-NADS3/Projeto1/raw/main/src/Entrega%203/Frontend/BankPay-Academy/bankpay-academy.apk" download>
+    <img src="https://img.shields.io/badge/⬇️%20Baixar%20APK%20Bank%20Pay%20Academy-0a0a0a?style=for-the-badge&logo=android&logoColor=green&labelColor=0a0a0a&color=0a0a0a" alt="Download APK Bank Pay Academy" />
+  </a>
+</p>
+
+> 📱 **Clique no botão acima para baixar o arquivo `.apk` do app Bank Pay Academy**  
+> Após o download, instale manualmente em seu dispositivo Android (ativando “Fontes desconhecidas”, se necessário).
 
 
 ## 🔧 Ferramentas Utilizadas
