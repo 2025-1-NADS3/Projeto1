@@ -91,15 +91,58 @@ Usado principalmente em: `LoginActivity`, `EditProfileActivity`, `PixTransferAct
 
 ## 🔁 Fluxo de Navegação
 
-### ✅ Fluxo completo entre as telas do app
+MainActivity (Splash)
+   ↓
+WelcomeActivity (Boas-vindas)
+   ├── btnCadastrar → RegisterActivity
+   └── btnEntrar → LoginActivity
+                      ↓
+               HomeActivity (Tela Inicial)
+                  ├── PixHomeActivity
+                  │     ├── PixTransferActivity
+                  │     │     ├── ConfirmPixPasswordActivity
+                  │     │     ├── ConfirmPixTransferActivity
+                  │     │     └── PixTransferReceiptActivity
+                  │     └── PixIntroManageKeysActivity
+                  │           ├── PixIntroCreateKeyActivity
+                  │           │     ├── PixRegisterCpfKeyActivity
+                  │           │     ├── PixRegisterEmailKeyActivity
+                  │           │     ├── PixRegisterPhoneKeyActivity
+                  │           │     └── PixRegisterRandomKeyActivity
+                  │           ├── PixKeyListActivity
+                  │           │     ├── PixKeyDetailsActivity
+                  │           │     ├── PixKeyConfirmDeleteActivity
+                  │           │     └── PixKeySuccessActivity
+                  │           ├── PixConfirmationActivity
+                  │           ├── PixPaymentDetailsActivity
+                  │           ├── PixIntroSendReceiveActivity
+                  │           ├── PixChooseKeyTypeActivity
+                  │           ├── PixAddAmountActivity
+                  │           │     └── PixAddAmountReceiptActivity
+                  │           ├── PixConfirmAmountActivity
+                  │           └── NoPixKeyActivity
+                  │
+                  ├── CanteenIntroActivity
+                  │     ├── CanteenActivity
+                  │     │     └── CanteenCartActivity
+                  │     │           ├── CanteenConfirmPasswordActivity
+                  │     │           └── CanteenReceiptActivity
+                  │
+                  ├── AsaIntroActivity
+                  │     ├── AsaServiceActivity
+                  │     │     └── AsaServiceCartActivity
+                  │     │           ├── AsaServiceConfirmPasswordActivity
+                  │     │           └── AsaServiceReceiptActivity
+                  │
+                  ├── RedeemPointsIntroActivity
+                  │     └── RedeemPointsActivity
+                  │           ├── RedeemPointsConfirmActivity
+                  │           └── RedeemPointsReceiptActivity
+                  │
+                  ├── EditProfileActivity
+                  ├── ExtractActivity (Extrato)
+                  └── FecapServicesActivity
 
-<p align="center">
-  <img src="fluxo_bankpay.png" alt="Fluxograma do BankPay Academy" width="700">
-</p>
-
-> ⚠️ Para adicionar essa imagem ao seu README, certifique-se de subir o arquivo `fluxo_bankpay.png` na raiz do seu repositório GitHub.
-
----
 
 ## 📦 APK de Instalação
 
