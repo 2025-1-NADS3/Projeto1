@@ -168,7 +168,7 @@ Após a instalação:
 | **Linguagem de Programação** | Java, JavaScript                                 |
 | **Backend/API**              | Node.js + Express                                |
 | **Frontend Mobile**          | Android SDK (Kotlin/Java)                        |
-| **Plataforma de Deploy**     | Microsoft Azure                                  |
+| **Plataforma de Deploy**     | Microsoft Azure,Code SandBox                     |
 | **Testes de Software**       | Postman                                          |
 | **Ferramentas de Design**    | Figma, Canva, StoryboardThat, Miro              |
 | **Sistemas Operacionais**    | Compatível com Windows, macOS e Linux            |
