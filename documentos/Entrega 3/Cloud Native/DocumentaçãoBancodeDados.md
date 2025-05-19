@@ -1,61 +1,44 @@
 # 🏦 BankPay Academy
 
-Sistema de pagamentos e benefícios estudantis integrados à plataforma da instituição.
+Sistema de gestão de pagamentos, produtos e pontos acadêmicos.
 
-## 📁 Banco de Dados
+## 📁 Estrutura do Projeto
 
-Nome: `bankpay_academy`  
-Gerado via: phpMyAdmin 5.2.1  
-Codificação: UTF-8 (utf8mb4)
+```bash
+src/
+├── /backend              ← Backend principal (produção)
+├── /backend-sandbox      ← Backend do CodeSandbox (desenvolvimento/teste)
+└── /frontend             ← Frontend (ex: React, Android, etc)
+```
 
----
+## 🗃️ Banco de Dados: `bankpay_academy`
 
-## 📄 Tabelas
+Gerenciado em MySQL 9.1.0 com codificação `utf8mb4`.
 
-### 🔐 `usuarios`
-Armazena informações dos usuários do sistema, incluindo dados pessoais, autenticação, saldo e pontos.
+### Tabelas principais:
 
-### 💰 `transacoes`
-Histórico financeiro com PIX, entradas e saídas, associadas aos usuários.
+- `usuarios` → Informações dos alunos
+- `transacoes` → Histórico financeiro com PIX
+- `cantina` → Itens disponíveis para compra
+- `asa_servicos` → Serviços acadêmicos como 2ª via de documentos
+- `produtos` → Itens da atlética trocáveis por pontos
+- `historico_pontos` → Controle mensal de pontos gastos
+- `historico_trocas` → Registro das trocas de pontos por produtos
 
-### 🥪 `cantina`
-Tabela com os produtos disponíveis para compra na cantina física da instituição.
+## 🧠 Funcionalidades Suportadas
 
-### 🧾 `asa_servicos`
-Serviços administrativos e estudantis oferecidos pelo ASA com cobrança via saldo.
+- Pagamentos via PIX
+- Registro de saldo e pontos
+- Troca de pontos por prêmios
+- Compra de produtos na cantina
+- Solicitação de serviços da secretaria/ASA
 
-### 🎁 `produtos`
-Itens da atlética que podem ser adquiridos com pontos acumulados.
+## 📌 Observações Técnicas
 
-### 📊 `historico_pontos`
-Registros mensais de pontos utilizados por cada aluno.
+- Algumas tabelas usam `MyISAM` (sem integridade referencial).
+- Todas as imagens são chamadas por nome do arquivo.
+- É recomendado migrar tabelas relacionais para `InnoDB`.
 
-### 🔄 `historico_trocas`
-Rastreamento de quais produtos foram trocados por pontos, por quais usuários e quando.
+## 📫 Contato
 
----
-
-## 🛠️ Tecnologias
-
-- MySQL 9.1.0
-- PHP 8.3.14
-- phpMyAdmin 5.2.1
-
----
-
-## 🧠 Observações
-
-- O sistema permite que estudantes acumulem pontos com base em interações financeiras.
-- Esses pontos podem ser trocados por produtos ou serviços.
-- A plataforma é extensível para dashboards e relatórios acadêmicos e financeiros.
-
----
-
-## 📷 Imagens
-
-Os campos `imagem` em diversas tabelas armazenam nomes de arquivos que devem ser referenciados no frontend.
-
----
-
-
-
+Para suporte ou contribuições, entre em contato com a equipe de desenvolvimento.
