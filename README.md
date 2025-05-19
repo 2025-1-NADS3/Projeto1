@@ -145,7 +145,7 @@ Após a instalação:
 ## 🎥 Demonstração do App
 
 <p align="center">
-  <img src="imagens/VdeodoWhatsAppde2025-05-18s20.30.02_9f0f356d-ezgif.com-video-to-gif-converter.gif" 
+  <img src="imagens/cantina.gif" 
        alt="Demonstração do App Bank Pay Academy" 
        width="300"/>
 </p>
