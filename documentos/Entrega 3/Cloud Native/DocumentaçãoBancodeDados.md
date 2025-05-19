@@ -15,7 +15,13 @@ src/
 O banco de dados `bankpay_academy` é utilizado em ambos os ambientes de backend (`/backend` e `/backend-sandbox`), e está hospedado na **plataforma Azure**.
 
 ---
+##  CodeSandbox
 
+<p align="center">
+  <a href="https://codesandbox.io/p/devbox/bankpayacademy-plyhcd" target="_blank">
+    <img src="https://img.shields.io/badge/abrir%20no-CodeSandbox-151515?style=for-the-badge&logo=codesandbox&logoColor=white" alt="Clique aqui para abrir o CodeSandBox"/>
+  </a>
+</p>
 ## 🗃️ Banco de Dados: `bankpay_academy`
 
 - **Local de hospedagem**: Microsoft Azure  
