@@ -142,51 +142,6 @@ export const getSaldo = async (req, res) => {
     }
 };
 
-export const trocarPontosPorProduto = async (req, res) => {
-    const { id } = req.user; 
-    const { produtoId } = req.body;
-
-    if (!produtoId) {
-        return res.status(400).json({ erro: "ID do produto é obrigatório." });
-    }
-
-    try {
-        const [produtoRows] = await db.execute("SELECT * FROM produtos WHERE id = ?", [produtoId]);
-        if (produtoRows.length === 0) {
-            return res.status(404).json({ erro: "Produto não encontrado." });
-        }
-
-        const produto = produtoRows[0];
-
-        if (produto.quantidade_estoque <= 0) {
-            return res.status(400).json({ erro: "Produto fora de estoque." });
-        }
-
-        const [usuarioRows] = await db.execute("SELECT pontos FROM usuarios WHERE id = ?", [id]);
-        const pontosUsuario = usuarioRows[0].pontos;
-
-        if (pontosUsuario < produto.pontos_necessarios) {
-            return res.status(400).json({ erro: "Você não tem pontos suficientes." });
-        }
-
-        const novosPontos = pontosUsuario - produto.pontos_necessarios;
-        await db.execute("UPDATE usuarios SET pontos = ? WHERE id = ?", [novosPontos, id]);
-
-        await db.execute("UPDATE produtos SET quantidade_estoque = quantidade_estoque - 1 WHERE id = ?", [produtoId]);
-
-        await db.execute("INSERT INTO historico_trocas (usuario_id, produto_id, data) VALUES (?, ?, NOW())", [id, produtoId]);
-
-        return res.status(200).json({
-            mensagem: "Troca realizada com sucesso!",
-            produto: produto.nome,
-        });
-
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ erro: "Erro ao processar a troca." });
-    }
-};
-
 export const listarHistoricoPontos = async (req, res) => {
     const { id } = req.params;
     try {
