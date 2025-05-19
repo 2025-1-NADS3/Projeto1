@@ -187,6 +187,15 @@ Após a instalação:
    * CONCLUÍDO: Projeto concluído.
  
 
+---
+
+### ✅  Contribuição
+
+```markdown
+## 🤝 Contribuição
+
+Este é um projeto acadêmico, mas você pode contribuir com feedback ou sugestões abrindo uma *issue* no repositório. Fique à vontade para colaborar conosco!😊
+
 ## 📋 Licença/License
 
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
