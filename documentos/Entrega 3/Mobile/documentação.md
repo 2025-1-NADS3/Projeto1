@@ -8,8 +8,8 @@ Aplicativo Android desenvolvido em Java para gerenciamento financeiro estudantil
 ## 📍 Localização do Projeto
 
 ```
-main/src/Entrega 2/Frontend/BankPay-Academy
-Pacote Android: br.com.neonpay.neonpayacademy
+main/src/Entrega 3/Frontend/BankPay-Academy
+Pacote Android: br.com.bankpay.bankpayacademy
 ```
 
 ---
@@ -21,7 +21,7 @@ Pacote Android: br.com.neonpay.neonpayacademy
 ├── app/
 │   └── src/
 │       └── main/
-│           ├── java/br/com/neonpay/neonpayacademy/
+│           ├── java/br/com/bankpay/bankpayacademy/
 │           │   ├── MainActivity.java
 │           │   ├── WelcomeActivity.java
 │           │   ├── RegisterActivity.java
