@@ -13,6 +13,10 @@
 ## 👨‍🏫 Professores Orientadores:<a href="https://www.linkedin.com/in/aimarlopes/">Aimar Martins Lopes</a>,<a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>,<a href="https://www.linkedin.com/in/vheltai/">Vinicius Heltai</a> e <a href="https://www.linkedin.com/in/jefferson-o-silva/">Jefferson Silva</a>.
 
 ## ✏ Introdução
+
+O projeto Bank Pay Academy foi desenvolvido por alunos da FECAP - Fundação Escola de Comércio Álvares Penteado, com o objetivo de inovar a experiência financeira dentro do ambiente universitário. A iniciativa alia tecnologia, praticidade e gamificação para atender às necessidades dos estudantes, promovendo integração com a instituição, autonomia no controle de gastos e recompensas pelo uso consciente da plataforma.
+
+A proposta nasceu da observação de uma demanda recorrente: centralizar pagamentos internos e, ao mesmo tempo, estimular o engajamento dos alunos por meio de um sistema de pontos e benefícios. O projeto foi orientado por professores experientes e construído em equipe com uso de boas práticas de desenvolvimento ágil, desde prototipação até testes e implantação.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/dffb5ab1-887d-493d-9cec-754eb9874957" alt="image" />
 </div>
@@ -20,7 +24,11 @@
 
 ## 🔎 Descrição
 
-Bank Pay Academy é um aplicativo financeiro voltado para o ambiente acadêmico, que permite aos alunos realizarem pagamentos de serviços e produtos da instituição de forma simples e segura, integrado à API. Além dos pagamentos, os estudantes acumulam pontos a cada transação, que podem ser trocados por benefícios exclusivos, como produtos da cantina. A plataforma visa facilitar a gestão financeira e incentivar o engajamento dentro da comunidade universitária.
+O Bank Pay Academy é um aplicativo mobile que transforma a maneira como os alunos da FECAP interagem com os serviços da instituição. A plataforma permite o pagamento de produtos e serviços — como cantina, eventos e materiais — de forma prática, segura e digital, diretamente pelo celular, utilizando integração com a API da instituição.
+
+A cada pagamento realizado, o aluno acumula pontos que podem ser trocados por recompensas exclusivas, promovendo um sistema de incentivo inteligente dentro do campus. Além disso, o app proporciona ao estudante uma visão clara e organizada de seu histórico financeiro, contribuindo para o desenvolvimento da educação financeira.
+
+Desenvolvido com arquitetura moderna, o projeto conta com um backend robusto em Node.js + Express e um aplicativo mobile Android nativo utilizando Java, integrados via API RESTful e conectados a um banco de dados MySQL hospedado na Azure. Todo o processo de criação foi documentado e dividido em entregas por áreas técnicas (UX, Mobile, Cloud Native, Testes), demonstrando organização e alinhamento com práticas profissionais do mercado.
 
 ## 📂 Estrutura de Pastas 
 
