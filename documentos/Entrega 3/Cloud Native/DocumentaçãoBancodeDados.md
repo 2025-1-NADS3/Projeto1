@@ -57,15 +57,5 @@ Os campos `imagem` em diversas tabelas armazenam nomes de arquivos que devem ser
 
 ---
 
-## 📌 Sugestão de Expansão
 
-- Implementar foreign keys reais para consistência referencial.
-- Adicionar logs de auditoria e histórico de alterações.
-- Normalizar melhor as tabelas `transacoes` e `produtos`.
-
----
-
-## 📫 Contato
-
-Para dúvidas ou sugestões, entre em contato com a equipe de desenvolvimento.
 
