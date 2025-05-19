@@ -145,7 +145,7 @@ Após a instalação:
 ##  CodeSandbox
 
 <p align="center">
-  <a href="https://codesandbox.io/SEU-LINK-AQUI" target="_blank">
+  <a href="https://codesandbox.io/p/devbox/bankpayacademy-plyhcd" target="_blank">
     <img src="https://img.shields.io/badge/abrir%20no-CodeSandbox-151515?style=for-the-badge&logo=codesandbox&logoColor=white" alt="Abrir no CodeSandbox"/>
   </a>
 </p>
