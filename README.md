@@ -142,12 +142,12 @@ Após a instalação:
 - Conecte um dispositivo físico via USB (certifique-se que a **depuração USB** está ativada) ou configure um emulador no Android Studio.
 - Clique no botão **"Run"** (ícone ▶) para compilar e executar o aplicativo no dispositivo/emulador.
 
-## 🎥 Demonstração do App
+## 🎥 Demonstrações do App
 
 <p align="center">
-  <img src="imagens/cantina.gif" 
-       alt="Demonstração do App Bank Pay Academy" 
-       width="300"/>
+  <img src="imagens/demo1.gif" alt="Demonstração 1" width="300"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="imagens/demo2.gif" alt="Demonstração 2" width="300"/>
 </p>
 
 
