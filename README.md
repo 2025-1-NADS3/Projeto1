@@ -111,8 +111,8 @@ Aplicativo Android desenvolvido no Android Studio, com integração via API.
 
 
 
-## 🎨 Clique abaixo para ver nosso Mockup design, Storyboard e Fluxograma
-<br><a href="https://www.figma.com/design/fJi0BJh1UnpZ2pNsil4LDm/WireFrame--Grupo-1.?node-id=49-4&t=pewvPpg1QO1NQwo0-1">🎨 WireFrame </a></br>
+## 🎨 Clique abaixo para ver nosso Wireframe / Mockup Design, Storyboard e Fluxograma
+<br><a href="https://www.figma.com/design/fJi0BJh1UnpZ2pNsil4LDm/WireFrame--Grupo-1.?node-id=49-4&t=pewvPpg1QO1NQwo0-1">🎨 WireFrame / Mockup Design </a></br>
 <br><a href="https://www.canva.com/design/DAGik0tm6I0/M8exD_9sd5LbMnnHM4bcGg/edit?utm_content=DAGik0tm6I0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">📔 StoryBoard </a></br>
 <br><a href="https://miro.com/welcomeonboard/YTNNSFdlVmtRTVJjNlBrelMvSFQ2WXU1SkVHQjNNNnZoYkp4ZmxuUXR5VWsxRzdsUFdueDIxM0tOa1p4dHpJSDFxSXlsVHFjSEJsdk1KYnNJQ01zTFBOR0s2YnNxSklQT2k4Y1dVZ1krTXdIYmw5RnFidTUxbFZFV3BqUmRJTkhQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=258966388391">👩‍💻 Fluxograma </a></br>
 
