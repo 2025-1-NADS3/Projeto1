@@ -145,10 +145,15 @@ Após a instalação:
 ## 🎥 Demonstrações do App
 
 <p align="center">
-  <img src="imagens/demo1.gif" alt="Demonstração 1" width="300"/>
-  &nbsp;&nbsp;&nbsp;
-  <img src="imagens/demo2.gif" alt="Demonstração 2" width="300"/>
+  <img src="imagens/cantina.gif" alt="Tela Cantina" width="200"/>
+  &nbsp;
+  <img src="imagens/asa.gif" alt="Tela ASA" width="200"/>
+  &nbsp;
+  <img src="imagens/trocar.gif" alt="Tela Trocar Pontos" width="200"/>
+  &nbsp;
+  <img src="imagens/pix.gif" alt="Tela Pix" width="200"/>
 </p>
+
 
 
 ## 🔧 Ferramentas Utilizadas
