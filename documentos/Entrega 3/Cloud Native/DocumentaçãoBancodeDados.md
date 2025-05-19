@@ -13,16 +13,17 @@ src/
 └── /frontend             ← Frontend (ex: React, Android, etc)
 ```
 
-O banco de dados `bankpay_academy` é utilizado em ambos os ambientes de backend (`/backend` e `/backend-sandbox`).
+O banco de dados `bankpay_academy` é utilizado em ambos os ambientes de backend (`/backend` e `/backend-sandbox`), e está hospedado na **plataforma Azure**.
 
 ---
 
 ## 🗃️ Banco de Dados: `bankpay_academy`
 
-- **Ferramenta de exportação**: phpMyAdmin 5.2.1  
-- **Versão do servidor MySQL**: 9.1.0  
+- **Local de hospedagem**: Microsoft Azure  
+- **Ferramenta de exportação**: phpMyAdmin  
+- **Versão do servidor MySQL**: 8.0.40-azure  
 - **Codificação padrão**: UTF-8 (`utf8mb4`)  
-- **Engine padrão**: `MyISAM` (exceto `usuarios`, que usa `InnoDB`)
+- **Engine utilizada**: `InnoDB`
 
 ---
 
@@ -52,7 +53,7 @@ Contém dados pessoais e financeiros dos alunos.
 
 ### 💰 `transacoes`
 
-Gerencia entradas e saídas financeiras dos usuários.
+Gerencia entradas e saídas financeiras dos usuários, incluindo trocas por pontos (registradas como `saida` com valor `0.00`).
 
 | Campo        | Tipo                         | Descrição |
 |--------------|------------------------------|-----------|
@@ -65,6 +66,8 @@ Gerencia entradas e saídas financeiras dos usuários.
 | `status`     | enum('pendente','confirmado')| Status da transação. |
 | `data`       | timestamp                    | Timestamp do registro. |
 | `senha_pedido` | int                        | Código de verificação (autenticação extra). |
+
+📌 As trocas por pontos foram integradas diretamente na tabela de transações com valor `0.00` e descrição iniciada com `Troca por Pontos`.
 
 ---
 
@@ -124,23 +127,17 @@ Controla os pontos gastos mensalmente.
 
 ---
 
-### 🔄 `historico_trocas`
-
-Registra todas as trocas de pontos por produtos.
-
-| Campo        | Tipo          | Descrição |
-|--------------|---------------|-----------|
-| `id`         | int (PK, AI)  | ID da troca. |
-| `usuario_id` | int (FK)      | Quem realizou a troca. |
-| `produto_id` | int (FK)      | Produto resgatado. |
-| `data`       | datetime      | Data da troca. |
-
----
-
 ## ✅ Considerações Técnicas
 
-- O uso de `MyISAM` impede uso de *foreign keys reais* — considerar migrar para `InnoDB` para integridade referencial.
-- Tabelas de relacionamento (ex: `historico_trocas`) poderiam ser mais robustas com `FOREIGN KEY`.
+- Todas as tabelas usam `InnoDB`, com suporte a integridade referencial.
+- A tabela `transacoes` foi expandida para registrar também trocas por pontos (valor `0.00`).
 - Todas as imagens são armazenadas por nome (ex: `img_moletom`), devendo ser resolvidas pelo frontend.
 
 ---
+
+## ☁️ Hospedagem
+
+O banco de dados está hospedado na **Azure Database for MySQL**, permitindo alta disponibilidade e escalabilidade para ambientes de produção.
+
+---
+
