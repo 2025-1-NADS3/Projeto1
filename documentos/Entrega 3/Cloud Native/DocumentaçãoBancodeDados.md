@@ -10,11 +10,7 @@ Sistema de gestão de pagamentos, produtos e pontos acadêmicos.
 src/
 ├── /backend              ← Backend principal (produção)
 └── /frontend             ← Frontend (ex: React, Android, etc)
-```
 
-O banco de dados `bankpay_academy` é utilizado em ambos os ambientes de backend (`/backend` e `/backend-sandbox`), e está hospedado na **plataforma Azure**.
-
----
 ##  CodeSandbox
 
 <p align="center">
