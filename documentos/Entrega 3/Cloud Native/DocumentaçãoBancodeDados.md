@@ -2,15 +2,15 @@
 
 Sistema de gestão de pagamentos, produtos e pontos acadêmicos.
 
----
+
 
 ## 📁 Estrutura do Projeto
 
-```bash
+```
 src/
 ├── /backend              ← Backend principal (produção)
-└── /frontend             ← Frontend (ex: React, Android, etc)
-
+└── /frontend             ← Frontend ( Android Studio)
+```
 ##  CodeSandbox
 
 <p align="center">
@@ -25,8 +25,6 @@ src/
 - **Versão do servidor MySQL**: 8.0.40-azure  
 - **Codificação padrão**: UTF-8 (`utf8mb4`)  
 - **Engine utilizada**: `InnoDB`
-
----
 
 ## 🧩 Tabelas e Estrutura
 
