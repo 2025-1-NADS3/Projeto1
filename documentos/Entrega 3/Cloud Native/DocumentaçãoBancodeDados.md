@@ -11,7 +11,7 @@ src/
 ├── /backend              ← Backend principal (produção)
 └── /frontend             ← Frontend ( Android Studio)
 ```
-##  CodeSandbox
+## 📦 CodeSandbox
 
 <p align="center">
   <a href="https://codesandbox.io/p/devbox/bankpayacademy-plyhcd" target="_blank">
