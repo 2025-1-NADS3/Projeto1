@@ -18,6 +18,7 @@ src/
     <img src="https://img.shields.io/badge/abrir%20no-CodeSandbox-151515?style=for-the-badge&logo=codesandbox&logoColor=white" alt="Clique aqui para abrir o CodeSandBox"/>
   </a>
 </p>
+
 ## 🗃️ Banco de Dados: `bankpay_academy`
 
 - **Local de hospedagem**: Microsoft Azure  
