@@ -48,7 +48,8 @@ pm2 start server.js --name bankpay-backend
 ```
 
 📸 *Exemplo de saída:*  
-![Start do servidor com PM2](./Projeto1/imagens/imagem1.jpg)
+![imagem 1](https://github.com/user-attachments/assets/02c0d9ba-52f0-47a1-80f9-f4d87148df81)
+
 
 ---
 
@@ -61,7 +62,8 @@ pm2 list
 ```
 
 📸 *Exemplo de listagem com status "online":*  
-![Listagem PM2](./Projeto1/imagens/imagem2.jpg)
+![imagem 2](https://github.com/user-attachments/assets/7d6c03c9-264a-4625-8f65-316ba08e39b8)
+
 
 ---
 
@@ -74,7 +76,8 @@ pm2 save
 ```
 
 📸 *Confirmação do comando `pm2 save`:*  
-![PM2 Save](./Projeto1/imagens/imagem3.jpg)
+![imagem 3](https://github.com/user-attachments/assets/8dd0edac-4d53-40a6-b955-87947485b1b3)
+
 
 ---
 
@@ -88,7 +91,8 @@ pm2 resurrect
 ```
 
 📸 *Resultado após o `resurrect` com processo restaurado:*  
-![PM2 Resurrect](./Projeto1/imagens/imagem4.jpg)
+![imagem 4](https://github.com/user-attachments/assets/1a21174f-ce61-4257-9886-c2e67448f13c)
+
 
 ---
 
