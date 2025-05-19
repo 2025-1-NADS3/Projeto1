@@ -139,4 +139,5 @@ Controla os pontos gastos mensalmente.
 O banco de dados está hospedado na **Azure Database for MySQL**, permitindo alta disponibilidade e escalabilidade para ambientes de produção.
 
 ---
+## 👨‍💻Entre em contato com os Desenvolvedores 😊: <a href="https://www.linkedin.com/in/alexandra-christine-silva-590092257">Alexandra Christine </a>,<a href="https://www.linkedin.com/in/gabrielly-cintra/">Gabrielly Cintra de Jesus	</a>, <a href="https://linkedin.com/in/hebert-/">Hebert dos Reis Esteves	</a> e <a href="https://www.linkedin.com/in/jos%C3%A9-almeida-80063a256/">José Bento Almeida Gama </a>.
 
