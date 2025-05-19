@@ -12,12 +12,18 @@ Este projeto representa o backend do sistema **BankPay**, desenvolvido com **Nod
 ├── server.js
 ├── package.json
 ├── README.md
+└── /Projeto1/imagens
+    ├── imagem 1.jpg
+    ├── imagem 2.jpg
+    ├── imagem 3.jpg
+    └── imagem 4.jpg
+```
+
+---
 
 ## ⚙️ Passos para executar o servidor com PM2
 
 ### 1️⃣ Instalar as dependências do projeto
-
-Execute o comando abaixo na pasta do projeto:
 
 ```bash
 npm install
@@ -42,7 +48,7 @@ pm2 start server.js --name bankpay-backend
 ```
 
 📸 *Exemplo de saída:*  
-![Start do servidor com PM2](./imagens/imagem1.jpg)
+![Start do servidor com PM2](./Projeto1/imagens/imagem%201.jpg)
 
 ---
 
@@ -55,7 +61,7 @@ pm2 list
 ```
 
 📸 *Exemplo de listagem com status "online":*  
-![Listagem PM2](./imagens/imagem2.jpg)
+![Listagem PM2](./Projeto1/imagens/imagem%202.jpg)
 
 ---
 
@@ -68,7 +74,7 @@ pm2 save
 ```
 
 📸 *Confirmação do comando `pm2 save`:*  
-![PM2 Save](./imagens/imagem3.jpg)
+![PM2 Save](./Projeto1/imagens/imagem%203.jpg)
 
 ---
 
@@ -82,7 +88,7 @@ pm2 resurrect
 ```
 
 📸 *Resultado após o `resurrect` com processo restaurado:*  
-![PM2 Resurrect](./imagens/imagem4.jpg)
+![PM2 Resurrect](./Projeto1/imagens/imagem%204.jpg)
 
 ---
 
